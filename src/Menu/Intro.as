@@ -1,6 +1,7 @@
 package Menu 
 {
 	import net.flashpunk.World;
+	import flash.system.Capabilities;
 	
 	/**
 	 * ...
@@ -11,7 +12,7 @@ package Menu
 		
 		public function Intro() 
 		{
-			trace('intro world is life');
+			trace(Capabilities.screenResolutionX + "x" + Capabilities.screenResolutionY); 
 		}
 		
 	}

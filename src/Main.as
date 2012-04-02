@@ -15,7 +15,7 @@ package
 			// Console for debugging
 			//FP.console.enable();		
 			
-			FP.world = new Intro;
+			FP.world = new Tutorial;
 			
 			//Mouse.hide();
 		}

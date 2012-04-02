@@ -8,15 +8,16 @@
     <movie fps="30" />
     <movie width="1024" />
     <movie height="600" />
-    <movie version="3" />
-    <movie minorVersion="2" />
-    <movie platform="AIR" />
+    <movie version="10" />
+    <movie minorVersion="1" />
+    <movie platform="Flash Player" />
     <movie background="#C0C0C0" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
     <class path="flashpunk\Draknek-FlashPunk-94a60de" />
+    <class path="flashpunk\RichardMarks-punk.ui-8f85e82\src" />
   </classpaths>
   <!-- Build options -->
   <build>
