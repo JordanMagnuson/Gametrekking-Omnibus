@@ -4,14 +4,14 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="bin\GametrekkingOmnibus.swf" />
+    <movie path="flashdevelop bin\GametrekkingOmnibus.swf" />
     <movie fps="30" />
     <movie width="1024" />
     <movie height="600" />
     <movie version="10" />
     <movie minorVersion="1" />
     <movie platform="Flash Player" />
-    <movie background="#C0C0C0" />
+    <movie background="#FFFFFF" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>

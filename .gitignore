@@ -2,3 +2,7 @@
 /bin/
 /obj/
 /lib/
+/flash builder bin-debug/
+/flash builder release/
+/flashdevelop bin/
+/.settings/

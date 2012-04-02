@@ -4,16 +4,17 @@ package menu
 	import flash.system.Capabilities;
 	import punk.ui.PunkButton;
 	import net.flashpunk.FP;
+	import freedombridge.worlds.MyWorld
 	
 	/**
 	 * ...
 	 * @author Jordan Magnuson
 	 */
-	public class Intro extends World
+	public class Landing extends World
 	{
 		public var buttonFreedomBridge:PunkButton;
 		
-		public function Intro() 
+		public function Landing() 
 		{
 			trace(Capabilities.screenResolutionX + "x" + Capabilities.screenResolutionY); 
 			
@@ -24,7 +25,8 @@ package menu
 		
 		public function gotoFreedomBridge():void
 		{
-			FP.world = new Tutorial;
+			remove(buttonFreedomBridge);
+			FP.world = new MyWorld;
 		}
 		
 	}
