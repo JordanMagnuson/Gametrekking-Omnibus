@@ -1,5 +1,7 @@
 package
 {
+	import loneliness.rooms.MainWorld;
+	import loneliness.rooms.MessageScreen;
 	import menu.Landing;
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
@@ -17,7 +19,7 @@ package
 		public function Main() 
 		{
 			super(1024, 600, 60);
-			//FP.screen.color = Colors.BLACK;
+			FP.screen.color = Colors.BLACK;
 			//FP.screen.color = Colors.WHITE;
 			
 			// Console for debugging
