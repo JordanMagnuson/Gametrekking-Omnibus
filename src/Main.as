@@ -1,5 +1,6 @@
 package
 {
+	import flash.events.Event;
 	import loneliness.rooms.MainWorld;
 	import loneliness.rooms.MessageScreen;
 	import menu.Landing;
@@ -11,6 +12,9 @@ package
 	import flash.display.StageScaleMode;
 	import flash.geom.Rectangle;
 	import flash.display.StageDisplayState;
+	import flash.events.FullScreenEvent;
+	import flash.events.KeyboardEvent;
+	import flash.ui.Keyboard;
 	
 	[SWF(width='1024',height='600',backgroundColor='#000000',frameRate='60')]
 	
@@ -32,11 +36,32 @@ package
 		
 		override public function init():void
 		{
+			// Full screen set up
 			FP.stage.scaleMode = StageScaleMode.SHOW_ALL;
 			FP.stage.fullScreenSourceRect= new Rectangle(0, 0, FP.width, FP.height);
-			FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;		
+			FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;	
+			
+			// Listen for Esc key, prevent exiting full screen
+			FP.stage.addEventListener(KeyboardEvent.KEY_DOWN, preventEsc);
 			super.init();
-		}		
+		}			
+
+		/**
+		 * Prevent escape key from exiting full screen
+		 * Only works in air app (not swf).
+		 * @param	e
+		 */
+		private function preventEsc(e:KeyboardEvent):void
+		{
+			if(e.keyCode == Keyboard.ESCAPE)
+			{
+				e.preventDefault();
+			}
+		}
+		
+		override public function update():void
+		{
+			super.update();
+		}
 	}
-	
 }
