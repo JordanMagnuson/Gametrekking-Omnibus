@@ -22,7 +22,8 @@ package
 	import net.flashpunk.World;
 	import net.flashpunk.utils.Draw;
 	import net.flashpunk.Entity;
-	import flash.display.StageScaleMode
+	import flash.display.StageScaleMode;
+	import heartattack.Game;
 	
 	[SWF(width='1024',height='600',backgroundColor='#000000',frameRate='60')]
 	
@@ -30,14 +31,14 @@ package
 	{
 		public function Main() 
 		{
-			super(1024, 600, 60);
+			super(SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT, 60);
 			FP.screen.color = Colors.BLACK;
 			//FP.screen.color = Colors.WHITE;
 			
 			// Console for debugging
 			//FP.console.enable();		
 			
-			FP.world = new Game;
+			FP.world = new heartattack.Game;
 			
 			//Mouse.hide();
 		}
@@ -66,7 +67,8 @@ package
 			// miscellaneous startup stuff
 			if (FP.randomSeed == 0) FP.randomizeSeed();
 			FP.entity = new Entity;
-			//FP._time = getTimer();	
+			//FP._time = getTimer();
+			FP.screen.color = Colors.BLACK;
 		
 			// Enable console
 			FP.console.enable();
@@ -76,7 +78,7 @@ package
 		{
 			// Full screen
 			//FP.stage.scaleMode = StageScaleMode.SHOW_ALL;
-			//FP.stage.fullScreenSourceRect = new Rectangle(0, 0, 1024, 600);
+			//FP.stage.fullScreenSourceRect = new Rectangle(0, 0, SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT);
 			//FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;	
 			
 			// Listen for Esc key, prevent exiting full screen

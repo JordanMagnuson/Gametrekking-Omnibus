@@ -9,11 +9,11 @@ package
 	import punk.ui.PunkTextField;
 	import punk.ui.PunkToggleButton;
 	
-	public class Tutorial extends World
+	public class PunkUITutorial extends World
 	{
 		public var button:PunkButton;
 		
-		public function Tutorial()
+		public function PunkUITutorial()
 		{
 			super();
 			

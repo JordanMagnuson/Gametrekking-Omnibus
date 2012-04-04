@@ -15,6 +15,7 @@ package
 		public static const YELLOW:uint = 0xFCFFAB;
 		public static const ORANGE:uint = 0xFFDB63;
 		public static const RED:uint = 0xFF0000;	
+		public static const BLOOD_RED:uint = 0xFFa70303;
 	}
 
 }
