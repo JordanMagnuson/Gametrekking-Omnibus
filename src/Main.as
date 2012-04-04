@@ -24,6 +24,7 @@ package
 	import net.flashpunk.Entity;
 	import flash.display.StageScaleMode;
 	import heartattack.Game;
+	import killer.rooms.MyWorld;
 	
 	[SWF(width='1024',height='600',backgroundColor='#000000',frameRate='60')]
 	
@@ -38,7 +39,7 @@ package
 			// Console for debugging
 			//FP.console.enable();		
 			
-			FP.world = new heartattack.Game;
+			FP.world = new killer.rooms.MyWorld
 			
 			//Mouse.hide();
 		}

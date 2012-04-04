@@ -1,4 +1,4 @@
-package heartattack  
+package heartattack
 {
 	import net.flashpunk.Entity;
 	import net.flashpunk.Graphic;
