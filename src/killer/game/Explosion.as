@@ -29,7 +29,7 @@ package killer.game
 			//spritemap.originX = 0;
 			//spritemap.originY = spritemap.height;
 			//spritemap.x = 0;
-			//spritemap.y = -spritemap.originY;	
+			////spritemap.y = -spritemap.originY;	
 			//
 			//setHitbox(spritemap.width, spritemap.height, spritemap.originX, spritemap.originY);				
 			

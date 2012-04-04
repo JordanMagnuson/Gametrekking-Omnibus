@@ -78,9 +78,9 @@ package
 		override public function init():void
 		{
 			// Full screen
-			//FP.stage.scaleMode = StageScaleMode.SHOW_ALL;
-			//FP.stage.fullScreenSourceRect = new Rectangle(0, 0, SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT);
-			//FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;	
+			FP.stage.scaleMode = StageScaleMode.SHOW_ALL;
+			FP.stage.fullScreenSourceRect = new Rectangle(0, 0, SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT);
+			FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;	
 			
 			// Listen for Esc key, prevent exiting full screen
 			FP.stage.addEventListener(KeyboardEvent.KEY_DOWN, preventEsc);

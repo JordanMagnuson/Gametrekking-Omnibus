@@ -31,7 +31,7 @@ package killer.game.snow
 			image.originX = 0;
 			image.originY = 3;
 			image.x = 0;
-			image.y = -image.originY;	
+			//image.y = -image.originY;	
 			
 			setHitbox(image.width, image.height,image.originX, image.originY);				
 		}

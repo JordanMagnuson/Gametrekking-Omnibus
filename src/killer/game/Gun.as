@@ -21,7 +21,7 @@ package killer.game
 			image.originX = 1;
 			image.originY = 2;
 			image.x = -originX;
-			image.y = -image.originY;				
+			//image.y = -image.originY;				
 			
 			x = Global.playerShooting.x + 7;
 			y = Global.playerShooting.y - 8;

@@ -37,6 +37,12 @@ package killer.game
 				image.alpha = 0;
 			else
 				image.alpha = 1;
+				
+			image.originX = 0;
+			image.originY = image.height;
+			image.x = 0;
+			x = 0;
+			y = Ground.y;
 		}
 		
 		override public function added():void

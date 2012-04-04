@@ -56,7 +56,7 @@ package killer.game
 			image.originX = 0;
 			image.originY = 0;
 			image.x = -image.originX;
-			image.y = -image.originY;	
+			//image.y = -image.originY;	
 			
 			setHitbox(image.width, image.height, image.originX, image.originY);					
 			

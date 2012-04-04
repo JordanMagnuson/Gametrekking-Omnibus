@@ -92,15 +92,15 @@ package killer.rooms
 		public function MyWorld()      
 		{
 			// Reset screen
+			FP.width = 342;
 			FP.height = 200;
-			FP.width = 300;
 			FP.screen = new Screen;
 			FP.screen.scale = 3;
 			FP.console.enable();
 			//FP.screen.update();
 			
 			// World size
-			width = 300;
+			width = 342;
 			height = 200;		
 		
 			// Set location

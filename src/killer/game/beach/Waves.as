@@ -44,7 +44,7 @@ package killer.game.beach
 			image.originX = 0;
 			image.originY = image.height;
 			image.x = 0;
-			image.y = -image.originY;	
+			//image.y = -image.originY;	
 			
 			setHitbox(image.width, image.height, image.originX, image.originY);		
 			
