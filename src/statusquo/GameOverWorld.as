@@ -58,11 +58,11 @@ package statusquo
 			
 			// Print text to screen
 			if (minutesAlive > 0)
-				add(new TextEntity("You managed to keep the status quo for " + minutesAliveString + " and " + secondsAliveString + ",", FP.halfWidth, FP.halfHeight - 65));
+				add(new TextEntity("You managed to keep the status quo for " + minutesAliveString + " and " + secondsAliveString + ",", FP.halfWidth, FP.halfHeight - 95));
 			else
-				add(new TextEntity("You managed to keep the status quo for " + secondsAliveString + ", ", FP.halfWidth, FP.halfHeight - 65));
+				add(new TextEntity("You managed to keep the status quo for " + secondsAliveString + ", ", FP.halfWidth, FP.halfHeight - 95));
 		
-			add(new TextEntity(modeOfDeathString, FP.halfWidth, FP.halfHeight - 35));
+			add(new TextEntity(modeOfDeathString, FP.halfWidth, FP.halfHeight - 65));
 				
 			add(new TextEntity("Press R to try again.", FP.halfWidth, FP.halfHeight + 35));
 			

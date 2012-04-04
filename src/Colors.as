@@ -5,6 +5,7 @@ package
 	 */
 	public class Colors
 	{
+		public static const DARK_GRAY:uint = 0x202020;
 		public static const WHITE:uint = 0xFFFFFF;
 		public static const OFF_WHITE:uint = 0xFFE5E5E5;
 		public static const BLACK:uint = 0xFF000000;		

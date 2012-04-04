@@ -1,6 +1,7 @@
 package
 {
 	import flash.events.Event;
+	import kindnessofstrangers.Game;
 	import loneliness.rooms.MainWorld;
 	import loneliness.rooms.MessageScreen;
 	import menu.Landing;
@@ -17,6 +18,11 @@ package
 	import flash.ui.Keyboard;
 	import statusquo.GameOverWorld;
 	import statusquo.GameWorld;
+	import net.flashpunk.Screen
+	import net.flashpunk.World;
+	import net.flashpunk.utils.Draw;
+	import net.flashpunk.Entity;
+	import flash.display.StageScaleMode
 	
 	[SWF(width='1024',height='600',backgroundColor='#000000',frameRate='60')]
 	
@@ -29,18 +35,48 @@ package
 			//FP.screen.color = Colors.WHITE;
 			
 			// Console for debugging
-			FP.console.enable();		
+			//FP.console.enable();		
 			
-			FP.world = new GameOverWorld;
+			FP.world = new Game;
 			
 			//Mouse.hide();
+		}
+		
+		public function reset(width:uint, height:uint, frameRate:Number = 60, fixed:Boolean = false):void
+		{
+			// See net.flashpunk.Engine constructor
+			
+			// global game properties
+			FP.width = width;
+			FP.height = height;
+			FP.halfWidth = width/2;
+			FP.halfHeight = height/2;
+			FP.assignedFrameRate = frameRate;
+			FP.fixed = fixed;
+			FP.timeInFrames = fixed;
+			
+			// global game objects
+			FP.engine = this;
+			FP.screen = new Screen;
+			FP.bounds = new Rectangle(0, 0, width, height);
+			//FP._world = new World;
+			//FP.camera = FP._world.camera;
+			Draw.resetTarget();
+			
+			// miscellaneous startup stuff
+			if (FP.randomSeed == 0) FP.randomizeSeed();
+			FP.entity = new Entity;
+			//FP._time = getTimer();	
+		
+			// Enable console
+			FP.console.enable();
 		}
 		
 		override public function init():void
 		{
 			// Full screen
 			//FP.stage.scaleMode = StageScaleMode.SHOW_ALL;
-			//FP.stage.fullScreenSourceRect= new Rectangle(0, 0, FP.width, FP.height);
+			//FP.stage.fullScreenSourceRect = new Rectangle(0, 0, 1024, 600);
 			//FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;	
 			
 			// Listen for Esc key, prevent exiting full screen

@@ -17,7 +17,7 @@ package statusquo
 		public var bg:Image;
 		
 		//[Embed(source = '../../assets/statusquo/CasualEncounter.ttf', embedAsCFF = "false", fontFamily = 'CasualEncounter')] private var CasualEncounter:Class;
-		[Embed(source = '../../assets/statusquo/verdana.ttf', embedAsCFF="false", fontFamily = 'verdana')] private var Verdana:Class;		
+		[Embed(source = '../../assets/verdana.ttf', embedAsCFF="false", fontFamily = 'verdana')] private var Verdana:Class;		
 		
 		public function TextEntity(textString:String, x:Number = 0, y:Number = 0, centered:Boolean = true, size:int = 8, color:uint = 0xFFFFFFFF, fillBG:Boolean = false, bgColor:uint = 0xFF000000) 
 		{
