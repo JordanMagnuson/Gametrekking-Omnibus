@@ -15,6 +15,8 @@ package
 	import flash.events.FullScreenEvent;
 	import flash.events.KeyboardEvent;
 	import flash.ui.Keyboard;
+	import statusquo.GameOverWorld;
+	import statusquo.GameWorld;
 	
 	[SWF(width='1024',height='600',backgroundColor='#000000',frameRate='60')]
 	
@@ -29,17 +31,17 @@ package
 			// Console for debugging
 			FP.console.enable();		
 			
-			FP.world = new Landing;
+			FP.world = new GameOverWorld;
 			
 			//Mouse.hide();
 		}
 		
 		override public function init():void
 		{
-			// Full screen set up
-			FP.stage.scaleMode = StageScaleMode.SHOW_ALL;
-			FP.stage.fullScreenSourceRect= new Rectangle(0, 0, FP.width, FP.height);
-			FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;	
+			// Full screen
+			//FP.stage.scaleMode = StageScaleMode.SHOW_ALL;
+			//FP.stage.fullScreenSourceRect= new Rectangle(0, 0, FP.width, FP.height);
+			//FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;	
 			
 			// Listen for Esc key, prevent exiting full screen
 			FP.stage.addEventListener(KeyboardEvent.KEY_DOWN, preventEsc);
