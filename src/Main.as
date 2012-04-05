@@ -1,6 +1,7 @@
 package
 {
 	import flash.events.Event;
+	import grandmother.Approach;
 	import killer.rooms.GameOver;
 	import killer.rooms.MusicChoice;
 	import kindnessofstrangers.Game;
@@ -28,6 +29,7 @@ package
 	import heartattack.Game;
 	import killer.rooms.MyWorld;
 	import killer.rooms.GameOver;
+	import grandmother.Game;
 	
 	[SWF(width='1024',height='600',backgroundColor='#000000',frameRate='60')]
 	
@@ -42,7 +44,7 @@ package
 			// Console for debugging
 			//FP.console.enable();		
 			
-			FP.world = new MusicChoice;
+			FP.world = new grandmother.Game;
 			
 			//Mouse.hide();
 		}
