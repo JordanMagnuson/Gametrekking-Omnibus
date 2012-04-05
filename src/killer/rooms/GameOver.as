@@ -29,8 +29,8 @@ package killer.rooms
 		
 		public function GameOver() 
 		{
-			FP.width = 600;
-			FP.height = 400;
+			FP.width = SuperGlobal.SCREEN_WIDTH;
+			FP.height = SuperGlobal.SCREEN_HEIGHT;
 			FP.screen = new Screen();	
 		}
 		
@@ -38,6 +38,7 @@ package killer.rooms
 		{
 			FP.rate = 0.4;
 			add(new FadeIn(Colors.BLACK, 6));
+			//Global.exploded = true;
 			if (Global.mercifulShot)
 				add(new Entity(0, 0, new Image(Assets.END_SCREEN_01_MERCY)));
 			else if (Global.exploded)

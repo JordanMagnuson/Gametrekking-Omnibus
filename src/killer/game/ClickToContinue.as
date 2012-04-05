@@ -22,15 +22,16 @@ package killer.game
 		{
 			graphic = new Image(Assets.CLICK_TO_CONTINUE_BLACK);
 
-			(graphic as Image).originX = (graphic as Image).width / 2;
-			(graphic as Image).originY = (graphic as Image).height / 2;
-			(graphic as Image).x = -(graphic as Image).originX;
-			(graphic as Image).y = -(graphic as Image).originY;		
-			setHitbox((graphic as Image).width - 1, (graphic as Image).height - 1, (graphic as Image).originX, (graphic as Image).originY);					
+			//(graphic as Image).originX = (graphic as Image).width / 2;
+			//(graphic as Image).originY = (graphic as Image).height / 2;
+			//(graphic as Image).x = -(graphic as Image).originX;
+			//(graphic as Image).y = -(graphic as Image).originY;		
+			(graphic as Image).centerOO();
+			//setHitbox((graphic as Image).width - 1, (graphic as Image).height - 1, (graphic as Image).originX, (graphic as Image).originY);					
 			
 			(graphic as Image).alpha = 0;
 			
-			y = FP.halfHeight + 25;
+			y = FP.halfHeight + 45;
 			x = FP.halfWidth;
 		}
 		
@@ -56,7 +57,7 @@ package killer.game
 						FP.world.remove(this);
 						break;
 					case 1:
-						Global.server.sendData();
+						//Global.server.sendData();
 						FP.world.add(new FadeIn);
 						FP.world.add(new Entity(0, 0, new Image(Assets.END_SCREEN_03)));
 						FP.world.remove(this);

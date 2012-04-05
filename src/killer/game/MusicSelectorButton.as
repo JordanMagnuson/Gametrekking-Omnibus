@@ -32,7 +32,7 @@ package killer.game
 				if (Input.mousePressed)
 				{
 					Global.MUSIC_WHILE_WALKING = true;
-					Global.server.sendMusicChoice();
+					//Global.server.sendMusicChoice();
 					FP.world = new MyWorld;
 				}
 			}

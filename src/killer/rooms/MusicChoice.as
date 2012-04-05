@@ -7,7 +7,6 @@ package killer.rooms
 	import net.flashpunk.World;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.FP;
-	import killer.game.Colors;
 	
 	/**
 	 * ...
@@ -20,9 +19,12 @@ package killer.rooms
 		
 		public function MusicChoice() 
 		{
-			//FP.width = 600;
-			//FP.height = 400;
+			// Center screen in window		
+			FP.width = 600;
+			FP.height = 400;
 			//FP.screen = new Screen();				
+			FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
+			FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;				
 		}
 		
 		override public function begin():void

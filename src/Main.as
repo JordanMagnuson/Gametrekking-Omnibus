@@ -1,6 +1,8 @@
 package
 {
 	import flash.events.Event;
+	import killer.rooms.GameOver;
+	import killer.rooms.MusicChoice;
 	import kindnessofstrangers.Game;
 	import loneliness.rooms.MainWorld;
 	import loneliness.rooms.MessageScreen;
@@ -25,6 +27,7 @@ package
 	import flash.display.StageScaleMode;
 	import heartattack.Game;
 	import killer.rooms.MyWorld;
+	import killer.rooms.GameOver;
 	
 	[SWF(width='1024',height='600',backgroundColor='#000000',frameRate='60')]
 	
@@ -39,7 +42,7 @@ package
 			// Console for debugging
 			//FP.console.enable();		
 			
-			FP.world = new killer.rooms.MyWorld
+			FP.world = new MusicChoice;
 			
 			//Mouse.hide();
 		}
