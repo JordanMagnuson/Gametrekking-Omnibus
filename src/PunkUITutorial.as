@@ -1,6 +1,8 @@
 package
 {
 	import net.flashpunk.World;
+	import punk.ui.skin.PunkSkin;
+	import punk.ui.skin.PunkSkinButtonElement;
 	
 	import punk.ui.PunkButton;
 	import punk.ui.PunkLabel;

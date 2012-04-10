@@ -357,7 +357,7 @@ package net.flashpunk.graphics
 		public function get clipRect():Rectangle { return _sourceRect; }
 		
 		/** @protected Source BitmapData image. */
-		protected function get source():BitmapData { return _source; }
+		public function get source():BitmapData { return _source; }
 		
 		/**
 		 * Lock the image, preventing updateBuffer() from being run until

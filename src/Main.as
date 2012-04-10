@@ -5,9 +5,12 @@ package
 	import killer.rooms.GameOver;
 	import killer.rooms.MusicChoice;
 	import kindnessofstrangers.Game;
+	import kindnessofstrangers.Menu;
 	import loneliness.rooms.MainWorld;
 	import loneliness.rooms.MessageScreen;
+	import menu.GumTest;
 	import menu.Landing;
+	import menu.TaiwanLanding;
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
 	import flash.ui.Mouse;
@@ -45,7 +48,7 @@ package
 			// Console for debugging
 			FP.console.enable();		
 			
-			FP.world = new briefhistory.Game;
+			FP.world = new TaiwanLanding;
 			
 			//Mouse.hide();
 		}

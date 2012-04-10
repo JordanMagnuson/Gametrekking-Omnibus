@@ -1,11 +1,13 @@
 package menu 
 {
 	import loneliness.rooms.MainWorld;
+	import net.flashpunk.graphics.Text;
 	import net.flashpunk.World;
 	import flash.system.Capabilities;
 	import punk.ui.PunkButton;
 	import net.flashpunk.FP;
 	import freedombridge.worlds.MyWorld
+	import punk.ui.skin.PunkSkinButtonElement;
 	
 	/**
 	 * ...
@@ -21,7 +23,7 @@ package menu
 			trace(Capabilities.screenResolutionX + "x" + Capabilities.screenResolutionY); 
 			
 			// Freedom Bridge
-			freedomBridgeButton = new PunkButton(0, 0, 200, 100, 'Freedom Bridge', gotoFreedomBridge);
+			freedomBridgeButton = new PunkButton(0, 0, 200, 100, 'Freedom Bridge', gotoFreedomBridge, 0);
 			add(freedomBridgeButton);
 			
 			// Loneliness

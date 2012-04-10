@@ -23,6 +23,9 @@ package
 		public static const FOREST_BROWN:uint = 0x9d481a;
 		public static const PLAINS_GREEN:uint = 0x006b3e;
 		public static const SNOW_WHITE:uint = 0xFFFFFFFF;		
+		
+		public static const MENU_CREAM:uint = 0xfffcf3;
+		public static const MENU_BLUE:uint = 0x40565c;
 	}
 
 }
