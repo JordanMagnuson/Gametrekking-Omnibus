@@ -14,6 +14,9 @@ package menu
 		[Embed(source = "../../assets/menu/nav_intro.png")] public static const NAV_INTRO:Class;
 		[Embed(source = "../../assets/menu/nav_korea.png")] public static const NAV_KOREA:Class;	
 		[Embed(source = "../../assets/menu/nav_taiwan.png")] public static const NAV_TAIWAN:Class;
+		
+		// Landing pages
+		[Embed(source = "../../assets/menu/taiwan_landing.jpg")] public static const TAIWAN_LANDING:Class;
 	}
 
 }
