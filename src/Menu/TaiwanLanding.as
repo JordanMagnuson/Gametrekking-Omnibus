@@ -49,7 +49,8 @@ package menu
 		
 		public function gotoStatusQuo():void
 		{
-			FP.world = new GameWorld;
+			//FP.world = new GameWorld;
+			FP.world = new IntroScreen(Assets.INTRO_STATUS_QUO, GameWorld);
 		}	
 		
 		public function gotoKindness():void

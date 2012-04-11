@@ -1,6 +1,7 @@
 package menu 
 {
 	import flash.net.URLRequest;
+	import freedombridge.worlds.Intro;
 	import freedombridge.worlds.MyWorld;
 	import loneliness.rooms.MainWorld;
 	import net.flashpunk.Entity;
@@ -48,12 +49,13 @@ package menu
 		
 		public function gotoFreedomBridge():void
 		{
-			FP.world = new MyWorld;
+			FP.world = new IntroScreen(Assets.INTRO_FREEDOM_BRIDGE, MyWorld);
 		}		
 		
 		public function gotoLoneliness():void
 		{
-			FP.world = new MainWorld;
+			//FP.world = new MainWorld;
+			FP.world = new IntroScreen(Assets.INTRO_LONELINESS, MainWorld);
 		}	
 		
 		public function gotoReflection():void

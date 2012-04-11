@@ -57,7 +57,12 @@ package menu
 		[Embed(source = "../../assets/menu/cambodia_photo_button.png")] public static const CAMBODIA_PHOTO_BUTTON:Class;
 		[Embed(source = "../../assets/menu/cambodia_reflection_button.png")] public static const CAMBODIA_REFLECTION_BUTTON:Class;
 		[Embed(source = "../../assets/menu/cambodia_killer_button.png")] public static const CAMBODIA_KILLER_BUTTON:Class;
-		[Embed(source = "../../assets/menu/cambodia_history_button.png")] public static const CAMBODIA_HISTORY_BUTTON:Class;			
+		[Embed(source = "../../assets/menu/cambodia_history_button.png")] public static const CAMBODIA_HISTORY_BUTTON:Class;	
+		
+		// Intro screens
+		[Embed(source = "../../assets/menu/intro_freedom_bridge.png")] public static const INTRO_FREEDOM_BRIDGE:Class;
+		[Embed(source = "../../assets/menu/intro_loneliness.png")] public static const INTRO_LONELINESS:Class;
+		[Embed(source = "../../assets/menu/intro_status_quo.png")] public static const INTRO_STATUS_QUO:Class;
 	}
 
 }
