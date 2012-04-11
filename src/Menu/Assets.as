@@ -53,11 +53,11 @@ package menu
 		
 		// Cambodia
 		[Embed(source = "../../assets/menu/cambodia_landing.jpg")] public static const CAMBODIA_LANDING:Class;
-		//[Embed(source = "../../assets/menu/vietnam_map.jpg")] public static const VIETNAM_MAP:Class;
-		//[Embed(source = "../../assets/menu/vietnam_photo_button.png")] public static const VIETNAM_PHOTO_BUTTON:Class;
-		//[Embed(source = "../../assets/menu/vietnam_reflection_button.png")] public static const VIETNAM_REFLECTION_BUTTON:Class;
-		//[Embed(source = "../../assets/menu/vietnam_heart_attack_button.png")] public static const VIETNAM_HEART_ATTACK_BUTTON:Class;
-		//[Embed(source = "../../assets/menu/vietnam_grandmother_button.png")] public static const VIETNAM_GRANDMOTHER_BUTTON:Class;			
+		[Embed(source = "../../assets/menu/cambodia_map.jpg")] public static const CAMBODIA_MAP:Class;
+		[Embed(source = "../../assets/menu/cambodia_photo_button.png")] public static const CAMBODIA_PHOTO_BUTTON:Class;
+		[Embed(source = "../../assets/menu/cambodia_reflection_button.png")] public static const CAMBODIA_REFLECTION_BUTTON:Class;
+		[Embed(source = "../../assets/menu/cambodia_killer_button.png")] public static const CAMBODIA_KILLER_BUTTON:Class;
+		[Embed(source = "../../assets/menu/cambodia_history_button.png")] public static const CAMBODIA_HISTORY_BUTTON:Class;			
 	}
 
 }

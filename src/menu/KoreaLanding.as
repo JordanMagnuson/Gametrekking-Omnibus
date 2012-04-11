@@ -17,6 +17,7 @@ package menu
 	 */
 	public class KoreaLanding extends MenuLanding
 	{
+		public var map:Entity;
 		public var request:URLRequest;
 		public var reflectionURL:String = "http://chasingdonguri.com/blog-from-beginning?field_country_value_many_to_one=Korea";	
 		public var beingThereURL:String = "http://www.gametrekking.com/the-games/korea/being-there";
@@ -26,19 +27,23 @@ package menu
 			super();
 			Global.navButtonIndex = Global.KOREA_BUTTON_INDEX;
 			
+			// Landing
+			//add(new Entity(0, 0, new Backdrop(Assets.KOREA_LANDING, false, false)));					
+			
 			// Map
-			add(new Entity(173, 0, new Backdrop(Assets.KOREA_MAP, false, false)));
+			add(map = new Entity(212, 0, new Backdrop(Assets.KOREA_MAP, false, false)));
+			//(map.graphic as Backdrop).alpha = 0.5;
 			
 			// Buttons
 			add(new Button(207, 200, new Image(Assets.KOREA_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));		
 			
-			add(new Button(234, 460, new Image(Assets.KOREA_REFLECTION_BUTTON), new Image(Assets.KOREA_REFLECTION_BUTTON_HOVER), 1, null, null, true, gotoReflection));	
+			add(new Button(219, 460, new Image(Assets.KOREA_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoReflection));	
 			
 			add(new Button(854, 177, new Image(Assets.KOREA_FREEDOM_BRIDGE_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoFreedomBridge));	
 			
-			add(new Button(645, 361, new Image(Assets.KOREA_LONELINESS_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoLoneliness));	
+			add(new Button(628, 385, new Image(Assets.KOREA_LONELINESS_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoLoneliness));	
 			
-			add(new Button(910, 437, new Image(Assets.KOREA_BEING_THERE_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoBeingThere));	
+			add(new Button(911, 438, new Image(Assets.KOREA_BEING_THERE_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoBeingThere));	
 		}
 		
 		public function gotoFreedomBridge():void

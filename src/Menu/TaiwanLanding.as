@@ -18,13 +18,19 @@ package menu
 	 */
 	public class TaiwanLanding extends MenuLanding
 	{		
+		public var map:Entity;
+		
 		public function TaiwanLanding() 
 		{
 			super();
 			Global.navButtonIndex = Global.TAIWAN_BUTTON_INDEX;
 			
+			// Landing
+			//add(new Entity(0, 0, new Backdrop(Assets.TAIWAN_LANDING, false, false)));			
+			
 			// Map
-			add(new Entity(236, 0, new Backdrop(Assets.TAIWAN_MAP, false, false)));		
+			add(map = new Entity(235, 0, new Backdrop(Assets.TAIWAN_MAP, false, false)));		
+			//(map.graphic as Backdrop).alpha = 0.5;
 			
 			// Buttons
 			add(new Button(194, 193, new Image(Assets.TAIWAN_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	

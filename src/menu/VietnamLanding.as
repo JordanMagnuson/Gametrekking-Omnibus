@@ -10,21 +10,26 @@ package menu
 	 */
 	public class VietnamLanding extends MenuLanding
 	{
+		public var map:Entity;
 		
 		public function VietnamLanding() 
 		{
 			super();
 			Global.navButtonIndex = Global.VIETNAM_BUTTON_INDEX;
 			
+			// Landing
+			//add(new Entity(0, 0, new Backdrop(Assets.VIETNAM_LANDING, false, false)));				
+			
 			// Map
-			add(new Entity(87, 0, new Backdrop(Assets.VIETNAM_MAP, false, false)));		
+			add(map = new Entity(87, 0, new Backdrop(Assets.VIETNAM_MAP, false, false)));
+			//(map.graphic as Backdrop).alpha = 0.5;
 			
 			// Buttons
-			add(new Button(280, 204, new Image(Assets.VIETNAM_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(281, 204, new Image(Assets.VIETNAM_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
 			
 			add(new Button(266, 461, new Image(Assets.VIETNAM_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
 			
-			add(new Button(805, 214, new Image(Assets.VIETNAM_HEART_ATTACK_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(806, 214, new Image(Assets.VIETNAM_HEART_ATTACK_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
 			
 			add(new Button(763, 451, new Image(Assets.VIETNAM_GRANDMOTHER_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
 		}

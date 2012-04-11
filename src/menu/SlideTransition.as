@@ -3,6 +3,7 @@ package menu
 	import flash.geom.Rectangle;
 	import net.flashpunk.Entity;
 	import net.flashpunk.Graphic;
+	import net.flashpunk.graphics.Backdrop;
 	import net.flashpunk.graphics.Canvas;
 	import net.flashpunk.FP;
 	import net.flashpunk.tweens.motion.LinearMotion;
@@ -51,6 +52,7 @@ package menu
 			super(x, y, graphic);
 			
 			layer = -60;
+			//(graphic as Backdrop).alpha = 0.5;
 			
 			motionTween = new LinearMotion(switchWorlds);
 		}

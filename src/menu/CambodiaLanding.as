@@ -10,6 +10,7 @@ package menu
 	 */
 	public class CambodiaLanding extends MenuLanding
 	{
+		public var map:Entity;
 		
 		public function CambodiaLanding() 
 		{
@@ -17,19 +18,20 @@ package menu
 			Global.navButtonIndex = Global.CAMBODIA_BUTTON_INDEX;
 			
 			// Landing
-			add(new Entity(0, 0, new Backdrop(Assets.CAMBODIA_LANDING, false, false)));	
+			//add(new Entity(0, 0, new Backdrop(Assets.CAMBODIA_LANDING, false, false)));
 			
 			// Map
-			//add(new Entity(87, 0, new Backdrop(Assets.VIETNAM_MAP, false, false)));		
+			add(map = new Entity(117, 39, new Backdrop(Assets.CAMBODIA_MAP, false, false)));		
+			//(map.graphic as Backdrop).alpha = 0.5;			
 			
 			// Buttons
-			//add(new Button(280, 204, new Image(Assets.VIETNAM_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
-			//
-			//add(new Button(266, 461, new Image(Assets.VIETNAM_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
-			//
-			//add(new Button(805, 214, new Image(Assets.VIETNAM_HEART_ATTACK_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
-			//
-			//add(new Button(763, 451, new Image(Assets.VIETNAM_GRANDMOTHER_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(317, 193, new Image(Assets.CAMBODIA_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			
+			add(new Button(277, 451, new Image(Assets.CAMBODIA_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			
+			add(new Button(798, 208, new Image(Assets.CAMBODIA_KILLER_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			
+			add(new Button(858, 459, new Image(Assets.CAMBODIA_HISTORY_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
 		}
 		
 		//public function gotoStatusQuo():void
