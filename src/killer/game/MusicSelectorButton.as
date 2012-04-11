@@ -22,6 +22,7 @@ package killer.game
 			image.visible = false;
 			setHitboxTo(image);
 			layer = 100;
+			type = 'button';
 		}
 		
 		override public function update():void

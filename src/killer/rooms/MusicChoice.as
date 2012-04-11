@@ -9,6 +9,7 @@ package killer.rooms
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Input;
+	import flash.ui.Mouse;
 	
 	/**
 	 * ...
@@ -19,23 +20,26 @@ package killer.rooms
 		[Embed(source = '../../../assets/killer/music_choice_screen.png')] public const BG:Class;
 		public var bgImage:Image = new Image(BG);
 		
+		public var musicSelectorButton:MusicSelectorButton;
+		public var ambientSelectorButton:AmbientSelectorButton;
+		
 		public function MusicChoice() 
-		{
+		{			
 			// Center screen in window		
-			FP.width = 600;
-			FP.height = 400;
+			//FP.width = 600;
+			//FP.height = 400;
 			//FP.screen = new Screen();				
-			FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
-			FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;				
+			//FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
+			//FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;				
 		}
 		
 		override public function begin():void
 		{
-			FP.screen.color = Colors.BLACK;
-			add(new Entity(0, 0, bgImage));
+			bgImage.centerOO();
+			add(new Entity(FP.halfWidth, FP.halfHeight, bgImage));
 			
-			add(new MusicSelectorButton(81, 128));
-			add(new AmbientSelectorButton(341, 128));
+			add(musicSelectorButton = new MusicSelectorButton(293, 227));
+			add(ambientSelectorButton = new AmbientSelectorButton(553, 227));
 		}
 		
 		override public function update():void
@@ -46,6 +50,16 @@ package killer.rooms
 				// Return
 				FP.world = new CambodiaLanding;
 			}		
+			
+			// Cursor
+			if (collidePoint('button', Input.mouseX, Input.mouseY))
+			{
+				Mouse.cursor = 'button';
+			}
+			else
+			{
+				Mouse.cursor = 'arrow';
+			}
 			
 			super.update();
 		}

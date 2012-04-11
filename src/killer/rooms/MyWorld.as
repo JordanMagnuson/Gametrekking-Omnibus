@@ -24,6 +24,7 @@ package killer.rooms
 	import flash.ui.Mouse;
 	import killer.SoundController;
 	import killer.Assets;
+	import killer.game.forest.River;
 	
 	public class MyWorld extends World
 	{
@@ -92,12 +93,17 @@ package killer.rooms
 		
 		public function MyWorld()      
 		{
-			// Reset screen
-			FP.width = 342;
-			FP.height = 200;
-			FP.screen = new Screen;
+			// Reset the screen
+			(FP.engine as Main).reset(342, 200, 60, false);
 			FP.screen.scale = 3;
-			FP.console.enable();
+			//FP.console.enable();		
+			
+			// Reset screen
+			//FP.width = 342;
+			//FP.height = 200;
+			//FP.screen = new Screen;
+			//FP.screen.scale = 3;
+			//FP.console.enable();
 			//FP.screen.update();
 			
 			// World size
@@ -194,9 +200,20 @@ package killer.rooms
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
 				// Stop sounds
-				soundController.stopSounds();		
+				soundController.stopSounds();	
+				Global.player.sndWalking.stop();
 				music.stop();
 				musicEnd.stop();
+				
+				var riverList:Array = [];
+				getClass(River, riverList);
+				for each (var r:River in riverList)
+				{
+					if (r.sndRiver.playing)
+					{
+						r.sndRiver.stop();
+					}
+				}					
 				
 				// Return
 				FP.world = new CambodiaLanding;

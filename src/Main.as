@@ -59,8 +59,7 @@ package
 		{
 			// First, black out current screen
 			FP.screen = new Screen;
-			
-			
+		
 			// See net.flashpunk.Engine constructor
 			
 			// global game properties
@@ -87,7 +86,7 @@ package
 			FP.screen.color = Colors.BLACK;
 		
 			// Enable console
-			FP.console.enable();
+			//FP.console.enable();
 		}
 		
 		override public function init():void
