@@ -15,6 +15,7 @@ package menu
 	 */
 	public class MenuLanding extends World
 	{
+		public var copyright:Entity;
 		
 		public function MenuLanding() 
 		{
@@ -22,7 +23,7 @@ package menu
 			add(new Entity(0, 0, new Backdrop(Assets.STAMP_BACKGROUND)));
 			
 			// Google copyright
-			var copyright:Entity = new Entity(515, 561, new Image(Assets.GOOGLE_COPYRIGHT));
+			copyright = new Entity(515, 561, new Image(Assets.GOOGLE_COPYRIGHT));
 			copyright.layer = -50;
 			add(copyright);
 			

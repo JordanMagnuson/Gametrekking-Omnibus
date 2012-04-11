@@ -34,7 +34,7 @@ package freedombridge
 		/**
 		 * Movement constants.
 		 */
-		public const SPEED_MAX:Number = 1000;	//110
+		public const SPEED_MAX:Number = 110;	//110
 		public const ACCEL:Number = 800;
 		public const DRAG:Number = 800;
 		

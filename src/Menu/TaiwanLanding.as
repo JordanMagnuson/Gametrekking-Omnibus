@@ -21,10 +21,19 @@ package menu
 		public function TaiwanLanding() 
 		{
 			super();
-			//add(new Button(100, 100, new Text('Booya'), new Text('Heya'), null, null, true, gotoStatusQuo));
-			add(new Entity(0, 0, new Backdrop(Assets.TAIWAN_LANDING)));
-			
 			Global.navButtonIndex = Global.TAIWAN_BUTTON_INDEX;
+			
+			// Map
+			add(new Entity(236, 0, new Backdrop(Assets.TAIWAN_MAP, false, false)));		
+			
+			// Buttons
+			add(new Button(194, 193, new Image(Assets.TAIWAN_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			
+			add(new Button(188, 448, new Image(Assets.TAIWAN_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			
+			add(new Button(857, 197, new Image(Assets.TAIWAN_STATUS_QUO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			
+			add(new Button(812, 443, new Image(Assets.TAIWAN_KINDNESS_OF_STRANGERS_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
 		}
 		
 		public function gotoStatusQuo():void

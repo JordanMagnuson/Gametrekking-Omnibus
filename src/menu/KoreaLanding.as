@@ -25,12 +25,12 @@ package menu
 		{
 			super();
 			Global.navButtonIndex = Global.KOREA_BUTTON_INDEX;
+			
+			// Map
 			add(new Entity(173, 0, new Backdrop(Assets.KOREA_MAP, false, false)));
 			
-			//add(new Button(100, 100, new Text('Booya'), new Text('Heya'), null, null, true, null));
-			
 			// Buttons
-			add(new Button(206, 199, new Image(Assets.KOREA_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));		
+			add(new Button(207, 200, new Image(Assets.KOREA_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));		
 			
 			add(new Button(234, 460, new Image(Assets.KOREA_REFLECTION_BUTTON), new Image(Assets.KOREA_REFLECTION_BUTTON_HOVER), 1, null, null, true, gotoReflection));	
 			

@@ -49,7 +49,7 @@ package
 			// Console for debugging
 			FP.console.enable();		
 			
-			FP.world = new KoreaLanding;
+			FP.world = new TaiwanLanding;
 			
 			//Mouse.hide();
 		}

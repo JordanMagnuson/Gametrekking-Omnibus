@@ -23,6 +23,7 @@ package menu
 		
 		public function SlideTransition(graphic:Graphic = null, color:uint = 0x000000, direction:Number = 1, duration:Number = 1, goto:Class = null, ease:Function = null) 
 		{
+			ease = Ease.quadInOut;
 			if (graphic != null)
 			{
 				this.graphic = graphic;

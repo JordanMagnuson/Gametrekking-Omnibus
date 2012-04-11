@@ -21,6 +21,10 @@ package menu
 		public var introButton:Button;
 		public var koreaButton:Button;
 		public var taiwanButton:Button;
+		public var vietnamButton:Button;
+		public var cambodiaButton:Button;
+		public var creditsButton:Button;
+		public var quitButton:Button;
 		
 		public var navigationUnderline:NavigationUnderline;
 		
@@ -40,33 +44,66 @@ package menu
 			//add(new Entity(200, 200, new Text("The Gametrekking Omnibus", 0, 0, { font: "Casual Encounter", size: 14 } )));
 			
 			// Intro
-			FP.world.add(introButton = new Button(388, 0, new Image(Assets.NAV_INTRO), null, Global.NAV_HOVER_SCALE, null, null, false, null));
+			FP.world.add(introButton = new Button(366, 0, new Image(Assets.NAV_INTRO), null, Global.NAV_HOVER_SCALE, null, null, false, gotoIntro));
 			introButton.layer = layer;
 			
 			// Korea
-			FP.world.add(koreaButton = new Button(475, 0, new Image(Assets.NAV_KOREA), null, Global.NAV_HOVER_SCALE, null, null, false, gotoKorea));	
+			FP.world.add(koreaButton = new Button(453, 0, new Image(Assets.NAV_KOREA), null, Global.NAV_HOVER_SCALE, null, null, false, gotoKorea));	
 			koreaButton.layer = layer;
 			
 			// Taiwan
-			FP.world.add(taiwanButton = new Button(562, 0, new Image(Assets.NAV_TAIWAN), null, Global.NAV_HOVER_SCALE, null, null, false, gotoTaiwan));	
-			//FP.world.add(taiwanButton = new Button(562, 0, new Text("Taiwan", 0, 0, { font: "Casual Encounter", size: 12 }), null, null, null, false, gotoTaiwan));	
+			FP.world.add(taiwanButton = new Button(540, 0, new Image(Assets.NAV_TAIWAN), null, Global.NAV_HOVER_SCALE, null, null, false, gotoTaiwan));	;	
 			taiwanButton.layer = layer;
+			
+			// Vietnam
+			FP.world.add(vietnamButton = new Button(635, 0, new Image(Assets.NAV_VIETNAM), null, Global.NAV_HOVER_SCALE, null, null, false, gotoVietnam));	;	
+			vietnamButton.layer = layer;
+			
+			// Cambodia
+			FP.world.add(cambodiaButton = new Button(741, 0, new Image(Assets.NAV_CAMBODIA), null, Global.NAV_HOVER_SCALE, null, null, false, gotoCambodia));	;	
+			cambodiaButton.layer = layer;			
 			
 			// Navigation Underline
 			switch(Global.navButtonIndex) 
 			{
 				//trace('FP.world: ' + getQualifiedClassName(FP.world));
+				case Global.INTRO_BUTTON_INDEX:
+					FP.world.add(navigationUnderline = new NavigationUnderline(introButton)); 
+					break;				
 				case Global.KOREA_BUTTON_INDEX:
 					FP.world.add(navigationUnderline = new NavigationUnderline(koreaButton)); 
 					break;
 				case Global.TAIWAN_BUTTON_INDEX:
 					FP.world.add(navigationUnderline = new NavigationUnderline(taiwanButton)); 
 					break;
+				case Global.VIETNAM_BUTTON_INDEX:
+					FP.world.add(navigationUnderline = new NavigationUnderline(vietnamButton)); 
+					break;					
+				case Global.CAMBODIA_BUTTON_INDEX:
+					FP.world.add(navigationUnderline = new NavigationUnderline(cambodiaButton)); 
+					break;	
+				case Global.CREDITS_BUTTON_INDEX:
+					FP.world.add(navigationUnderline = new NavigationUnderline(creditsButton)); 
+					break;					
 				default:
 					break;
 			}
 			
 		}
+		
+		public function gotoIntro():void
+		{
+			if (Global.navButtonIndex < Global.INTRO_BUTTON_INDEX)
+			{
+				slideDirection = 1;
+			}
+			else
+			{
+				slideDirection = -1;
+			}
+			FP.world.add(new SlideTransition(new Backdrop(Assets.INTRO_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, IntroLanding));
+			navigationUnderline.goto(introButton, SLIDE_DURATION);
+		}		
 		
 		public function gotoKorea():void
 		{
@@ -95,6 +132,34 @@ package menu
 			FP.world.add(new SlideTransition(new Backdrop(Assets.TAIWAN_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, TaiwanLanding));
 			navigationUnderline.goto(taiwanButton, SLIDE_DURATION);
 		}		
+		
+		public function gotoVietnam():void
+		{
+			if (Global.navButtonIndex < Global.VIETNAM_BUTTON_INDEX)
+			{
+				slideDirection = 1;
+			}
+			else
+			{
+				slideDirection = -1;
+			}			
+			FP.world.add(new SlideTransition(new Backdrop(Assets.VIETNAM_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, VietnamLanding));
+			navigationUnderline.goto(vietnamButton, SLIDE_DURATION);
+		}	
+		
+		public function gotoCambodia():void
+		{
+			if (Global.navButtonIndex < Global.CAMBODIA_BUTTON_INDEX)
+			{
+				slideDirection = 1;
+			}
+			else
+			{
+				slideDirection = -1;
+			}			
+			FP.world.add(new SlideTransition(new Backdrop(Assets.CAMBODIA_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, CambodiaLanding));
+			navigationUnderline.goto(cambodiaButton, SLIDE_DURATION);
+		}			
 		
 	}
 
