@@ -127,7 +127,7 @@ package killer.game
 			//if (Global.MUSIC_WHILE_WALKING)
 			if (true)
 			{
-				(FP.world as MyWorld).music.play(0);
+				MyWorld.music.play(0);
 				(FP.world as MyWorld).musicFader.fadeTo(1, 10);
 			}
 			
@@ -144,7 +144,7 @@ package killer.game
 		
 		public function playMusic():void
 		{
-			(FP.world as MyWorld).musicEnd.play();			
+			MyWorld.musicEnd.play();			
 		}
 		
 		public function fadeMusicIn():void

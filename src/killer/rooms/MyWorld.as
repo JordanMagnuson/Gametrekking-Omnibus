@@ -8,6 +8,7 @@ package killer.rooms
 	import killer.game.plains.Plains;
 	import killer.game.snow.Snow;
 	import killer.game.textReachedFields;
+	import menu.CambodiaLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.Screen;
 	import net.flashpunk.Sfx;
@@ -76,9 +77,9 @@ package killer.rooms
 		/**
 		 * Music
 		 */
-		public var music:Sfx = new Sfx(Assets.MUSIC);			
+		public static var music:Sfx = new Sfx(Assets.MUSIC);			
 		public var musicFader:SfxFader = new SfxFader(music, musicFaderComplete);
-		public var musicEnd:Sfx = new Sfx(Assets.MUSIC_END);
+		public static var musicEnd:Sfx = new Sfx(Assets.MUSIC_END);
 		public var musicStarted:Boolean = false;
 		
 		public var reachedPlainsAlarm:Alarm = new Alarm(15, reachedPlains);
@@ -188,6 +189,18 @@ package killer.rooms
 				//if (Global.MUSIC_WHILE_WALKING && !musicStarted)
 					//fadeMusicIn(Global.MUSIC_IN_DURATION);	
 			//}
+			
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				// Stop sounds
+				soundController.stopSounds();		
+				music.stop();
+				musicEnd.stop();
+				
+				// Return
+				FP.world = new CambodiaLanding;
+			}					
 			
 			// Testing
 			if (Input.pressed(Key.F12))

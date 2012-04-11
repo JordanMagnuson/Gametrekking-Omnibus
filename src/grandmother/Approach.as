@@ -1,9 +1,11 @@
 package grandmother  
 {
+	import menu.VietnamLanding;
 	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import flash.ui.Mouse;
 	import net.flashpunk.FP;
+	import net.flashpunk.utils.Input;
 	
 	/**
 	 * ...
@@ -22,7 +24,7 @@ package grandmother
 			// Center screen in window
 			FP.screen.y = -(768 - SuperGlobal.SCREEN_HEIGHT) / 2;
 			//FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
-			//FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;			
+			//FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;
 		}
 		
 		override public function begin():void
@@ -30,6 +32,31 @@ package grandmother
 			add(Global.photoController = new PhotoController(photoArray, soundArray, clickMaskArray));
 			Global.SndAmbient.loop();
 			add(new MouseControllerApproach);
+		}
+		
+		override public function update():void
+		{
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				// Stop sounds
+				Global.SndAmbient.stop();
+
+				var backdropList:Array = [];
+				getClass(PhotoBackdrop, backdropList);
+				for each (var pb:PhotoBackdrop in backdropList)
+				{
+					if (pb.sound.playing)
+					{
+						pb.sound.stop();
+					}
+				}				
+				
+				// Return
+				FP.world = new VietnamLanding;
+			}				
+			
+			super.update();
 		}
 		
 	}

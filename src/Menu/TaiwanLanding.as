@@ -1,8 +1,10 @@
 package menu 
 {
 	import flash.geom.Rectangle;
+	import flash.net.URLRequest;
 	import gum.FlashPunk.UIEntity;
 	import gum.UISkin;
+	import kindnessofstrangers.Game;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Backdrop;
 	import net.flashpunk.graphics.Image;
@@ -11,6 +13,7 @@ package menu
 	import net.flashpunk.FP;
 	import jui.Button;
 	import statusquo.GameWorld;
+	import flash.net.navigateToURL;	
 	
 	/**
 	 * ...
@@ -19,6 +22,8 @@ package menu
 	public class TaiwanLanding extends MenuLanding
 	{		
 		public var map:Entity;
+		public var request:URLRequest;
+		public var reflectionURL:String = "http://www.gametrekking.com/blog/taiwan-touch-your-heart";		
 		
 		public function TaiwanLanding() 
 		{
@@ -35,22 +40,32 @@ package menu
 			// Buttons
 			add(new Button(194, 193, new Image(Assets.TAIWAN_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
 			
-			add(new Button(188, 448, new Image(Assets.TAIWAN_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(188, 448, new Image(Assets.TAIWAN_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoReflection));	
 			
-			add(new Button(857, 197, new Image(Assets.TAIWAN_STATUS_QUO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(857, 197, new Image(Assets.TAIWAN_STATUS_QUO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoStatusQuo));	
 			
-			add(new Button(812, 443, new Image(Assets.TAIWAN_KINDNESS_OF_STRANGERS_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(812, 443, new Image(Assets.TAIWAN_KINDNESS_OF_STRANGERS_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoKindness));	
 		}
 		
 		public function gotoStatusQuo():void
 		{
 			FP.world = new GameWorld;
-		}		
+		}	
 		
-		override public function begin():void
+		public function gotoKindness():void
 		{
-			super.begin();		
-		}
+			FP.world = new Game;
+		}				
+		
+		public function gotoReflection():void
+		{
+			request = new URLRequest(reflectionURL);
+			try {
+				navigateToURL(request, '_blank'); // second argument is target
+			} catch (e:Error) {
+				trace("Error occurred!");
+			}
+		}	
 		
 	}
 

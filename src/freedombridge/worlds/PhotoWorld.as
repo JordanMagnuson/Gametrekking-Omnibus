@@ -34,6 +34,7 @@ package freedombridge.worlds
 				River.sndRiver.stop();
 				FP.world = new KoreaLanding;
 			}			
+			super.update();
 		}
 		
 	}

@@ -1,9 +1,15 @@
 package menu 
 {
+	import briefhistory.Game;
 	import jui.Button;
+	import killer.rooms.MusicChoice;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Backdrop;
 	import net.flashpunk.graphics.Image;
+	import net.flashpunk.FP;
+	import flash.net.URLRequest;
+	import flash.net.navigateToURL;			
+	
 	/**
 	 * ...
 	 * @author ...
@@ -11,6 +17,8 @@ package menu
 	public class CambodiaLanding extends MenuLanding
 	{
 		public var map:Entity;
+		public var request:URLRequest;
+		public var reflectionURL:String = "http://www.gametrekking.com/blog/cambodia-like-no-place-ive-been";			
 		
 		public function CambodiaLanding() 
 		{
@@ -27,22 +35,32 @@ package menu
 			// Buttons
 			add(new Button(317, 193, new Image(Assets.CAMBODIA_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
 			
-			add(new Button(277, 451, new Image(Assets.CAMBODIA_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(277, 451, new Image(Assets.CAMBODIA_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoReflection));	
 			
-			add(new Button(798, 208, new Image(Assets.CAMBODIA_KILLER_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(798, 208, new Image(Assets.CAMBODIA_KILLER_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoKiller));	
 			
-			add(new Button(858, 459, new Image(Assets.CAMBODIA_HISTORY_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(858, 459, new Image(Assets.CAMBODIA_HISTORY_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoBriefHistory));	
 		}
 		
-		//public function gotoStatusQuo():void
-		//{
-			//FP.world = new GameWorld;
-		//}		
-		//
-		//override public function begin():void
-		//{
-			//super.begin();		
-		//}
+		public function gotoKiller():void
+		{
+			FP.world = new MusicChoice;
+		}		
+		
+		public function gotoBriefHistory():void
+		{
+			FP.world = new Game;
+		}	
+		
+		public function gotoReflection():void
+		{
+			request = new URLRequest(reflectionURL);
+			try {
+				navigateToURL(request, '_blank'); // second argument is target
+			} catch (e:Error) {
+				trace("Error occurred!");
+			}
+		}			
 		
 	}
 

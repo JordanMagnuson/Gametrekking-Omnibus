@@ -3,6 +3,7 @@ package kindnessofstrangers
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.utils.ByteArray;
+	import menu.TaiwanLanding;
 	import net.flashpunk.Engine;
 	
 	import net.flashpunk.Entity;
@@ -49,7 +50,7 @@ package kindnessofstrangers
 			else
 				Global.kindness = true;		
 				
-			//Mouse.hide();			
+			Mouse.hide();			
 		}
 		
 		override public function begin():void 
@@ -106,6 +107,27 @@ package kindnessofstrangers
 			if (Global.finished) {
 				nextlevel();
 			}
+			
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				if (Global.soundControler) 
+				{
+					Global.soundControler.sndTranscript01.stop();
+					Global.soundControler.sndTranscript02.stop();
+					Global.soundControler.sndTranscript02Break.stop();
+					Global.soundControler.sndTranscript03.stop();
+					Global.soundControler.sndTranscript04.stop();
+				}
+				if (Global.airplane)
+				{
+					Global.airplane.soundPlane.stop();
+				}
+				if (Global.airplane2)
+				{
+					Global.airplane2.soundPlane.stop();
+				}
+				FP.world = new TaiwanLanding;
+			}						
 		}
 		
 		public function loadlevel():void 

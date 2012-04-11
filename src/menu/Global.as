@@ -18,6 +18,7 @@ package menu
 		public static const NAV_HOVER_SCALE:Number = 1;
 		
 		public static var navButtonIndex;
+		public static var inTransition:Boolean = false;
 		
 	}
 

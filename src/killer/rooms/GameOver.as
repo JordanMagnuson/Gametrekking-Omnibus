@@ -2,6 +2,7 @@ package killer.rooms
 {
 	import killer.game.EndScreen02;
 	import killer.game.FadeIn;
+	import menu.CambodiaLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.Screen;
@@ -53,6 +54,18 @@ package killer.rooms
 			//{
 				//add(new EndScreen02);
 			//}
+			
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				// Stop sounds
+				if (MyWorld.music) MyWorld.music.stop();
+				if (MyWorld.musicEnd) MyWorld.musicEnd.stop();
+				
+				// Return
+				FP.world = new CambodiaLanding;
+			}					
+			
 			if (Global.endScreen >= 2 && Input.pressed(Key.SPACE))
 			{  
 				request = new URLRequest(learnMoreGameTrekkingCambodiaURL);

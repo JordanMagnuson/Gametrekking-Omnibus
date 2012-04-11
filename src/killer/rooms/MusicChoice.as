@@ -2,11 +2,13 @@ package killer.rooms
 {
 	import killer.game.AmbientSelectorButton;
 	import killer.game.MusicSelectorButton;
+	import menu.CambodiaLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.Screen;
 	import net.flashpunk.World;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.FP;
+	import net.flashpunk.utils.Input;
 	
 	/**
 	 * ...
@@ -34,6 +36,18 @@ package killer.rooms
 			
 			add(new MusicSelectorButton(81, 128));
 			add(new AmbientSelectorButton(341, 128));
+		}
+		
+		override public function update():void
+		{
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{				
+				// Return
+				FP.world = new CambodiaLanding;
+			}		
+			
+			super.update();
 		}
 		
 	}

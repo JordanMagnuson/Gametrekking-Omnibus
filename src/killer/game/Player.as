@@ -97,7 +97,7 @@ package killer.game
 						(FP.world as MyWorld).soundController.fadeOut(5);
 						//(FP.world as MyWorld).fadeMusicIn(10);
 						//Global.playSounds = false;
-						(FP.world as MyWorld).music.loop();
+						MyWorld.music.loop();
 					}
 					standingPush();
 					Global.startedWalking = true;
@@ -169,7 +169,7 @@ package killer.game
 						FP.world.add((FP.world as MyWorld).soundController = new SoundController((FP.world as MyWorld).location));
 						//if ((FP.world as MyWorld).time == 'night')
 							//(FP.world as MyWorld).soundController.startNight();
-						(FP.world as MyWorld).music.stop();
+						MyWorld.music.stop();
 						Global.playSounds = true;						
 					}
 					Global.fadeSounds = false;

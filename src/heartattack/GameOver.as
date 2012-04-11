@@ -1,6 +1,7 @@
 package heartattack  
 {
 	import flash.net.URLRequest;
+	import menu.VietnamLanding;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
@@ -26,6 +27,13 @@ package heartattack
 		{
 			gameOverText = new EntityFader(0, 0, new Image(Assets.END_SCREEN));
 			FP.screen.color = Colors.BLACK;
+			
+			// Reset the engine to fixed frame rate
+			//(FP.engine as Main).reset(640, 480, 60, true);			
+			
+			// Center screen in window
+			FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
+			FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;			
 		}
 		
 		override public function begin():void
@@ -41,6 +49,17 @@ package heartattack
 		
 		override public function update():void
 		{
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				// Stop sounds
+				if (GameOverSequence.music) GameOverSequence.music.stop();
+				if (GameOverSequence.sndFlatline) GameOverSequence.sndFlatline.stop();
+				
+				// Return
+				FP.world = new VietnamLanding;
+			}				
+			
 			if (Input.pressed(Key.SPACE))
 			{  
 				request = new URLRequest(learnMoreURL);

@@ -1,9 +1,11 @@
 package statusquo  
 {
+	import menu.TaiwanLanding;
 	import net.flashpunk.tweens.misc.Alarm;
 	import net.flashpunk.tweens.misc.ColorTween;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
+	import net.flashpunk.utils.Input;
 	
 	/**
 	 * ...
@@ -18,6 +20,7 @@ package statusquo
 		public static var enemyController:EnemyController;
 		public static var timingController:TimingController;
 		public static var safeZone:SafeZone;
+		import flash.ui.Mouse;
 		
 		// keeps track of how long the player is alive
 		public static var timer:TimeCounter;
@@ -45,6 +48,7 @@ package statusquo
 			add(new SoundController);
 			add(timer = new TimeCounter);
 			add(timingController = new TimingController);
+			Mouse.hide();
 		}
 		
 		override public function update():void
@@ -55,6 +59,14 @@ package statusquo
 				fadeStarted = true;
 				add(new FadeOut(GameOverWorld));
 			}
+			
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				SoundController.music.stop();
+				FP.world = new TaiwanLanding;
+			}						
+			
 			super.update();
 		}		
 		

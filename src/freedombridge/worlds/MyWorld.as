@@ -82,7 +82,7 @@ package freedombridge.worlds
 			barb04.x = bridge.x + 280;
 			
 			FP.screen.color = Colors.WHITE;
-			//Mouse.hide();
+			Mouse.hide();
 		}
 		
 		/**

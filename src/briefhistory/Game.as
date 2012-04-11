@@ -1,10 +1,12 @@
 package briefhistory  
 {
+	import menu.CambodiaLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Backdrop;
 	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
+	import net.flashpunk.utils.Input;
 	
 	/**
 	 * ...
@@ -49,7 +51,23 @@ package briefhistory
 		
 		override public function update():void
 		{
-			Global.t += FP.elapsed;
+			//Global.t += FP.elapsed;
+			
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				// Stop sounds
+				sndWaves.stop();
+				if (Global.ambientController.currentSound) Global.ambientController.currentSound.stop();
+				if (Global.ambientController.lastSound) Global.ambientController.lastSound.stop();				
+				Global.ambientController.sndHell01.stop();
+				Global.ambientController.sndHell02.stop();
+				Global.ambientController.sndHell03.stop();
+				
+				// Return
+				FP.world = new CambodiaLanding;
+			}		
+			
 			super.update();
 		}
 		

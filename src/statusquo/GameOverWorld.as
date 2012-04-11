@@ -1,6 +1,7 @@
 package statusquo  
 {
 	import flash.net.URLRequest;
+	import menu.TaiwanLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.graphics.Text;
@@ -92,6 +93,13 @@ package statusquo
 		
 		override public function update():void
 		{
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				if (SoundController.music) SoundController.music.stop();
+				FP.world = new TaiwanLanding;
+			}				
+			
 			if (Input.pressed(Key.R))
 			{
 				FP.world = new GameWorld;

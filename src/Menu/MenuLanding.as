@@ -8,6 +8,7 @@ package menu
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import statusquo.GameWorld;
+	import flash.ui.Mouse;
 	
 	/**
 	 * ...
@@ -19,6 +20,12 @@ package menu
 		
 		public function MenuLanding() 
 		{
+			// Reset the engine and screen
+			if (FP.width != SuperGlobal.SCREEN_WIDTH || FP.height != SuperGlobal.SCREEN_HEIGHT || FP.fixed == true)
+			{
+				(FP.engine as Main).reset(SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT, 60, false);	
+			}
+			
 			// Background
 			add(new Entity(0, 0, new Backdrop(Assets.STAMP_BACKGROUND)));
 			
@@ -32,6 +39,8 @@ package menu
 			
 			// Button Controller
 			add(new ButtonController);
+			
+			Mouse.show();
 		}
 		
 	}

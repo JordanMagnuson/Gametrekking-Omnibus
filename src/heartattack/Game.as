@@ -1,10 +1,13 @@
 package heartattack  
 {
 	import flash.geom.Point;
+	import menu.VietnamLanding;
 	import net.flashpunk.tweens.misc.Alarm;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Key;
+	import net.flashpunk.utils.Input;
+	import flash.ui.Mouse;
 	
 	/**
 	 * ...
@@ -25,6 +28,8 @@ package heartattack
 			// Center screen in window
 			FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
 			FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;
+			
+			Mouse.hide();
 			
 			if (Global.TEST_MODE)
 			{
@@ -74,10 +79,34 @@ package heartattack
 				FP.world.add(new Tutorial(Global.americanController));
 				FP.world.add(new Tutorial(Global.vietController));
 			}
+			//FP.world = new GameOver;
 		}
 		
 		override public function update():void
 		{
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				// Stop sounds
+				Global.americanController.heartController.heartSoundController.sndBeat01.stop();
+				Global.americanController.heartController.heartSoundController.sndBeat02.stop();
+				Global.americanController.heartController.heartSoundController.sndBeat03.stop();
+				Global.americanController.heartController.heartSoundController.sndBeat04.stop();
+				Global.americanController.heartController.heartSoundController.sndMissed.stop();
+
+				Global.vietController.heartController.heartSoundController.sndBeat01.stop();
+				Global.vietController.heartController.heartSoundController.sndBeat02.stop();
+				Global.vietController.heartController.heartSoundController.sndBeat03.stop();
+				Global.vietController.heartController.heartSoundController.sndBeat04.stop();
+				Global.vietController.heartController.heartSoundController.sndMissed.stop();	
+				
+				if (GameOverSequence.music) GameOverSequence.music.stop();
+				if (GameOverSequence.sndFlatline) GameOverSequence.sndFlatline.stop();
+				
+				// Return
+				FP.world = new VietnamLanding;
+			}					
+			
 			//trace(Global.phase);
 		
 			// Deal with death

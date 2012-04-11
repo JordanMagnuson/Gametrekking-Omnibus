@@ -9,6 +9,7 @@ package
 	import loneliness.rooms.MainWorld;
 	import loneliness.rooms.MessageScreen;
 	import menu.GumTest;
+	import menu.IntroLanding;
 	import menu.KoreaLanding;
 	import menu.Landing;
 	import menu.TaiwanLanding;
@@ -47,15 +48,19 @@ package
 			//FP.screen.color = Colors.WHITE;
 			
 			// Console for debugging
-			//FP.console.enable();		
+			FP.console.enable();		
 			
-			FP.world = new TaiwanLanding;
+			FP.world = new IntroLanding;
 			
 			//Mouse.hide();
 		}
 		
 		public function reset(width:uint, height:uint, frameRate:Number = 60, fixed:Boolean = false):void
 		{
+			// First, black out current screen
+			FP.screen = new Screen;
+			
+			
 			// See net.flashpunk.Engine constructor
 			
 			// global game properties
@@ -88,9 +93,9 @@ package
 		override public function init():void
 		{
 			// Full screen
-			FP.stage.scaleMode = StageScaleMode.SHOW_ALL;
-			FP.stage.fullScreenSourceRect = new Rectangle(0, 0, SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT);
-			FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;	
+			//FP.stage.scaleMode = StageScaleMode.SHOW_ALL;
+			//FP.stage.fullScreenSourceRect = new Rectangle(0, 0, SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT);
+			//FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;	
 			
 			// Listen for Esc key, prevent exiting full screen
 			FP.stage.addEventListener(KeyboardEvent.KEY_DOWN, preventEsc);

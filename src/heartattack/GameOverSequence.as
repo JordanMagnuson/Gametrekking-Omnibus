@@ -33,12 +33,12 @@ package heartattack
 		public var dead:PersonController;
 		public var notDead:PersonController;
 		
-		public var sndFlatline:Sfx = new Sfx(Assets.SND_FLATLINE);
+		public static var sndFlatline:Sfx = new Sfx(Assets.SND_FLATLINE);
 		public var sfxFader:SfxFader = new SfxFader(sndFlatline);
 		
 		public var startSlideshowAlarm:Alarm = new Alarm(SLIDE_SHOW_START_TIME, startSlideshow);
 		public var startMusicAlarm:Alarm = new Alarm(MUSIC_START_TIME, startMusic);
-		public var music:Sfx;
+		public static var music:Sfx;
 		public var musicDuration:Number;
 		public var musicFader:SfxFader;
 		
@@ -52,7 +52,7 @@ package heartattack
 			this.dead = dead;
 			this.notDead = notDead;
 			trace('dead: ' + this.dead.type);
-			trace('notdead: ' + this.notDead.type);
+			trace('notdead: ' + this.notDead.type);			
 		}
 		
 		override public function added():void
@@ -144,6 +144,8 @@ package heartattack
 			// Prime slideshow
 			primeSlideshow();
 			
+			FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
+			FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;					
 		}
 		
 		public function startMusic():void

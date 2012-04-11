@@ -26,6 +26,7 @@ package loneliness.rooms
 	import flash.utils.ByteArray;
 	import net.flashpunk.Sfx;
 	import net.flashpunk.utils.Input;
+	import flash.ui.Mouse;
 	
 	public class MainWorld extends World
 	{
@@ -84,6 +85,8 @@ package loneliness.rooms
 			addTween(backgroundAlarm, true);
 			
 			music.loop();
+			
+			Mouse.hide();
 			
 			//alarm to update background
 			//FP.alarm(1, updateBackground);

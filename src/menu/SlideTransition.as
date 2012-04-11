@@ -94,6 +94,7 @@ package menu
 		
 		public function switchWorlds():void
 		{
+			Global.inTransition = false;
 			if (goto) FP.world = new goto;
 			FP.world.remove(this);
 		}

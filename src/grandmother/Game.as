@@ -1,11 +1,13 @@
 package grandmother  
 {
+	import menu.VietnamLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Backdrop;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import flash.ui.Mouse;
+	import net.flashpunk.utils.Input;
 	
 	/**
 	 * ...
@@ -26,7 +28,27 @@ package grandmother
 		
 		override public function update():void
 		{
-			Mouse.hide();
+			//Mouse.hide();
+			
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				// Stop sounds
+				Global.SndAmbient.stop();
+
+				var backdropList:Array = [];
+				getClass(PhotoBackdrop, backdropList);
+				for each (var pb:PhotoBackdrop in backdropList)
+				{
+					if (pb.sound.playing)
+					{
+						pb.sound.stop();
+					}
+				}				
+				
+				// Return
+				FP.world = new VietnamLanding;
+			}				
 			
 			if (Global.dust.cleaned && Global.mouseController.lastPressCounter >= Global.WAIT_TO_DROP_BUCKET && !Global.bucketDropped)
 			{
