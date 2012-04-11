@@ -19,7 +19,12 @@ package menu
 		public function MenuLanding() 
 		{
 			// Background
-			//add(new Entity(0, 0, new Backdrop(Assets.STAMP_BACKGROUND)));
+			add(new Entity(0, 0, new Backdrop(Assets.STAMP_BACKGROUND)));
+			
+			// Google copyright
+			var copyright:Entity = new Entity(515, 561, new Image(Assets.GOOGLE_COPYRIGHT));
+			copyright.layer = -50;
+			add(copyright);
 			
 			// Navigation bar
 			add(new NavigationBar);			

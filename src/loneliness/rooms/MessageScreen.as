@@ -1,10 +1,13 @@
 package loneliness.rooms 
 {
 	import loneliness.game.ChildrenAndText;
+	import menu.KoreaLanding;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import net.flashpunk.Screen;
 	import flash.geom.Rectangle;
+	import net.flashpunk.utils.Input;
+	
 	/**
 	 * ...
 	 * @author Jordan Magnuson
@@ -30,6 +33,16 @@ package loneliness.rooms
 			
 			// Text
 			add(new ChildrenAndText);
+		}
+		
+		override public function update():void
+		{
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				MainWorld.music.stop();
+				FP.world = new KoreaLanding;
+			}			
+			super.update();
 		}
 		
 	}

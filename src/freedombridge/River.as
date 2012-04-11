@@ -20,8 +20,8 @@ package freedombridge
 		/**
 		 * Sound
 		 */
-		[Embed(source='../../assets/freedombridge/river_sound.swf', symbol='river.wav')] private const SND_RIVER:Class;
-		public var sndRiver:Sfx = new Sfx(SND_RIVER);
+		[Embed(source='../../assets/freedombridge/river_sound.swf', symbol='river.wav')] public static const SND_RIVER:Class;
+		public static var sndRiver:Sfx = new Sfx(SND_RIVER);
 		//private var fader:SfxFader = new SfxFader(sndRiver);
 		
 		public var distToPlayer:Number;
@@ -84,6 +84,11 @@ package freedombridge
 			addTween(fader);
 			fader.fadeTo(0, 15);
 			fader.start();
+		}
+		
+		override public function removed():void
+		{
+			sndRiver.stop();
 		}
 		
 	}

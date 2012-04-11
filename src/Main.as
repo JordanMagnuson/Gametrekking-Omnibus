@@ -9,6 +9,7 @@ package
 	import loneliness.rooms.MainWorld;
 	import loneliness.rooms.MessageScreen;
 	import menu.GumTest;
+	import menu.KoreaLanding;
 	import menu.Landing;
 	import menu.TaiwanLanding;
 	import net.flashpunk.Engine;
@@ -48,7 +49,7 @@ package
 			// Console for debugging
 			FP.console.enable();		
 			
-			FP.world = new TaiwanLanding;
+			FP.world = new KoreaLanding;
 			
 			//Mouse.hide();
 		}

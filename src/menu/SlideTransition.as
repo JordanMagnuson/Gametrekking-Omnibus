@@ -49,6 +49,8 @@ package menu
 			}
 			super(x, y, graphic);
 			
+			layer = -60;
+			
 			motionTween = new LinearMotion(switchWorlds);
 		}
 		

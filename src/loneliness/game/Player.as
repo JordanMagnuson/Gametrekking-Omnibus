@@ -14,7 +14,7 @@ package loneliness.game
 		/**
 		 * Movement constants.
 		 */
-		public const SPEED_MAX:Number = 100;	//70
+		public const SPEED_MAX:Number = 100;	//70 100
 		public const ACCEL:Number = 800;
 		public const DRAG:Number = 800;
 		

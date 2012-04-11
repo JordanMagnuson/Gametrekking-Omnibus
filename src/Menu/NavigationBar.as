@@ -40,15 +40,15 @@ package menu
 			//add(new Entity(200, 200, new Text("The Gametrekking Omnibus", 0, 0, { font: "Casual Encounter", size: 14 } )));
 			
 			// Intro
-			FP.world.add(introButton = new Button(388, 0, new Image(Assets.NAV_INTRO), null, null, null, false, null));
+			FP.world.add(introButton = new Button(388, 0, new Image(Assets.NAV_INTRO), null, Global.NAV_HOVER_SCALE, null, null, false, null));
 			introButton.layer = layer;
 			
 			// Korea
-			FP.world.add(koreaButton = new Button(475, 0, new Image(Assets.NAV_KOREA), null, null, null, false, gotoKorea));	
+			FP.world.add(koreaButton = new Button(475, 0, new Image(Assets.NAV_KOREA), null, Global.NAV_HOVER_SCALE, null, null, false, gotoKorea));	
 			koreaButton.layer = layer;
 			
 			// Taiwan
-			FP.world.add(taiwanButton = new Button(562, 0, new Image(Assets.NAV_TAIWAN), null, null, null, false, gotoTaiwan));	
+			FP.world.add(taiwanButton = new Button(562, 0, new Image(Assets.NAV_TAIWAN), null, Global.NAV_HOVER_SCALE, null, null, false, gotoTaiwan));	
 			//FP.world.add(taiwanButton = new Button(562, 0, new Text("Taiwan", 0, 0, { font: "Casual Encounter", size: 12 }), null, null, null, false, gotoTaiwan));	
 			taiwanButton.layer = layer;
 			
@@ -78,7 +78,7 @@ package menu
 			{
 				slideDirection = -1;
 			}
-			FP.world.add(new SlideTransition(null, Colors.WHITE, slideDirection, SLIDE_DURATION, KoreaLanding));
+			FP.world.add(new SlideTransition(new Backdrop(Assets.KOREA_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, KoreaLanding));
 			navigationUnderline.goto(koreaButton, SLIDE_DURATION);
 		}
 		

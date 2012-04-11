@@ -23,6 +23,7 @@ package menu
 			super();
 			//add(new Button(100, 100, new Text('Booya'), new Text('Heya'), null, null, true, gotoStatusQuo));
 			add(new Entity(0, 0, new Backdrop(Assets.TAIWAN_LANDING)));
+			
 			Global.navButtonIndex = Global.TAIWAN_BUTTON_INDEX;
 		}
 		

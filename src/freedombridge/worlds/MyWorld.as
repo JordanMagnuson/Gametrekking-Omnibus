@@ -9,11 +9,13 @@ package freedombridge.worlds
 	import freedombridge.Bridge;
 	import freedombridge.Player;
 	import freedombridge.River;
+	import menu.KoreaLanding;
 	import net.flashpunk.*;
 	import net.flashpunk.tweens.misc.Alarm;
 	import net.flashpunk.World;
 	import freedombridge.worlds.PhotoWorld;
 	import flash.ui.Mouse;
+	import net.flashpunk.utils.Input;
 	
 	public class MyWorld extends World
 	{
@@ -102,6 +104,12 @@ package freedombridge.worlds
 			
 			// camera following
 			cameraFollow();
+			
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				River.sndRiver.stop();
+				FP.world = new KoreaLanding;
+			}
 		}		
 		
 		/**
