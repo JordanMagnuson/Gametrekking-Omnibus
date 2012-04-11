@@ -64,6 +64,32 @@ package briefhistory
 				Global.ambientController.sndHell02.stop();
 				Global.ambientController.sndHell03.stop();
 				
+				var gaspers:Array = [];
+				getClass(PersonGasping, gaspers);
+				for each (var g:PersonGasping in gaspers)
+				{
+					if (g.sndGasping.playing)
+					{
+						g.sndGasping.stop();
+					}
+				}		
+				
+				var swimmers:Array = [];
+				getClass(PersonSwimming, swimmers);
+				for each (var s:PersonSwimming in swimmers)
+				{
+					if (s.sndHeartbeat.playing)
+					{
+						s.sndHeartbeat.stop();
+					}
+				}					
+				
+				if (Global.personGrabbed) 
+				{
+					Global.personGrabbed.sndHeartbeat.stop();	
+					(Global.personGrabbed as PersonGrabbed).sndDrowning.stop();
+				}
+				
 				// Return
 				FP.world = new CambodiaLanding;
 			}		

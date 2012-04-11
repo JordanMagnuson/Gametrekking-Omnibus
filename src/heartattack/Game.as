@@ -93,15 +93,18 @@ package heartattack
 				Global.americanController.heartController.heartSoundController.sndBeat03.stop();
 				Global.americanController.heartController.heartSoundController.sndBeat04.stop();
 				Global.americanController.heartController.heartSoundController.sndMissed.stop();
-
+				Global.americanController.heartController.heartSoundController.beatLoop.stop();
+				
 				Global.vietController.heartController.heartSoundController.sndBeat01.stop();
 				Global.vietController.heartController.heartSoundController.sndBeat02.stop();
 				Global.vietController.heartController.heartSoundController.sndBeat03.stop();
 				Global.vietController.heartController.heartSoundController.sndBeat04.stop();
 				Global.vietController.heartController.heartSoundController.sndMissed.stop();	
+				Global.vietController.heartController.heartSoundController.beatLoop.stop();
 				
 				if (GameOverSequence.music) GameOverSequence.music.stop();
 				if (GameOverSequence.sndFlatline) GameOverSequence.sndFlatline.stop();
+				heartattack.Global
 				
 				// Return
 				FP.world = new VietnamLanding;
