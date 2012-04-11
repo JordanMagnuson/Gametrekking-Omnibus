@@ -1,5 +1,9 @@
 package menu 
 {
+	import punk.transition.effects.BlurOut;
+	import punk.transition.effects.Effect;
+	import punk.transition.effects.BlurIn;
+	
 	/**
 	 * ...
 	 * @author ...
@@ -16,6 +20,11 @@ package menu
 		
 		public static const BUTTON_HOVER_SCALE:Number = 1.05;
 		public static const NAV_HOVER_SCALE:Number = 1;
+		
+		public static const TRANS_OUT:Class = BlurOut;
+		public static const TRANS_IN:Class = BlurIn;
+		public static const TRANS_OUT_OPTIONS:Object = { duration: 0.5 }
+		public static const TRANS_IN_OPTIONS:Object = { duration: 0.5 }		
 		
 		public static var navButtonIndex;
 		public static var inTransition:Boolean = false;

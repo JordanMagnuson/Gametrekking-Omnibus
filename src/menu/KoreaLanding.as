@@ -11,6 +11,8 @@ package menu
 	import net.flashpunk.graphics.Text;
 	import net.flashpunk.FP;
 	import flash.net.navigateToURL;
+	import net.flashpunk.World;
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -49,13 +51,17 @@ package menu
 		
 		public function gotoFreedomBridge():void
 		{
-			FP.world = new IntroScreen(Assets.INTRO_FREEDOM_BRIDGE, MyWorld);
+			//FP.world = new IntroScreen(Assets.INTRO_FREEDOM_BRIDGE, MyWorld);
+			var goto:World = new IntroScreen(Assets.INTRO_FREEDOM_BRIDGE, MyWorld, KoreaLanding);
+			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 				
 		}		
 		
 		public function gotoLoneliness():void
 		{
 			//FP.world = new MainWorld;
-			FP.world = new IntroScreen(Assets.INTRO_LONELINESS, MainWorld);
+			//FP.world = new IntroScreen(Assets.INTRO_LONELINESS, MainWorld, KoreaLanding);
+			var goto:World = new IntroScreen(Assets.INTRO_LONELINESS, MainWorld, KoreaLanding);
+			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 			
 		}	
 		
 		public function gotoReflection():void

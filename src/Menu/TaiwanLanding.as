@@ -12,8 +12,13 @@ package menu
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import jui.Button;
+	import punk.transition.effects.BlurIn;
+	import punk.transition.effects.BlurOut;
+	import punk.transition.effects.PixelateIn;
+	import punk.transition.effects.PixelateOut;
 	import statusquo.GameWorld;
 	import flash.net.navigateToURL;	
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -50,12 +55,17 @@ package menu
 		public function gotoStatusQuo():void
 		{
 			//FP.world = new GameWorld;
-			FP.world = new IntroScreen(Assets.INTRO_STATUS_QUO, GameWorld);
+			//FP.world = new IntroScreen(Assets.INTRO_STATUS_QUO, GameWorld);
+			var goto:World = new IntroScreen(Assets.INTRO_STATUS_QUO, GameWorld, TaiwanLanding);
+			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 
+			
 		}	
 		
 		public function gotoKindness():void
 		{
-			FP.world = new Game;
+			//FP.world = new Game;
+			var goto:World = new IntroScreen(Assets.INTRO_KINDNESS_OF_STRANGERS, Game, TaiwanLanding);
+			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 			
 		}				
 		
 		public function gotoReflection():void

@@ -21,7 +21,7 @@ package menu
 		public function MenuLanding() 
 		{
 			// Reset the engine and screen
-			if (FP.width != SuperGlobal.SCREEN_WIDTH || FP.height != SuperGlobal.SCREEN_HEIGHT || FP.fixed == true)
+			if (FP.width != SuperGlobal.SCREEN_WIDTH || FP.height != SuperGlobal.SCREEN_HEIGHT || FP.fixed == true || FP.screen.scale != 1)
 			{
 				(FP.engine as Main).reset(SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT, 60, false);	
 			}

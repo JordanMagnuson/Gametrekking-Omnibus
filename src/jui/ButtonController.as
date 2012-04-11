@@ -4,6 +4,7 @@ package jui
 	import net.flashpunk.FP;
 	import jui.Button;
 	import net.flashpunk.utils.Input;
+	import menu.Global;
 	
 	/**
 	 * ...
@@ -19,6 +20,9 @@ package jui
 		
 		override public function update():void
 		{
+			if (Global.inTransition)
+				return;
+			
 			// First, we will create an empty array.
 			var buttonList:Array = [];
 

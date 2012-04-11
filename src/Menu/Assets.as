@@ -63,6 +63,11 @@ package menu
 		[Embed(source = "../../assets/menu/intro_freedom_bridge.png")] public static const INTRO_FREEDOM_BRIDGE:Class;
 		[Embed(source = "../../assets/menu/intro_loneliness.png")] public static const INTRO_LONELINESS:Class;
 		[Embed(source = "../../assets/menu/intro_status_quo.png")] public static const INTRO_STATUS_QUO:Class;
+		[Embed(source = "../../assets/menu/intro_kindness_of_strangers.png")] public static const INTRO_KINDNESS_OF_STRANGERS:Class;
+		[Embed(source = "../../assets/menu/intro_heart_attack.png")] public static const INTRO_HEART_ATTACK:Class;
+		[Embed(source = "../../assets/menu/intro_grandmother.png")] public static const INTRO_GRANDMOTHER:Class;
+		[Embed(source = "../../assets/menu/intro_killer.png")] public static const INTRO_KILLER:Class;
+		[Embed(source = "../../assets/menu/intro_brief_history.png")] public static const INTRO_BRIEF_HISTORY:Class;
 	}
 
 }

@@ -48,6 +48,7 @@ package statusquo
 			add(new SoundController);
 			add(timer = new TimeCounter);
 			add(timingController = new TimingController);
+			FP.screen.color = Colors.BLACK;
 			Mouse.hide();
 		}
 		

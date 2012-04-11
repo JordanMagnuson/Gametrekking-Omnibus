@@ -25,6 +25,7 @@ package killer.rooms
 		
 		public function MusicChoice() 
 		{			
+			FP.screen.color = Colors.BLACK;
 			// Center screen in window		
 			//FP.width = 600;
 			//FP.height = 400;

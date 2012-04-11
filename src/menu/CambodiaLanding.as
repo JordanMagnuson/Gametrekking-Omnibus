@@ -9,6 +9,8 @@ package menu
 	import net.flashpunk.FP;
 	import flash.net.URLRequest;
 	import flash.net.navigateToURL;			
+	import net.flashpunk.World;
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -44,12 +46,16 @@ package menu
 		
 		public function gotoKiller():void
 		{
-			FP.world = new MusicChoice;
+			//FP.world = new MusicChoice;
+			var goto:World = new IntroScreen(Assets.INTRO_KILLER, MusicChoice, CambodiaLanding);
+			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 					
 		}		
 		
 		public function gotoBriefHistory():void
 		{
-			FP.world = new Game;
+			//FP.world = new Game;
+			var goto:World = new IntroScreen(Assets.INTRO_BRIEF_HISTORY, Game, CambodiaLanding);
+			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 			
 		}	
 		
 		public function gotoReflection():void
