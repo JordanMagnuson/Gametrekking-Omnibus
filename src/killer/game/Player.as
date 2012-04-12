@@ -152,6 +152,7 @@ package killer.game
 			
 			if (Input.released("X"))
 			{
+				//if (false)
 				if (!Global.reachedPlains)
 				{
 					FP.world.add(new textNotFarEnough);

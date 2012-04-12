@@ -36,6 +36,8 @@ package
 	import killer.rooms.GameOver;
 	import grandmother.Game;
 	import briefhistory.Game;
+	import net.flashpunk.utils.Input;
+	import net.flashpunk.utils.Key;
 	
 	[SWF(width='1024',height='600',backgroundColor='#000000',frameRate='60')]
 	
@@ -86,7 +88,7 @@ package
 			FP.screen.color = Colors.BLACK;
 		
 			// Enable console
-			FP.console.enable()
+			//FP.console.enable()
 		}
 		
 		override public function init():void
@@ -116,6 +118,20 @@ package
 		
 		override public function update():void
 		{
+			// Toggle fullscreen
+			if (Input.pressed(SuperGlobal.FULLSCREEN_KEY))
+			{
+				if (FP.stage.displayState == StageDisplayState.NORMAL)
+				{
+					FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+				}
+				else 
+				{
+					FP.stage.displayState = StageDisplayState.NORMAL;
+				}
+					
+			}
+			
 			super.update();
 		}
 	}

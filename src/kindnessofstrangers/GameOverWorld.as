@@ -1,5 +1,6 @@
 package kindnessofstrangers 
 {
+	import menu.TaiwanLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.World;
@@ -63,6 +64,12 @@ package kindnessofstrangers
 		
 		override public function update():void
 		{
+			// Return
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				FP.world = new TaiwanLanding;
+			}					
+			
 			if (Input.released(Key.SPACE))
 			{
 				// Determine whether strangers will help the player

@@ -74,7 +74,7 @@ package killer.game
 			spritemap.x = 0;
 			//spritemap.y = -spritemap.originY;	
 			
-			setHitbox(spritemap.width, spritemap.height, spritemap.originX, spritemap.originY);				
+			setHitbox(spritemap.width, spritemap.height, spritemap.originX, spritemap.originY);					
 			
 			// Location
 			x = Global.player.x + 10;

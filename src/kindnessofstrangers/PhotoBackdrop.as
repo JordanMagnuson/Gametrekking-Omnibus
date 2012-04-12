@@ -34,6 +34,7 @@ package kindnessofstrangers
 			graphic.scrollY = 0;
 			image.alpha = 0;
 			image.scale = 1.6;
+			image.smooth = true;
 			layer = 100;
 		}
 		

@@ -30,12 +30,7 @@ package briefhistory
 			if (canBeScared && FP.distance(x, y, Global.mouseController.x, Global.mouseController.y) < Global.scareDistance && !scared)
 			{
 				scare();
-			}			
-			
-			if (!sndHeartbeat.playing)
-			{
-				sndHeartbeat.loop();
-			}			
+			}				
 			
 			if (health > Global.MIN_HEALTH)
 			{
@@ -69,6 +64,10 @@ package briefhistory
 		{
 			FP.alarm(1, allowScare);
 			swimUp();
+			if (!sndHeartbeat.playing)
+			{
+				sndHeartbeat.loop();
+			}					
 			super.added();
 		}
 		

@@ -226,6 +226,8 @@ package killer.rooms
 			{
 				// Stop sounds
 				soundController.stopSounds();	
+				if (soundController.newSound) soundController.newSound.stop();
+				if (soundController.currentSound) soundController.currentSound.stop();
 				Global.player.sndWalking.stop();
 				music.stop();
 				musicEnd.stop();

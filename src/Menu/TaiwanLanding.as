@@ -50,6 +50,14 @@ package menu
 			add(new Button(857, 197, new Image(Assets.TAIWAN_STATUS_QUO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoStatusQuo));	
 			
 			add(new Button(812, 443, new Image(Assets.TAIWAN_KINDNESS_OF_STRANGERS_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoKindness));	
+			
+			// Reset some game variables
+			resetGameVariables();
+		}
+		
+		public function resetGameVariables():void
+		{
+			kindnessofstrangers.Global.kindness = true;
 		}
 		
 		public function gotoStatusQuo():void

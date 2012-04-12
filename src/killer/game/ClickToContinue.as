@@ -45,9 +45,12 @@ package killer.game
 			(graphic as Image).alpha = fadeTween.alpha;
 			
 			if (fadeTween.alpha >= 0.5)
+			{
 				Mouse.show();
+				Mouse.cursor = 'button';
+			}
 			
-			if (Input.mouseReleased)
+			if (Input.mousePressed)
 			{
 				switch (Global.endScreen++)
 				{

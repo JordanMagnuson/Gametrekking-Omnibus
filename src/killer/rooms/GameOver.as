@@ -30,9 +30,10 @@ package killer.rooms
 		
 		public function GameOver() 
 		{
-			FP.width = SuperGlobal.SCREEN_WIDTH;
-			FP.height = SuperGlobal.SCREEN_HEIGHT;
-			FP.screen = new Screen();	
+			(FP.engine as Main).reset(SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT, 60, false);
+			//FP.width = SuperGlobal.SCREEN_WIDTH;
+			//FP.height = SuperGlobal.SCREEN_HEIGHT;
+			//FP.screen = new Screen();	
 		}
 		
 		override public function begin():void

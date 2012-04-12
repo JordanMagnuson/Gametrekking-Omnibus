@@ -1,5 +1,6 @@
 package grandmother  
 {
+	import kindnessofstrangers.Menu;
 	import menu.VietnamLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Backdrop;
@@ -8,6 +9,8 @@ package grandmother
 	import net.flashpunk.FP;
 	import flash.ui.Mouse;
 	import net.flashpunk.utils.Input;
+	import punk.transition.effects.FadeIn;
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -18,6 +21,7 @@ package grandmother
 		
 		public function Game() 
 		{
+			Global.startedFade = false;
 			FP.screen.scale = 1.6;
 			
 			// Center screen in window
@@ -83,6 +87,7 @@ package grandmother
 			add(Global.vase = new Vase(482, 339));
 			add(Global.bucket = new Bucket);
 			add(Global.sponge = new Sponge);
+			//fadeOut();
 		}
 		
 		public function dropBucket():void
@@ -95,6 +100,7 @@ package grandmother
 		
 		public function fadeOut():void
 		{
+			//Transition.to(GameOver, new punk.transition.effects.FadeOut({duration: 5} ), new punk.transition.effects.FadeIn( {duration: 5} )); 				
 			if (!Global.startedFade)
 			{
 				add(new FadeOut(GameOver, Colors.BLACK, Global.FADE_OUT_DURATION));

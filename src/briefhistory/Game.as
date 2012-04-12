@@ -88,11 +88,18 @@ package briefhistory
 				getClass(PersonSwimming, swimmers);
 				for each (var s:PersonSwimming in swimmers)
 				{
-					if (s.sndHeartbeat.playing)
-					{
-						s.sndHeartbeat.stop();
-					}
-				}					
+					trace('swimmer stop');
+					s.sndHeartbeat.stop();
+				}				
+				
+				var people:Array = [];
+				//getClass(Person, swimmers);
+				getType('person', people);
+				for each (var p:Person in people)
+				{
+					trace('person stop');
+					p.sndHeartbeat.stop();
+				}							
 				
 				if (Global.personGrabbed) 
 				{

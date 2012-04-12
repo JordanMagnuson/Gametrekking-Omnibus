@@ -33,7 +33,7 @@ package killer.game
 			sprPlayer.originX = 0;
 			sprPlayer.originY = sprPlayer.height;
 			sprPlayer.x = 0;
-			sprPlayer.y = -sprPlayer.originY;	
+			//sprPlayer.y = -sprPlayer.originY;	
 			
 			setHitbox(sprPlayer.width, sprPlayer.height, sprPlayer.originX, sprPlayer.originY);				
 			

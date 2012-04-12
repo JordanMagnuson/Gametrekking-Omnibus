@@ -17,6 +17,7 @@ package grandmother
 		[Embed(source = '../../assets/grandmother/sponge_mask.png')] public static const SPONGE_MASK:Class;
 		[Embed(source = '../../assets/grandmother/bucket.png')] public static const BUCKET:Class;
 		[Embed(source = '../../assets/grandmother/bucket_front.png')] public static const BUCKET_FRONT:Class;
+		[Embed(source = "../../assets/grandmother/game_over_screen.png")] public static const GAME_OVER_SCREEN:Class;
 		
 		/**
 		 * Icons
