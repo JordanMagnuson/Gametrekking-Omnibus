@@ -144,8 +144,9 @@ package heartattack
 			// Prime slideshow
 			primeSlideshow();
 			
-			FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
-			FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;					
+			// Center screen
+			FP.screen.x = Global.screenX;
+			FP.screen.y = Global.screenY;					
 		}
 		
 		public function startMusic():void

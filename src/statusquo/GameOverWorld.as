@@ -67,7 +67,7 @@ package statusquo
 				
 			add(new TextEntity("Press R to try again.", FP.halfWidth, FP.halfHeight + 35));
 			
-			add(new TextEntity("Press X to learn about how this game applies to Taiwan (will open in browser).", FP.halfWidth, FP.halfHeight + 65));
+			add(new TextEntity("Press X to learn about how this game applies to Taiwan (web link).", FP.halfWidth, FP.halfHeight + 65));
 			
 			add(new TextEntity("Press Esc to return to the menu.", FP.halfWidth, FP.halfHeight + 95));
 			

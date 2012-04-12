@@ -26,8 +26,8 @@ package heartattack
 			(FP.engine as Main).reset(640, 480, 60, true);
 			
 			// Center screen in window
-			FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
-			FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;
+			FP.screen.x = Global.screenX = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
+			FP.screen.y = Global.screenY = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;
 			
 			Mouse.hide();
 			
@@ -39,7 +39,7 @@ package heartattack
 				Global.startPixelating = false;
 				Global.startDepixelating = false;
 				Global.alphaIncreasing = false;
-				Global.quakeScreenOnBeat = false;
+				Global.quakeScreenOnBeat = true;
 				Global.quakeDuration = 0.01;
 				Global.quakeIntensity = 0.01;
 			}
@@ -176,7 +176,7 @@ package heartattack
 		public function quakeScreen():void
 		{
 			Global.quake.start(quakeIntensity, quakeDuration);
-			quakeAlarm.reset(quakeInterval);
+			quakeAlarm.reset(quakeInterval);				
 		}		
 		
 	}

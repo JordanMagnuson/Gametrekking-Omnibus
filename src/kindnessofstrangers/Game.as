@@ -45,10 +45,10 @@ package kindnessofstrangers
 			
 			// Determine whether strangers will help the player
 			//if (FP.random < 0.25)
-			if (false)
-				Global.kindness = false;
-			else
-				Global.kindness = true;		
+			//if (false)
+				//Global.kindness = false;
+			//else
+				//Global.kindness = true;		
 				
 			Mouse.hide();			
 		}
@@ -66,6 +66,8 @@ package kindnessofstrangers
 			nextlevel();
 			
 			PhotoController.show = true;
+			
+			//if (Global.kindness == true) FP.world = new GameOverWorld;
 			
 			//add(new GlitchController);
 		}

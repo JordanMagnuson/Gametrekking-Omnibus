@@ -32,8 +32,8 @@ package heartattack
 			//(FP.engine as Main).reset(640, 480, 60, true);			
 			
 			// Center screen in window
-			FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
-			FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;			
+			FP.screen.x = Global.screenX;
+			FP.screen.y = Global.screenY;			
 		}
 		
 		override public function begin():void
@@ -60,24 +60,24 @@ package heartattack
 				FP.world = new VietnamLanding;
 			}				
 			
-			if (Input.pressed(Key.SPACE))
-			{  
-				request = new URLRequest(learnMoreURL);
-				try {
-				  navigateToURL(request, '_blank'); // second argument is target
-				} catch (e:Error) {
-				  trace("Error occurred!");
-				}
-			}
-			if (Input.pressed(Key.X))
-			{
-				request = new URLRequest(leaveCommentURL);
-				try {
-				  navigateToURL(request, '_blank'); // second argument is target
-				} catch (e:Error) {
-				  trace("Error occurred!");
-				}
-			}
+			//if (Input.pressed(Key.SPACE))
+			//{  
+				//request = new URLRequest(learnMoreURL);
+				//try {
+				  //navigateToURL(request, '_blank'); // second argument is target
+				//} catch (e:Error) {
+				  //trace("Error occurred!");
+				//}
+			//}
+			//if (Input.pressed(Key.X))
+			//{
+				//request = new URLRequest(leaveCommentURL);
+				//try {
+				  //navigateToURL(request, '_blank'); // second argument is target
+				//} catch (e:Error) {
+				  //trace("Error occurred!");
+				//}
+			//}
 			super.update();
 		}				
 		

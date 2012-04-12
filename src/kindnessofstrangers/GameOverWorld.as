@@ -76,7 +76,7 @@ package kindnessofstrangers
 						Global.kindness = true;								
 				}
 				// If player didn't die, reverse kindness for "different experience"
-				else if (Global.kindness)
+				else if (Global.kindness == true)
 					Global.kindness = false;
 				else
 					Global.kindness = true;				

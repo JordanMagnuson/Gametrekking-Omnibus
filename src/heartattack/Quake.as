@@ -44,10 +44,14 @@ package heartattack
 		 */		
 		public function stop():void
 		{
-			FP.screen.x = 0;
-			FP.screen.y = 0;
+			//FP.screen.x = 0;
+			//FP.screen.y = 0;
 			intensity = 0;
 			timer = 0;
+			
+			// center screen
+			FP.screen.x = Global.screenX;
+			FP.screen.y = Global.screenY;				
 		}
 		
 		/**
@@ -66,8 +70,10 @@ package heartattack
 				}
 				else
 				{
-					FP.screen.x = (Math.random()*intensity*FP.width*2-intensity*FP.width)*0.5;
-					FP.screen.y = (Math.random()*intensity*FP.height*2-intensity*FP.height)*0.5;
+					//FP.screen.x = (Math.random()*intensity*FP.width*2-intensity*FP.width)*0.5;
+					//FP.screen.y = (Math.random()*intensity*FP.height*2-intensity*FP.height)*0.5;
+					FP.screen.x = Global.screenX + (Math.random()*intensity*FP.width*2-intensity*FP.width)*0.5;
+					FP.screen.y = Global.screenY + (Math.random()*intensity*FP.height*2-intensity*FP.height)*0.5;					
 				}
 			}
 		}
