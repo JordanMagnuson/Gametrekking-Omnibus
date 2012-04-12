@@ -38,10 +38,12 @@ package loneliness.game
 			
 			graphic = image;			
 			
-			image.originX = image.width / 2;
-			image.originY = image.height / 2;
-			image.x = -image.originX;
-			image.y = -image.originY;	
+			//image.originX = image.width / 2;
+			//image.originY = image.height / 2;
+			//image.x = -image.originX;
+			//image.y = -image.originY;	
+			
+			image.centerOO();
 			setHitbox(image.width, image.height, image.originX, image.originY);	
 			
 			setSpdMax();

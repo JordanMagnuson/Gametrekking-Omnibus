@@ -6,3 +6,4 @@
 /flash builder release/
 /flashdevelop bin/
 /.settings/
+/bin-release-temp/

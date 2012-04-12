@@ -6,6 +6,7 @@ package menu
 	import net.flashpunk.graphics.Text;
 	import net.flashpunk.FP;
 	import jui.Button;
+	import flash.desktop.NativeApplication;
 	
 	/**
 	 * ...
@@ -61,7 +62,15 @@ package menu
 			
 			// Cambodia
 			FP.world.add(cambodiaButton = new Button(741, 0, new Image(Assets.NAV_CAMBODIA), null, Global.NAV_HOVER_SCALE, null, null, false, gotoCambodia));	;	
-			cambodiaButton.layer = layer;			
+			cambodiaButton.layer = layer;		
+			
+			// Credits
+			FP.world.add(creditsButton = new Button(858, 0, new Image(Assets.NAV_CREDITS), null, Global.NAV_HOVER_SCALE, null, null, false, null));	;	
+			creditsButton.layer = layer;		
+			
+			// Quit
+			FP.world.add(quitButton = new Button(953, 0, new Image(Assets.NAV_QUIT), null, Global.NAV_HOVER_SCALE, null, null, false, quit));	;	
+			quitButton.layer = layer;					
 			
 			// Navigation Underline
 			switch(Global.navButtonIndex) 
@@ -89,6 +98,11 @@ package menu
 					break;
 			}
 			
+		}
+		
+		public function quit():void
+		{
+			NativeApplication.nativeApplication.exit();
 		}
 		
 		public function gotoIntro():void

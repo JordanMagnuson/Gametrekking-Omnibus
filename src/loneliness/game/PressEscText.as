@@ -45,7 +45,7 @@ package loneliness.game
 		
 		public function showMouse():void
 		{
-			Mouse.show();
+			//Mouse.show();
 			//FP.world.add(new ManyReportText);
 		}		
 		
