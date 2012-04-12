@@ -36,8 +36,8 @@ package killer.rooms
 		
 		override public function begin():void
 		{
-			bgImage.centerOO();
-			add(new Entity(FP.halfWidth, FP.halfHeight, bgImage));
+			//bgImage.centerOO();
+			add(new Entity(0, 0, bgImage));
 			
 			add(musicSelectorButton = new MusicSelectorButton(293, 227));
 			add(ambientSelectorButton = new AmbientSelectorButton(553, 227));

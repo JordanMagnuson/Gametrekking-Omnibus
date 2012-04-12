@@ -29,8 +29,8 @@ package heartattack
 			FP.screen.smoothing = true;
 			
 			// Center screen in window
-			FP.screen.x = Global.screenX = (SuperGlobal.SCREEN_WIDTH - FP.screen.width * FP.screen.scale) / 2;
-			FP.screen.y = Global.screenY = (SuperGlobal.SCREEN_HEIGHT - FP.screen.height * FP.screen.scale) / 2;
+			FP.screen.x = Global.screenX = (SuperGlobal.SCREEN_WIDTH - FP.width * FP.screen.scale) / 2;
+			FP.screen.y = Global.screenY = (SuperGlobal.SCREEN_HEIGHT - FP.height * FP.screen.scale) / 2;
 			
 			resetGlobals();
 			

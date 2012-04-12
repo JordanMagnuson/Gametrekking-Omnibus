@@ -69,7 +69,7 @@ package killer.game
 			setHitbox(image.width, image.height, image.originX, image.originY);				
 			
 			// Create every item at the far right edge of the screen
-			x = FP.screen.width + 10;
+			x = FP.width + 10;
 			y = Ground.y;		
 			
 			// Layer
@@ -93,6 +93,7 @@ package killer.game
 		 */
 		override public function added():void
 		{
+			trace('item added at ' + x + ', ' + y);
 			super.added();
 			if (overlap == false)
 			{

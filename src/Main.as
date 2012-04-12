@@ -50,7 +50,7 @@ package
 			//FP.screen.color = Colors.WHITE;
 			
 			// Console for debugging
-			//FP.console.enable();		
+			FP.console.enable();		
 			
 			FP.world = new IntroLanding;
 			
@@ -60,7 +60,7 @@ package
 		public function reset(width:uint, height:uint, frameRate:Number = 60, fixed:Boolean = false):void
 		{
 			// First, black out current screen
-			FP.screen = new Screen;
+			//FP.screen = new Screen;
 		
 			// See net.flashpunk.Engine constructor
 			
@@ -74,16 +74,16 @@ package
 			FP.timeInFrames = fixed;
 			
 			// global game objects
-			FP.engine = this;
-			FP.screen = new Screen;
-			FP.bounds = new Rectangle(0, 0, width, height);
+			//FP.engine = this;
+			//FP.screen = new Screen;
+			//FP.bounds = new Rectangle(0, 0, width, height);
 			//FP._world = new World;
 			//FP.camera = FP._world.camera;
-			Draw.resetTarget();
+			//Draw.resetTarget();
 			
 			// miscellaneous startup stuff
-			if (FP.randomSeed == 0) FP.randomizeSeed();
-			FP.entity = new Entity;
+			//if (FP.randomSeed == 0) FP.randomizeSeed();
+			//FP.entity = new Entity;
 			//FP._time = getTimer();
 			FP.screen.color = Colors.BLACK;
 		
@@ -119,7 +119,10 @@ package
 		override public function update():void
 		{
 			// Toggle fullscreen
-			if (Input.pressed(SuperGlobal.FULLSCREEN_KEY))
+			//if (Input.pressed(SuperGlobal.FULLSCREEN_KEY))
+			if (Input.check(Key.CONTROL) && Input.pressed(SuperGlobal.FULLSCREEN_KEY) ||
+				Input.check(Keyboard.ALTERNATE) && Input.pressed(Key.ENTER) ||
+				Input.pressed(Key.F11))
 			{
 				if (FP.stage.displayState == StageDisplayState.NORMAL)
 				{
