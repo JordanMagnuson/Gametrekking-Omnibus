@@ -25,9 +25,12 @@ package heartattack
 			// Reset the engine to fixed frame rate
 			(FP.engine as Main).reset(640, 480, 60, true);
 			
+			FP.screen.scale = 1.25;
+			FP.screen.smoothing = true;
+			
 			// Center screen in window
-			FP.screen.x = Global.screenX = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
-			FP.screen.y = Global.screenY = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;
+			FP.screen.x = Global.screenX = (SuperGlobal.SCREEN_WIDTH - FP.screen.width * FP.screen.scale) / 2;
+			FP.screen.y = Global.screenY = (SuperGlobal.SCREEN_HEIGHT - FP.screen.height * FP.screen.scale) / 2;
 			
 			resetGlobals();
 			

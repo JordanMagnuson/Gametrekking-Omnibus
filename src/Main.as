@@ -48,7 +48,7 @@ package
 			//FP.screen.color = Colors.WHITE;
 			
 			// Console for debugging
-			FP.console.enable();		
+			//FP.console.enable();		
 			
 			FP.world = new IntroLanding;
 			
@@ -86,7 +86,7 @@ package
 			FP.screen.color = Colors.BLACK;
 		
 			// Enable console
-			FP.console.enable();
+			FP.console.enable()
 		}
 		
 		override public function init():void

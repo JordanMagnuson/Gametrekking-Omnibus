@@ -93,8 +93,8 @@ package heartattack
 		
 		// American constants
 		
-		public static var screenX:Number;	// If the screen is smaller than the frame, should it be centered, etc? See Game.as constructor
-		public static var screenY:Number;
+		public static var screenX:Number = 0;	// If the screen is smaller than the frame, should it be centered, etc? See Game.as constructor
+		public static var screenY:Number = 0;
 
 		
 	}
