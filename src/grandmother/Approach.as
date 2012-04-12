@@ -19,7 +19,10 @@ package grandmother
 		
 		public function Approach() 
 		{
+			FP.screen.smoothing = true;
 			FP.screen.scale = 1.6;
+			
+			trace('smoothing: ' + FP.screen.smoothing);
 			
 			// Center screen in window
 			FP.screen.y = -(768 - SuperGlobal.SCREEN_HEIGHT) / 2;
