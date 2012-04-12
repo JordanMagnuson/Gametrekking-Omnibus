@@ -32,8 +32,8 @@ package
 			// Click to continue
 			if (Input.mousePressed)
 			{
-				if (goto != null) FP.world = new goto;
-				//if (goto != null) Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 				
+				//if (goto != null) FP.world = new goto;
+				if (goto != null) Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 				
 				
 			}
 			
