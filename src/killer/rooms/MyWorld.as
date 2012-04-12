@@ -93,8 +93,13 @@ package killer.rooms
 		
 		public function MyWorld()      
 		{
+			resetGlobals();
+			
 			// Reset the screen
 			(FP.engine as Main).reset(342, 200, 60, false);
+			//FP.width = 342;
+			//FP.height = 200;
+			//FP.screen = new Screen;
 			FP.screen.scale = 3;
 			//FP.console.enable();		
 			
@@ -169,6 +174,26 @@ package killer.rooms
 				trace('no explosion this time');
 		}
 		
+		public function resetGlobals():void
+		{
+			Global.shouldExplode = false;
+			Global.explosionTime = 0;
+			Global.exploded = false;
+			Global.startedWalking = false;
+			Global.firstPush = false;
+			Global.farEnough = true;
+			Global.playSounds = true;
+			Global.fadeSounds = false;
+			Global.shotFired = false;
+			Global.mercifulShot = false;
+			Global.stillInJungle = true;
+			Global.touchedPlains = false;
+			Global.reachedPlains = false;
+			Global.numberOfStops = 0;
+			Global.locationChanges = 0;
+			Global.endScreen = 0;			
+		}
+		
 		override public function begin():void
 		{	
 			Mouse.hide();
@@ -220,47 +245,47 @@ package killer.rooms
 			}					
 			
 			// Testing
-			if (Input.pressed(Key.F12))
-			{
-				Global.shouldExplode = true;
-				Global.explosionTime = Global.EARLIEST_EXPLOSION + FP.random * (Global.LATEST_EXPLOSION - Global.EARLIEST_EXPLOSION);
+			//if (Input.pressed(Key.F12))
+			//{
+				//Global.shouldExplode = true;
+				//Global.explosionTime = Global.EARLIEST_EXPLOSION + FP.random * (Global.LATEST_EXPLOSION - Global.EARLIEST_EXPLOSION);
 				//Global.explosionTime = 2;
-				explosionAlarm = new Alarm(Global.explosionTime, explode);
-				explosionAlarm.active = true;
-				addTween(explosionAlarm, true);
-				trace('explosion set to: ' + Global.explosionTime);
-			}
-			if (Input.pressed(Key.F11))
-			{
-				Global.shouldExplode = false;
-				Global.explosionTime = 5000;
+				//explosionAlarm = new Alarm(Global.explosionTime, explode);
+				//explosionAlarm.active = true;
+				//addTween(explosionAlarm, true);
+				//trace('explosion set to: ' + Global.explosionTime);
+			//}
+			//if (Input.pressed(Key.F11))
+			//{
+				//Global.shouldExplode = false;
+				//Global.explosionTime = 5000;
 				//Global.explosionTime = 2;
-				if (explosionAlarm) explosionAlarm.active = false;
-				if (explosionAlarm) removeTween(explosionAlarm);
-				trace('explosion canceled');
-			}			
+				//if (explosionAlarm) explosionAlarm.active = false;
+				//if (explosionAlarm) removeTween(explosionAlarm);
+				//trace('explosion canceled');
+			//}			
 			
-			if (Input.pressed(Key.F7))
- 			{
-				explode(); 
-			}
-
-			if (Input.pressed(Key.F6))
- 			{
-				trace('c presesd');
-				this.changeLocation();
-			}
-
-			if (Input.pressed(Key.F5) && !musicStarted)
-			{
-				trace('music fading in');
-				Global.playSounds = false;
-				Global.fadeSounds = true;
-				musicStarted = true;
-				soundController.fadeOut();
-				music.loop(0);
-				musicFader.fadeTo(1, Global.MUSIC_IN_DURATION);
-			}			
+			//if (Input.pressed(Key.F7))
+ 			//{
+				//explode(); 
+			//}
+//
+			//if (Input.pressed(Key.F6))
+ 			//{
+				//trace('c presesd');
+				//this.changeLocation();
+			//}
+//
+			//if (Input.pressed(Key.F5) && !musicStarted)
+			//{
+				//trace('music fading in');
+				//Global.playSounds = false;
+				//Global.fadeSounds = true;
+				//musicStarted = true;
+				//soundController.fadeOut();
+				//music.loop(0);
+				//musicFader.fadeTo(1, Global.MUSIC_IN_DURATION);
+			//}			
 			
 			//if (Input.pressed(Key.N))
  			//{

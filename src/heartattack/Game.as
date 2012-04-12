@@ -29,6 +29,8 @@ package heartattack
 			FP.screen.x = Global.screenX = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
 			FP.screen.y = Global.screenY = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;
 			
+			resetGlobals();
+			
 			Mouse.hide();
 			
 			if (Global.TEST_MODE)
@@ -43,6 +45,32 @@ package heartattack
 				Global.quakeDuration = 0.01;
 				Global.quakeIntensity = 0.01;
 			}
+		}
+		
+		public function resetGlobals():void
+		{
+			Global.phase = 0;
+			
+			// Game over
+			Global.gameOver = false;
+			Global.dieTogether = false;
+			Global.bothDead = false;		
+			Global.increaseAlphaAmount = 0.05;		
+			
+			// Photo pixelation
+			Global.startPixelating = false;
+			Global.startDepixelating = false;
+			Global.pixelatePerPhoto = 0.25;		// 0.3 Once startPixelating is true, how much to increase pixelation with each photo?
+			Global.depixelatePerPhoto = 0.5;
+			Global.photoCellSize = 1;
+			Global.alphaIncreasing = false;
+			
+			// Screen quake
+			Global.quakeScreenOnBeat = false;
+			Global.quakeDuration = 0.01;
+			Global.quakeIntensity = 0.01;		
+			Global.quakeDurationIncreaseBy = 0.01;
+			Global.quakeIntensityIncreaseBy = 0.01;				
 		}
 		
 		override public function begin():void

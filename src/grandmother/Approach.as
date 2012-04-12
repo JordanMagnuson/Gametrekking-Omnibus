@@ -28,6 +28,21 @@ package grandmother
 			FP.screen.y = -(768 - SuperGlobal.SCREEN_HEIGHT) / 2;
 			//FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
 			//FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;
+			
+			// Reset Globals
+			resetGlobals();
+		}
+		
+		public function resetGlobals():void
+		{
+			// Variables
+			Global.hasSponge = false;
+			Global.bucketDropped = false;
+			Global.startedFade = false;
+			Global.endingStarted = false;
+			
+			// Entities
+			Global.SndAmbient = new Sfx(Assets.SND_AMBIENT_01);		
 		}
 		
 		override public function begin():void

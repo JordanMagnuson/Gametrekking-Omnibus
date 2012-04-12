@@ -18,6 +18,16 @@ package briefhistory
 		
 		public function Game() 
 		{
+			resetGlobals();
+		}
+		
+		public function resetGlobals():void
+		{
+			// Global variables
+			Global.t = 0;							// Time elapsed since start of game
+			Global.peopleKilled = 0;
+			Global.startedShaking = false;
+			Global.shakeAmount = 0.3;			
 		}
 		
 		override public function begin():void
