@@ -54,7 +54,7 @@ package
 			// Console for debugging
 			//FP.console.enable();		
 			
-			FP.world = new Gallery(Assets.KOREA_PHOTO_ARRAY);
+			FP.world = new IntroLanding;
 			
 			//Mouse.hide();
 		}

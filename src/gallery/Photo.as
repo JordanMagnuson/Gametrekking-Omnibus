@@ -43,16 +43,20 @@ package gallery
 		
 		public function Photo(x:Number = 0, y:Number = 0, backdropSource:* = null, captionString:String = null) 
 		{
-			// Caption
-			caption = new Text(captionString, 0, 0, { color: Colors.BLACK, font: 'Special Elite', width: FP.width - 2 * CAPTION_MARGIN_HORIZONTAL, wordWrap: true } );
-			caption.leading = 10;
-			captionBackground = new Rectangle(x, FP.height - caption.textHeight - 2 * CAPTION_MARGIN_VERTICAL, FP.width, caption.textHeight + 2 * CAPTION_MARGIN_VERTICAL);
-			
-			// Draw everything to canvas
 			canvas = new Canvas(FP.width, FP.height);
 			canvas.draw(0, 0, FP.getBitmap(backdropSource));
-			canvas.drawRect(captionBackground, Colors.WHITE, 0.5);
-			canvas.drawGraphic(captionBackground.x + CAPTION_MARGIN_HORIZONTAL, captionBackground.y + CAPTION_MARGIN_VERTICAL, caption);
+			
+			// Caption
+			if (captionString != null)
+			{
+				caption = new Text(captionString, 0, 0, { color: Colors.BLACK, font: 'Special Elite', width: FP.width - 2 * CAPTION_MARGIN_HORIZONTAL, wordWrap: true } );
+				caption.leading = 10;
+				captionBackground = new Rectangle(x, FP.height - caption.textHeight - 2 * CAPTION_MARGIN_VERTICAL, FP.width, caption.textHeight + 2 * CAPTION_MARGIN_VERTICAL);
+			
+				// Draw to canvas
+				canvas.drawRect(captionBackground, Colors.WHITE, 0.5);
+				canvas.drawGraphic(captionBackground.x + CAPTION_MARGIN_HORIZONTAL, captionBackground.y + CAPTION_MARGIN_VERTICAL, caption);
+			}
 			
 			// Super
 			super(x, y, canvas);

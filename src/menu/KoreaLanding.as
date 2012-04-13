@@ -3,6 +3,7 @@ package menu
 	import flash.net.URLRequest;
 	import freedombridge.worlds.Intro;
 	import freedombridge.worlds.MyWorld;
+	import gallery.Gallery;
 	import loneliness.rooms.MainWorld;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Backdrop;
@@ -24,6 +25,7 @@ package menu
 		public var request:URLRequest;
 		public var reflectionURL:String = "http://chasingdonguri.com/blog-from-beginning?field_country_value_many_to_one=Korea";	
 		public var beingThereURL:String = "http://www.gametrekking.com/the-games/korea/being-there";
+		public var morePhotosURL:String = "http://www.flickr.com/photos/chasingdonguri/collections/72157613775330015/";
 		
 		public function KoreaLanding() 
 		{
@@ -38,7 +40,7 @@ package menu
 			//(map.graphic as Backdrop).alpha = 0.5;
 			
 			// Buttons
-			add(new Button(207, 200, new Image(Assets.KOREA_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));		
+			add(new Button(207, 200, new Image(Assets.KOREA_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoPhotos));		
 			
 			add(new Button(219, 460, new Image(Assets.KOREA_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoReflection));	
 			
@@ -63,6 +65,12 @@ package menu
 			var goto:World = new IntroScreen(Assets.INTRO_LONELINESS, MainWorld, KoreaLanding);
 			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 			
 		}	
+		
+		public function gotoPhotos():void
+		{
+			var goto:World = new Gallery(gallery.Assets.KOREA_PHOTO_ARRAY, KoreaLanding, morePhotosURL);
+			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS));
+		}			
 		
 		public function gotoReflection():void
 		{

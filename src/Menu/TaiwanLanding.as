@@ -2,6 +2,7 @@ package menu
 {
 	import flash.geom.Rectangle;
 	import flash.net.URLRequest;
+	import gallery.Gallery;
 	import gum.FlashPunk.UIEntity;
 	import gum.UISkin;
 	import kindnessofstrangers.Game;
@@ -28,7 +29,8 @@ package menu
 	{		
 		public var map:Entity;
 		public var request:URLRequest;
-		public var reflectionURL:String = "http://www.gametrekking.com/blog/taiwan-touch-your-heart";		
+		public var reflectionURL:String = "http://www.gametrekking.com/blog/taiwan-touch-your-heart";	
+		public var morePhotosURL:String = "http://www.gametrekking.com/blog/taiwan-journey-in-review";
 		
 		public function TaiwanLanding() 
 		{
@@ -43,7 +45,7 @@ package menu
 			//(map.graphic as Backdrop).alpha = 0.5;
 			
 			// Buttons
-			add(new Button(194, 193, new Image(Assets.TAIWAN_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(194, 193, new Image(Assets.TAIWAN_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoPhotos));	
 			
 			add(new Button(188, 448, new Image(Assets.TAIWAN_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoReflection));	
 			
@@ -59,6 +61,12 @@ package menu
 		{
 			kindnessofstrangers.Global.kindness = true;
 		}
+		
+		public function gotoPhotos():void
+		{
+			var goto:World = new Gallery(gallery.Assets.TAIWAN_PHOTO_ARRAY, TaiwanLanding, morePhotosURL);
+			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS));
+		}			
 		
 		public function gotoStatusQuo():void
 		{
