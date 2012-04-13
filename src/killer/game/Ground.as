@@ -61,7 +61,7 @@ package killer.game
 			setHitbox(image.width, image.height, image.originX, image.originY);					
 			
 			// Starting location
-			x = FP.screen.width;
+			x = FP.width;
 			y = Ground.y;
 			
 			layer = 12;

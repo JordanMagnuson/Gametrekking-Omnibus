@@ -49,7 +49,7 @@ package killer.game.beach
 			setHitbox(image.width, image.height, image.originX, image.originY);		
 			
 			x = X_INIT;
-			y = FP.screen.height;
+			y = FP.height;
 		}
 		
 		override public function added():void

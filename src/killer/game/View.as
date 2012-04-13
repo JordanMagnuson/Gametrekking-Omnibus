@@ -43,10 +43,10 @@ package killer.game
 		{
 			//follow the entity
 			
-			var dist:Number = FP.distance(_tofollow.x - FP.screen.width / 2, _tofollow.y - 68 - FP.screen.height / 2, FP.camera.x, FP.camera.y);
+			var dist:Number = FP.distance(_tofollow.x - FP.width / 2, _tofollow.y - 68 - FP.height / 2, FP.camera.x, FP.camera.y);
 			var spd:Number = dist / _speed;
 			
-			FP.stepTowards(this, _tofollow.x - FP.screen.width / 2, _tofollow.y - 68 - FP.screen.height / 2, spd);
+			FP.stepTowards(this, _tofollow.x - FP.width / 2, _tofollow.y - 68 - FP.height / 2, spd);
 			
 			FP.camera.x = int(x);
 			FP.camera.y = int(y);
@@ -56,8 +56,8 @@ package killer.game
 				if (FP.camera.x < _within.x) { FP.camera.x = _within.x; }
 				if (FP.camera.y < _within.y) { FP.camera.y = _within.y; }
 				
-				if (FP.camera.x + FP.screen.width > _within.x + _within.width) { FP.camera.x = _within.x + _within.width - FP.screen.width; }
-				if (FP.camera.y + FP.screen.height > _within.y + _within.height) { FP.camera.y = _within.y + _within.height - FP.screen.height; }
+				if (FP.camera.x + FP.width > _within.x + _within.width) { FP.camera.x = _within.x + _within.width - FP.width; }
+				if (FP.camera.y + FP.height > _within.y + _within.height) { FP.camera.y = _within.y + _within.height - FP.height; }
 			}
 		}
 		

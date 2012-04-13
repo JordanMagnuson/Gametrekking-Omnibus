@@ -35,7 +35,7 @@ package killer.game.snow
 			// Play sound
 			if (Global.playSounds && FP.random < 0.002 && !sndCreaking.playing)
 			{
-				var pan:Number = FP.scale(x, 0, FP.screen.width, -1, 1);
+				var pan:Number = FP.scale(x, 0, FP.width, -1, 1);
 				var vol:Number = 0.2 + 0.8 * FP.random;
 				sndCreaking.play(vol, pan);
 			}			

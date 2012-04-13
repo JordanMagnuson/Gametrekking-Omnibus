@@ -55,7 +55,7 @@ package killer.game
 			maxAlpha = 0.6 + FP.random * 0.4;
 			
 			// Starting position
-			x = -image.width + int(FP.random * (FP.screen.width + 2*image.width));
+			x = -image.width + int(FP.random * (FP.width + 2*image.width));
 			y = int(FP.random * MAX_Y);
 			
 			// Speed
