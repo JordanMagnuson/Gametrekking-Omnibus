@@ -1,0 +1,7 @@
+[Embed(source = "korea/assets.as")] static public const assets:Class
+[Embed(source = "korea/at_school_P1040483.jpg")] static public const at_school_P1040483:Class
+[Embed(source = "korea/blossoms_3423082756.jpg")] static public const blossoms_3423082756:Class
+[Embed(source = "korea/going_home_P1040431.jpg")] static public const going_home_P1040431:Class
+[Embed(source = "korea/Monkey-in-The-Window.jpg")] static public const Monkey-in-The-Window:Class
+[Embed(source = "korea/sledding_P1080323.jpg")] static public const sledding_P1080323:Class
+[Embed(source = "korea/Thumbs.db")] static public const Thumbs:Class
