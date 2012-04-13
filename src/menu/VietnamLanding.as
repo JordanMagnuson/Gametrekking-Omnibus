@@ -1,5 +1,6 @@
 package menu 
 {
+	import gallery.Gallery;
 	import grandmother.Approach;
 	import heartattack.Game;
 	import jui.Button;
@@ -20,7 +21,8 @@ package menu
 	{
 		public var map:Entity;
 		public var request:URLRequest;
-		public var reflectionURL:String = "http://www.gametrekking.com/blog/vietnam-yin-and-yang";			
+		public var reflectionURL:String = "http://www.gametrekking.com/blog/vietnam-yin-and-yang";	
+		public var morePhotosURL:String = "http://www.gametrekking.com/blog/vietnam-journey-in-review";
 		
 		public function VietnamLanding() 
 		{
@@ -35,7 +37,7 @@ package menu
 			//(map.graphic as Backdrop).alpha = 0.5;
 			
 			// Buttons
-			add(new Button(281, 204, new Image(Assets.VIETNAM_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(281, 204, new Image(Assets.VIETNAM_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoPhotos));	
 			
 			add(new Button(266, 461, new Image(Assets.VIETNAM_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoReflection));	
 			
@@ -43,6 +45,12 @@ package menu
 			
 			add(new Button(763, 451, new Image(Assets.VIETNAM_GRANDMOTHER_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoGrandmother));	
 		}
+		
+		public function gotoPhotos():void
+		{
+			var goto:World = new Gallery(gallery.Assets.VIETNAM_PHOTO_ARRAY, VietnamLanding, morePhotosURL);
+			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS));
+		}						
 		
 		public function gotoHeartAttack():void
 		{

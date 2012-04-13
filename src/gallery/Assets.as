@@ -101,17 +101,17 @@ package gallery
 		[Embed(source = "../../assets/gallery/vietnam/vietnam_end.png")] static public const vietnam_end:Class
 		
 		public static const VIETNAM_PHOTO_ARRAY:Array = new Array(
-			new Array(vietnam_01, "Skulls of victims at the Choeung Ek killing fields. Choeung Ek is only one of some 20,000 mass grave sites in Cambodia where people were killed and buried during the Khmer Rouge regime."),
-			new Array(vietnam_01, "A Buddhist monk on a moped. A common sight in Phnom Penh, as all male Cambodians are expected to serve some time in the orange robes."),
-			new Array(vietnam_01, "Eating dinner with Rob (an Australian we met in Phnom Penh) and his Cambodian fiancee, Srey Na. Soon to be joined by Srey Na's fun extended family. A wonderful evening of laughing, eating frog legs, and drinking beer with ice."),
-			new Array(vietnam_01, "In Kompong Cham, the young and the hip lead the way in a line-dancing, aerobic hybrid workout."),
-			new Array(vietnam_01, "Meeting an elephant before taking a ride in Cambodia's isolated eastern region."),
-			new Array(vietnam_01, "Tuol Sleng Genocide Museum has detailed records of the people who were imprisoned, tortured, and killed by the Khmer Rouge. The photo of this young boy jumped out at me especially."),
-			new Array(vietnam_01, "On Koh Paen island. The bamboo bridge you see in the background is washed away every year during Cambodia's wet season, and built again when the Southwest monsoon passes."),
-			new Array(vietnam_01, "A painting by Vann Nath, one of seven survivors of prison S-21, where 17,000 victims were killed. This image in particular inspired my short game, 'The Killer.'"),
-			new Array(vietnam_01, "Sa Vorn, our wonderful Angkor tour guide, studying his English while he waits for us at a temple stop. No kidding, that's a grammar book."),
-			new Array(vietnam_01, "The incomparable Angkor Wat."),
-			new Array(cambodia_end, null)
+			new Array(vietnam_01, "Ho Chi Minh's Mausoleum: a memorial to a man, and also to a struggle. One of the many conspicuous examples of Vietnam's fascination with the American War, which inspired my short notgame, 'The Heart Attack.'"),
+			new Array(vietnam_03, "People enjoying a swim in one of Hanoi's lakes."),
+			new Array(vietnam_05, "Getting a haircut in Hanoi."),
+			new Array(vietnam_02, "The Vietnamese hold their ancestors in high regard. The constant demonstration of this fact served as inspiration for my interactive sketch, 'Grandmother.'"),
+			new Array(vietnam_04, "Mopeds and bicycles are the vehicles of choice in Vietnam. I took this shot while riding through the northern countryside on a moped of my own."),
+			new Array(vietnam_07, "The amazing karsts of Ninh Binh rise directly out of rice fields."),
+			new Array(vietnam_06, "Note the crosses on the graves. I took this shot from the train while riding through a region of northern Vietnam populated by Christian minority tribes."),
+			new Array(vietnam_08, "Palm trees and rice paddies seen from a train window."),
+			new Array(vietnam_10, "Hanoi's Lake Tay Ho at dusk."),
+			new Array(vietnam_09, "Hanoi at sundown."),
+			new Array(vietnam_end, null)
 		);					
 		
 	}
