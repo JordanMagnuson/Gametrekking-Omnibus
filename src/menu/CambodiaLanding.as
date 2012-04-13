@@ -1,6 +1,7 @@
 package menu 
 {
 	import briefhistory.Game;
+	import gallery.Gallery;
 	import jui.Button;
 	import killer.rooms.MusicChoice;
 	import net.flashpunk.Entity;
@@ -20,7 +21,8 @@ package menu
 	{
 		public var map:Entity;
 		public var request:URLRequest;
-		public var reflectionURL:String = "http://www.gametrekking.com/blog/cambodia-like-no-place-ive-been";			
+		public var reflectionURL:String = "http://www.gametrekking.com/blog/cambodia-like-no-place-ive-been";	
+		public var morePhotosURL:String = "http://www.gametrekking.com/blog/cambodia-journey-in-review";
 		
 		public function CambodiaLanding() 
 		{
@@ -35,7 +37,7 @@ package menu
 			//(map.graphic as Backdrop).alpha = 0.5;			
 			
 			// Buttons
-			add(new Button(317, 193, new Image(Assets.CAMBODIA_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, null));	
+			add(new Button(317, 193, new Image(Assets.CAMBODIA_PHOTO_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoPhotos));	
 			
 			add(new Button(277, 451, new Image(Assets.CAMBODIA_REFLECTION_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoReflection));	
 			
@@ -43,6 +45,12 @@ package menu
 			
 			add(new Button(858, 459, new Image(Assets.CAMBODIA_HISTORY_BUTTON), null, Global.BUTTON_HOVER_SCALE, null, null, true, gotoBriefHistory));	
 		}
+		
+		public function gotoPhotos():void
+		{
+			var goto:World = new Gallery(gallery.Assets.CAMBODIA_PHOTO_ARRAY, CambodiaLanding, morePhotosURL);
+			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS));
+		}					
 		
 		public function gotoKiller():void
 		{

@@ -193,7 +193,7 @@ package menu
 		{
 			if (Global.inTransition)
 				return;	
-			if (Global.CAMBODIA_BUTTON_INDEX == Global.KOREA_BUTTON_INDEX)
+			if (Global.navButtonIndex == Global.CAMBODIA_BUTTON_INDEX)
 				return;
 				
 			Global.inTransition = true;			

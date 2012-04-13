@@ -34,7 +34,6 @@ package gallery
 		);
 		
 		// Taiwan
-		[Embed(source = "../../assets/gallery/taiwan/taiwan_01.jpg")] static public const taiwan_01:Class
 		[Embed(source = "../../assets/gallery/taiwan/taiwan_02.jpg")] static public const taiwan_02:Class
 		[Embed(source = "../../assets/gallery/taiwan/taiwan_03.jpg")] static public const taiwan_03:Class
 		[Embed(source = "../../assets/gallery/taiwan/taiwan_04.jpg")] static public const taiwan_04:Class
@@ -60,6 +59,60 @@ package gallery
 			new Array(taiwan_10, "A picture I took at Kaohsiung Harbor, which embodies the Taiwanese spirit for me. I will never forget all the smiling faces, and the outrageous kindness that was shown to us as strangers."),
 			new Array(taiwan_end, null)
 		);		
+		
+		// Cambodia
+		[Embed(source = "../../assets/gallery/cambodia/cambodia_01.jpg")] static public const cambodia_01:Class
+		[Embed(source = "../../assets/gallery/cambodia/cambodia_02.jpg")] static public const cambodia_02:Class
+		[Embed(source = "../../assets/gallery/cambodia/cambodia_03.jpg")] static public const cambodia_03:Class
+		[Embed(source = "../../assets/gallery/cambodia/cambodia_04.jpg")] static public const cambodia_04:Class
+		[Embed(source = "../../assets/gallery/cambodia/cambodia_05.jpg")] static public const cambodia_05:Class
+		[Embed(source = "../../assets/gallery/cambodia/cambodia_06.jpg")] static public const cambodia_06:Class
+		[Embed(source = "../../assets/gallery/cambodia/cambodia_07.jpg")] static public const cambodia_07:Class
+		[Embed(source = "../../assets/gallery/cambodia/cambodia_08.jpg")] static public const cambodia_08:Class
+		[Embed(source = "../../assets/gallery/cambodia/cambodia_10.jpg")] static public const cambodia_10:Class
+		[Embed(source = "../../assets/gallery/cambodia/cambodia_11.jpg")] static public const cambodia_11:Class
+		[Embed(source = "../../assets/gallery/cambodia/cambodia_end.png")] static public const cambodia_end:Class
+		
+		public static const CAMBODIA_PHOTO_ARRAY:Array = new Array(
+			new Array(cambodia_11, "Skulls of victims at the Choeung Ek killing fields. Choeung Ek is only one of some 20,000 mass grave sites in Cambodia where people were killed and buried during the Khmer Rouge regime."),
+			new Array(cambodia_02, "A Buddhist monk on a moped. A common sight in Phnom Penh, as all male Cambodians are expected to serve some time in the orange robes."),
+			new Array(cambodia_01, "Eating dinner with Rob (an Australian we met in Phnom Penh) and his Cambodian fiancee, Srey Na. Soon to be joined by Srey Na's fun extended family. A wonderful evening of laughing, eating frog legs, and drinking beer with ice."),
+			new Array(cambodia_03, "In Kompong Cham, the young and the hip lead the way in a line-dancing, aerobic hybrid workout."),
+			new Array(cambodia_04, "Meeting an elephant before taking a ride in Cambodia's isolated eastern region."),
+			new Array(cambodia_05, "Tuol Sleng Genocide Museum has detailed records of the people who were imprisoned, tortured, and killed by the Khmer Rouge. The photo of this young boy jumped out at me especially."),
+			new Array(cambodia_06, "On Koh Paen island. The bamboo bridge you see in the background is washed away every year during Cambodia's wet season, and built again when the Southwest monsoon passes."),
+			new Array(cambodia_10, "A painting by Vann Nath, one of seven survivors of prison S-21, where 17,000 victims were killed. This image in particular inspired my short game, 'The Killer.'"),
+			new Array(cambodia_07, "Sa Vorn, our wonderful Angkor tour guide, studying his English while he waits for us at a temple stop. No kidding, that's a grammar book."),
+			new Array(cambodia_08, "The incomparable Angkor Wat."),
+			new Array(cambodia_end, null)
+		);			
+		
+		// Vietnam
+		[Embed(source = "../../assets/gallery/vietnam/vietnam_01.jpg")] static public const vietnam_01:Class
+		[Embed(source = "../../assets/gallery/vietnam/vietnam_02.jpg")] static public const vietnam_02:Class
+		[Embed(source = "../../assets/gallery/vietnam/vietnam_03.jpg")] static public const vietnam_03:Class
+		[Embed(source = "../../assets/gallery/vietnam/vietnam_04.jpg")] static public const vietnam_04:Class
+		[Embed(source = "../../assets/gallery/vietnam/vietnam_05.jpg")] static public const vietnam_05:Class
+		[Embed(source = "../../assets/gallery/vietnam/vietnam_06.jpg")] static public const vietnam_06:Class
+		[Embed(source = "../../assets/gallery/vietnam/vietnam_07.jpg")] static public const vietnam_07:Class
+		[Embed(source = "../../assets/gallery/vietnam/vietnam_08.jpg")] static public const vietnam_08:Class
+		[Embed(source = "../../assets/gallery/vietnam/vietnam_09.jpg")] static public const vietnam_09:Class
+		[Embed(source = "../../assets/gallery/vietnam/vietnam_10.jpg")] static public const vietnam_10:Class
+		[Embed(source = "../../assets/gallery/vietnam/vietnam_end.png")] static public const vietnam_end:Class
+		
+		public static const VIETNAM_PHOTO_ARRAY:Array = new Array(
+			new Array(vietnam_01, "Skulls of victims at the Choeung Ek killing fields. Choeung Ek is only one of some 20,000 mass grave sites in Cambodia where people were killed and buried during the Khmer Rouge regime."),
+			new Array(vietnam_01, "A Buddhist monk on a moped. A common sight in Phnom Penh, as all male Cambodians are expected to serve some time in the orange robes."),
+			new Array(vietnam_01, "Eating dinner with Rob (an Australian we met in Phnom Penh) and his Cambodian fiancee, Srey Na. Soon to be joined by Srey Na's fun extended family. A wonderful evening of laughing, eating frog legs, and drinking beer with ice."),
+			new Array(vietnam_01, "In Kompong Cham, the young and the hip lead the way in a line-dancing, aerobic hybrid workout."),
+			new Array(vietnam_01, "Meeting an elephant before taking a ride in Cambodia's isolated eastern region."),
+			new Array(vietnam_01, "Tuol Sleng Genocide Museum has detailed records of the people who were imprisoned, tortured, and killed by the Khmer Rouge. The photo of this young boy jumped out at me especially."),
+			new Array(vietnam_01, "On Koh Paen island. The bamboo bridge you see in the background is washed away every year during Cambodia's wet season, and built again when the Southwest monsoon passes."),
+			new Array(vietnam_01, "A painting by Vann Nath, one of seven survivors of prison S-21, where 17,000 victims were killed. This image in particular inspired my short game, 'The Killer.'"),
+			new Array(vietnam_01, "Sa Vorn, our wonderful Angkor tour guide, studying his English while he waits for us at a temple stop. No kidding, that's a grammar book."),
+			new Array(vietnam_01, "The incomparable Angkor Wat."),
+			new Array(cambodia_end, null)
+		);					
 		
 	}
 
