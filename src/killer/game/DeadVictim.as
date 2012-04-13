@@ -22,8 +22,9 @@ package killer.game
 		[Embed(source='../../../assets/killer/victim_dying.png')] private const VICTIM:Class;
 		public var spritemap:Spritemap = new Spritemap(VICTIM, 30, 20);			
 		
-		public function DeadVictim() 
+		public function DeadVictim(x:Number = 0, y:Number = 0) 
 		{
+			super(x, y);
 			spritemap.add("die", [0, 1, 2, 3], 2, false);
 			graphic = spritemap;
 			

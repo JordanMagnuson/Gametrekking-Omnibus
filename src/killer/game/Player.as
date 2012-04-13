@@ -1,5 +1,6 @@
 package killer.game
 {
+	import killer.rooms.GameOver;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Spritemap;
 	import net.flashpunk.utils.Input;
@@ -152,6 +153,7 @@ package killer.game
 			
 			if (Input.released("X"))
 			{
+				//FP.world = new GameOver;
 				//if (false)
 				if (!Global.reachedPlains)
 				{

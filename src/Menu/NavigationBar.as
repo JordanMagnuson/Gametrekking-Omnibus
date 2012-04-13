@@ -109,6 +109,9 @@ package menu
 		{
 			if (Global.inTransition)
 				return;	
+			if (Global.navButtonIndex == Global.INTRO_BUTTON_INDEX)
+				return;
+				
 			Global.inTransition = true;
 			
 			if (Global.navButtonIndex < Global.INTRO_BUTTON_INDEX)
@@ -127,6 +130,9 @@ package menu
 		{
 			if (Global.inTransition)
 				return;	
+			if (Global.navButtonIndex == Global.KOREA_BUTTON_INDEX)
+				return;
+				
 			Global.inTransition = true;
 			
 			if (Global.navButtonIndex < Global.KOREA_BUTTON_INDEX)
@@ -145,6 +151,9 @@ package menu
 		{
 			if (Global.inTransition)
 				return;	
+			if (Global.navButtonIndex == Global.TAIWAN_BUTTON_INDEX)
+				return;				
+				
 			Global.inTransition = true;			
 			
 			if (Global.navButtonIndex < Global.TAIWAN_BUTTON_INDEX)
@@ -163,6 +172,9 @@ package menu
 		{
 			if (Global.inTransition)
 				return;	
+			if (Global.navButtonIndex == Global.VIETNAM_BUTTON_INDEX)
+				return;
+				
 			Global.inTransition = true;			
 			
 			if (Global.navButtonIndex < Global.VIETNAM_BUTTON_INDEX)
@@ -181,6 +193,9 @@ package menu
 		{
 			if (Global.inTransition)
 				return;	
+			if (Global.CAMBODIA_BUTTON_INDEX == Global.KOREA_BUTTON_INDEX)
+				return;
+				
 			Global.inTransition = true;			
 			
 			if (Global.navButtonIndex < Global.CAMBODIA_BUTTON_INDEX)

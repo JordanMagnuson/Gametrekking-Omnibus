@@ -52,7 +52,7 @@ package
 			//FP.screen.color = Colors.WHITE;
 			
 			// Console for debugging
-			//FP.console.enable();		
+			FP.console.enable();		
 			
 			FP.world = new IntroLanding;
 			
@@ -87,10 +87,15 @@ package
 			//if (FP.randomSeed == 0) FP.randomizeSeed();
 			//FP.entity = new Entity;
 			//FP._time = getTimer();
+			
+			// Additional touches that are not part of engine constructor
 			FP.screen.color = Colors.BLACK;
+			FP.screen.x = 0;
+			FP.screen.y = 0;
+			FP.screen.scale = 1;
+			FP.rate = 1;
+			FP.screen.smoothing = false;
 		
-			// Enable console
-			//FP.console.enable()
 		}
 		
 		override public function init():void
@@ -98,7 +103,7 @@ package
 			// Full screen
 			FP.stage.scaleMode = StageScaleMode.SHOW_ALL;
 			FP.stage.fullScreenSourceRect = new Rectangle(0, 0, SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT);
-			FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;	
+			//FP.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;	
 			
 			// Listen for Esc key, prevent exiting full screen
 			FP.stage.addEventListener(KeyboardEvent.KEY_DOWN, preventEsc);

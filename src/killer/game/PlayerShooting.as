@@ -155,10 +155,8 @@ package killer.game
 		public function killVictim():void
 		{
 			// Kill victim
-			FP.world.add(Global.deadVictim = new DeadVictim);
+			FP.world.add(Global.deadVictim = new DeadVictim(Global.victim.x + 10, Global.victim.y - 5));
 			FP.world.add(Global.deadUnderground = new DeadUnderground);
-			Global.deadVictim.x = Global.victim.x;
-			Global.deadVictim.y = Global.victim.y;
 			FP.world.remove(Global.victim);					
 		}
 		
