@@ -15,16 +15,24 @@ package menu
 	 */
 	public class SlideTransition extends Entity
 	{
+		public static const DEFAULT_EASE_FUNCTION:Function = Ease.quadInOut;
+		
 		public var destX:Number;
-		public var direction:Number;
+		public var destY:Number;
+		public var direction:String;
 		public var duration:Number;
 		public var goto:Class;
 		public var motionTween:LinearMotion;
 		public var ease:Function;
 		
-		public function SlideTransition(graphic:Graphic = null, color:uint = 0x000000, direction:Number = 1, duration:Number = 1, goto:Class = null, ease:Function = null) 
+		public function SlideTransition(graphic:Graphic = null, color:uint = 0x000000, direction:String = 'left', duration:Number = 1, goto:Class = null, ease:Function = null, layer:Number = -60) 
 		{
-			ease = Ease.quadInOut;
+			if (ease == null) 
+			{
+				ease = DEFAULT_EASE_FUNCTION;
+			}
+			this.ease = ease;
+			
 			if (graphic != null)
 			{
 				this.graphic = graphic;
@@ -39,19 +47,30 @@ package menu
 			this.duration = duration;
 			this.goto = goto;
 			this.ease = ease;
-			y = 0;
 			destX = 0;
-			if (direction == 1)
+			destY = 0;
+			switch(direction)
 			{
-				x = FP.width;
-			}
-			else 
-			{
-				x = -FP.width;
+				case 'left':
+					x = FP.width;
+					y = 0;
+					break;
+				case 'right':
+					x = -FP.width;
+					y = 0;
+					break;
+				case 'up':
+					x = 0;
+					y = FP.height;
+					break;
+				case 'down':
+					x = 0;
+					y = -FP.height;
+					break;
 			}
 			super(x, y, graphic);
 			
-			layer = -60;
+			this.layer = layer;
 			//(graphic as Backdrop).alpha = 0.5;
 			
 			motionTween = new LinearMotion(switchWorlds);
@@ -60,7 +79,7 @@ package menu
 		override public function added():void
 		{
 			addTween(motionTween);
-			motionTween.setMotion(x, y, destX, y, duration, ease);
+			motionTween.setMotion(x, y, destX, destY, duration, ease);
 			super.added();
 		}
 		
@@ -94,7 +113,7 @@ package menu
 		
 		public function switchWorlds():void
 		{
-			Global.inTransition = false;
+			//Global.inTransition = false;
 			if (goto) FP.world = new goto;
 			FP.world.remove(this);
 		}

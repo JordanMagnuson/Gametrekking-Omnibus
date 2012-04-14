@@ -7,6 +7,7 @@ package menu
 	import net.flashpunk.FP;
 	import jui.Button;
 	import flash.desktop.NativeApplication;
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -15,7 +16,7 @@ package menu
 	public class NavigationBar extends Entity
 	{
 		public const SLIDE_DURATION:Number = 1;
-		public var slideDirection:Number; 
+		public var slideDirection:String; 
 		
 		public var background:Image = Image.createRect(SuperGlobal.SCREEN_WIDTH, 46, Colors.MENU_CREAM, 0.5);
 		
@@ -65,7 +66,7 @@ package menu
 			cambodiaButton.layer = layer;		
 			
 			// Credits
-			FP.world.add(creditsButton = new Button(858, 0, new Image(Assets.NAV_CREDITS), null, Global.NAV_HOVER_SCALE, null, null, false, null));	;	
+			FP.world.add(creditsButton = new Button(858, 0, new Image(Assets.NAV_CREDITS), null, Global.NAV_HOVER_SCALE, null, null, false, gotoCredits));	;	
 			creditsButton.layer = layer;		
 			
 			// Quit
@@ -105,22 +106,48 @@ package menu
 			NativeApplication.nativeApplication.exit();
 		}
 		
+		public function gotoCredits():void
+		{
+			trace('goto credits');
+			if (Global.inTransition)
+			{
+				trace("can't slide: in transition");
+				return;	
+			}		
+			if (Global.navButtonIndex == Global.CREDITS_BUTTON_INDEX)
+			{
+				trace("can't slide: already on button " + Global.navButtonIndex);
+				return;	
+			}			
+				
+			FP.world.add(new SlideTransition(new Backdrop(Assets.CREDITS_TOP, false, false), Colors.WHITE, 'up', SLIDE_DURATION, Credits, null, -200));
+			navigationUnderline.goto(creditsButton, SLIDE_DURATION);			
+			//Transition.to(Credits, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 	
+		}
+		
 		public function gotoIntro():void
 		{
+			trace('goto intro');
 			if (Global.inTransition)
+			{
+				trace("can't slide: in transition");
 				return;	
+			}		
 			if (Global.navButtonIndex == Global.INTRO_BUTTON_INDEX)
-				return;
+			{
+				trace("can't slide: already on button " + Global.navButtonIndex);
+				return;	
+			}		
 				
 			Global.inTransition = true;
 			
 			if (Global.navButtonIndex < Global.INTRO_BUTTON_INDEX)
 			{
-				slideDirection = 1;
+				slideDirection = 'right';
 			}
 			else
 			{
-				slideDirection = -1;
+				slideDirection = 'left';
 			}
 			FP.world.add(new SlideTransition(new Backdrop(Assets.INTRO_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, IntroLanding));
 			navigationUnderline.goto(introButton, SLIDE_DURATION);
@@ -128,20 +155,27 @@ package menu
 		
 		public function gotoKorea():void
 		{
+			trace('goto korea');
 			if (Global.inTransition)
+			{
+				trace("can't slide: in transition");
 				return;	
+			}
 			if (Global.navButtonIndex == Global.KOREA_BUTTON_INDEX)
-				return;
+			{
+				trace("can't slide: already on button " + Global.navButtonIndex);
+				return;	
+			}		
 				
 			Global.inTransition = true;
 			
 			if (Global.navButtonIndex < Global.KOREA_BUTTON_INDEX)
 			{
-				slideDirection = 1;
+				slideDirection = 'right';;
 			}
 			else
 			{
-				slideDirection = -1;
+				slideDirection = 'left';;
 			}
 			FP.world.add(new SlideTransition(new Backdrop(Assets.KOREA_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, KoreaLanding));
 			navigationUnderline.goto(koreaButton, SLIDE_DURATION);
@@ -149,20 +183,27 @@ package menu
 		
 		public function gotoTaiwan():void
 		{
+			trace('goto taiwan');
 			if (Global.inTransition)
+			{
+				trace("can't slide: in transition");
 				return;	
+			}
 			if (Global.navButtonIndex == Global.TAIWAN_BUTTON_INDEX)
-				return;				
+			{
+				trace("can't slide: already on button " + Global.navButtonIndex);
+				return;	
+			}					
 				
 			Global.inTransition = true;			
 			
 			if (Global.navButtonIndex < Global.TAIWAN_BUTTON_INDEX)
 			{
-				slideDirection = 1;
+				slideDirection = 'right';
 			}
 			else
 			{
-				slideDirection = -1;
+				slideDirection = 'left';
 			}			
 			FP.world.add(new SlideTransition(new Backdrop(Assets.TAIWAN_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, TaiwanLanding));
 			navigationUnderline.goto(taiwanButton, SLIDE_DURATION);
@@ -170,20 +211,27 @@ package menu
 		
 		public function gotoVietnam():void
 		{
+			trace('goto vietnam');
 			if (Global.inTransition)
+			{
+				trace("can't slide: in transition");
 				return;	
+			}
 			if (Global.navButtonIndex == Global.VIETNAM_BUTTON_INDEX)
-				return;
+			{
+				trace("can't slide: already on button " + Global.navButtonIndex);
+				return;	
+			}		
 				
 			Global.inTransition = true;			
 			
 			if (Global.navButtonIndex < Global.VIETNAM_BUTTON_INDEX)
 			{
-				slideDirection = 1;
+				slideDirection = 'right';
 			}
 			else
 			{
-				slideDirection = -1;
+				slideDirection = 'left';
 			}			
 			FP.world.add(new SlideTransition(new Backdrop(Assets.VIETNAM_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, VietnamLanding));
 			navigationUnderline.goto(vietnamButton, SLIDE_DURATION);
@@ -191,20 +239,27 @@ package menu
 		
 		public function gotoCambodia():void
 		{
+			trace('goto cambodia');
 			if (Global.inTransition)
+			{
+				trace("can't slide: in transition");
 				return;	
+			}
 			if (Global.navButtonIndex == Global.CAMBODIA_BUTTON_INDEX)
-				return;
+			{
+				trace("can't slide: already on button " + Global.navButtonIndex);
+				return;	
+			}		
 				
 			Global.inTransition = true;			
 			
 			if (Global.navButtonIndex < Global.CAMBODIA_BUTTON_INDEX)
 			{
-				slideDirection = 1;
+				slideDirection = 'right';
 			}
 			else
 			{
-				slideDirection = -1;
+				slideDirection = 'left';
 			}			
 			FP.world.add(new SlideTransition(new Backdrop(Assets.CAMBODIA_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, CambodiaLanding));
 			navigationUnderline.goto(cambodiaButton, SLIDE_DURATION);

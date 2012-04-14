@@ -51,6 +51,11 @@ package menu
 			Mouse.show();
 		}
 		
+		override public function begin():void
+		{
+			Global.inTransition = false;			
+		}
+		
 	}
 
 }

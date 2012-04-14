@@ -71,7 +71,7 @@ package jui
 				graphic = this.imageHover;
 			}
 			this.imageOff.scale = hoverScale;
-			Mouse.cursor = 'button';
+			//Mouse.cursor = 'button';
 			this.hover = true;
 		}
 		
@@ -81,7 +81,7 @@ package jui
 			graphic = this.imageOff;
 			if (this.imageOff.scale != 1)
 				this.imageOff.scale = 1;
-			Mouse.cursor = 'arrow';
+			//Mouse.cursor = 'arrow';
 			this.hover = false;
 		}		
 		

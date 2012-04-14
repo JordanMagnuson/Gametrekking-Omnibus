@@ -68,6 +68,10 @@ package menu
 		[Embed(source = "../../assets/menu/intro_grandmother.png")] public static const INTRO_GRANDMOTHER:Class;
 		[Embed(source = "../../assets/menu/intro_killer.png")] public static const INTRO_KILLER:Class;
 		[Embed(source = "../../assets/menu/intro_brief_history.png")] public static const INTRO_BRIEF_HISTORY:Class;
+		
+		// Credits
+		[Embed(source = "../../assets/credits/credits_top.png")] public static const CREDITS_TOP:Class;
+		[Embed(source = "../../assets/credits/credits_full.png")] public static const CREDITS_FULL:Class;
 	}
 
 }
