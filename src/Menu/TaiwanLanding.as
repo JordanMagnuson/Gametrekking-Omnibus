@@ -3,8 +3,6 @@ package menu
 	import flash.geom.Rectangle;
 	import flash.net.URLRequest;
 	import gallery.Gallery;
-	import gum.FlashPunk.UIEntity;
-	import gum.UISkin;
 	import kindnessofstrangers.Game;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Backdrop;
