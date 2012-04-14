@@ -44,7 +44,7 @@ package gallery
 			Mouse.cursor = 'button';
 			add(currentPhoto);
 			currentPhoto.fadeInCallback();
-			currentIndex = 1;
+			currentIndex = 0;
 		}
 		
 		override public function update():void
@@ -72,10 +72,27 @@ package gallery
 			if (currentPhoto.fadeInComplete)
 			{
 				Mouse.show();
-				if (Input.mousePressed)
+				if (Input.mousePressed || Input.pressed(Key.SPACE) || Input.pressed(Key.RIGHT))
 				{
 					nextPhoto();
 				}
+				else if (Input.pressed(Key.LEFT))
+				{
+					previousPhoto();
+				}
+			}
+		}
+		
+		public function previousPhoto(fadeIn:Boolean = true):void
+		{
+			if (currentIndex > 0)
+			{
+				Mouse.hide();
+				currentIndex--;
+				lastPhoto = currentPhoto;
+				lastPhoto.fadeOut(FADE_OUT_DURATION);
+				add(currentPhoto = new Photo(0, 0, photoArray[currentIndex][0], photoArray[currentIndex][1]));
+				currentPhoto.fadeIn(FADE_IN_DURATION);
 			}
 		}
 		
@@ -88,8 +105,9 @@ package gallery
 			
 			Mouse.hide();
 			
-			if (currentIndex < photoArray.length)
+			if (currentIndex < photoArray.length - 1)
 			{
+				currentIndex++;
 				lastPhoto = currentPhoto;
 				lastPhoto.fadeOut(FADE_OUT_DURATION);
 				add(currentPhoto = new Photo(0, 0, photoArray[currentIndex][0], photoArray[currentIndex][1]));
@@ -108,7 +126,6 @@ package gallery
 					currentPhoto.fadeIn(FADE_IN_DURATION);
 				}				
 			}
-			currentIndex++;
 		}				
 		
 	}

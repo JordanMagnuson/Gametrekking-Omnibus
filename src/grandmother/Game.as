@@ -29,7 +29,18 @@ package grandmother
 			// Center screen in window
 			FP.screen.y = -(768 - SuperGlobal.SCREEN_HEIGHT) / 2;
 			//FP.screen.x = (SuperGlobal.SCREEN_WIDTH - FP.width) / 2;
-			//FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;				
+			//FP.screen.y = (SuperGlobal.SCREEN_HEIGHT - FP.height) / 2;	
+			
+			resetGlobals();
+		}
+		
+		public function resetGlobals():void
+		{
+			// Variables
+			Global.hasSponge = false;
+			Global.bucketDropped = false;
+			Global.startedFade = false;
+			Global.endingStarted = false;			
 		}
 		
 		override public function update():void

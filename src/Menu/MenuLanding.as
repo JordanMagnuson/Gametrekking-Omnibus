@@ -24,6 +24,7 @@ package menu
 		{
 			// Reset the engine and screen
 			(FP.engine as Main).reset(SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT, 60, false);	
+			FP.screen.smoothing = true;
 			//if (FP.fixed == true || FP.screen.width != SuperGlobal.SCREEN_WIDTH || FP.screen.height != SuperGlobal.SCREEN_HEIGHT)
 			//{
 				//(FP.engine as Main).reset(SuperGlobal.SCREEN_WIDTH, SuperGlobal.SCREEN_HEIGHT, 60, false);	
