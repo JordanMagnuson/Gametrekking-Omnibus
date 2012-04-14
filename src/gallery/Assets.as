@@ -47,13 +47,13 @@ package gallery
 		[Embed(source = "../../assets/gallery/taiwan/taiwan_end.png")] static public const taiwan_end:Class
 		
 		public static const TAIWAN_PHOTO_ARRAY:Array = new Array(
-			new Array(taiwan_07, "A woman praying and casting stones at multidenominational Longshan temple in Taipei. Like most temples in Taiwan, Longshan honors a mix of Buddhist, Taoist, and local folk deities."),
+			new Array(taiwan_07, "A woman praying and casting stones at multidenominational Longshan Temple in Taipei. Like most temples in Taiwan, Longshan honors a mix of Buddhist, Taoist, and local folk deities."),
 			new Array(taiwan_09, "Taiwan's ROC flag flying proudly outside of the National Palace Museum, which houses the world's largest collection of artifacts and treasures from mainland China. China considers the artifacts stolen, and threatens to take them back by force. Just one of the many tensions that exist between the two nations, which inspired my game, 'Status Quo.'"),
 			new Array(taiwan_11, "In Taipei, on the metro, I played an elaborate game of sign language with this boy, who's hat read 'Yo Yo King,' while his sister looked on and laughed hysterically. What game we were playing, I'll never know."),
 			new Array(taiwan_02, "Hiking the Historic Caoling Trail in the rain, above the tropic tree line."),
 			new Array(taiwan_03, "A family paying their respects at a small mountaintop shrine. Whether perched on top of a mountain, placed unassumingly beside the road, or tucked away under a bridge, the shrines seemed omnipresent in Taiwan."),
-			new Array(taiwan_04, "Tiangong temple, in Dali, where we spent the night after hiking Caoling."),
-			new Array(taiwan_05, "Hitching a ride on the back of a pickup on Taiwan's east coast. Our drivers were incredibly friendly, and the ocean breeze felt amazing (especially as this was our first real sunny day in Taiwan)."),
+			new Array(taiwan_04, "Tiangong Temple, in Dali, where we spent the night after hiking Caoling."),
+			new Array(taiwan_05, "Hitching a ride on the back of a pickup on Taiwan's east coast. Our drivers were incredibly friendly, and the ocean breeze felt amazing (especially as this was our first real sunny day in Taiwan, after two weeks of rain)."),
 			new Array(taiwan_06, "Buddhist monks in Taroko Gorge, who were returning to their monastery after visiting a sick friend. After talking for a bit, they insisted on sharing their lunch with us... delicious honey-bread dessert included."),
 			new Array(taiwan_08, "Dinner with the Mao-Mao's, a family in Tainan who took us in sight-unseen, and treated us like family... one of the many inspirations for my game, 'The Kindness of Strangers.'"),
 			new Array(taiwan_10, "A picture I took in Kaohsiung Harbor, which embodies the Taiwanese spirit for me. I will never forget all the smiling faces, and the outrageous kindness that was shown to us there."),
@@ -74,7 +74,7 @@ package gallery
 		[Embed(source = "../../assets/gallery/cambodia/cambodia_end.png")] static public const cambodia_end:Class
 		
 		public static const CAMBODIA_PHOTO_ARRAY:Array = new Array(
-			new Array(cambodia_11, "Skulls of Khmer Rouge victims at the Choeung Ek killing fields. Cambodia's overwhelming, horrific past prodded me to create 'The Killer' and 'A Brief History of Cambodia.'"),
+			new Array(cambodia_11, "Skulls of Khmer Rouge victims at the Choeung Ek Killing Fields. Cambodia's overwhelming, horrific past prodded me to create 'The Killer' and 'A Brief History of Cambodia.'"),
 			new Array(cambodia_02, "A Buddhist monk on a moped. A common sight in Phnom Penh, as all male Cambodians are expected to serve some time in the ubiquitous orange robes."),
 			new Array(cambodia_01, "Eating dinner with Rob (an Australian we met in Phnom Penh) and his Cambodian fiancée, Srey Na. Srey Na's fun extended family joined us later for a wonderful evening of laughter, eating frog legs, and drinking beer with ice."),
 			new Array(cambodia_03, "In Kompong Cham, the young and the hip lead the way in a line-dancing, aerobic hybrid workout."),

@@ -53,7 +53,8 @@ package menu
 		
 		override public function begin():void
 		{
-			Global.inTransition = false;			
+			Global.inTransition = false;	
+			//FP.tweener.clearTweens();
 		}
 		
 	}

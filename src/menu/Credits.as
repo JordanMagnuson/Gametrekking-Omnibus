@@ -20,9 +20,11 @@ package menu
 	public class Credits extends World
 	{
 		public static var DEFAULT_SCROLL_SPEED:Number = 2;
+		public static var SCROLL_ADJUST_SPEED:Number = 0.2;
 		
 		public var scrollSpeed:Number = DEFAULT_SCROLL_SPEED;
 		public var finished:Boolean = false;
+		public var motionTween:LinearMotion;
 		
 		public var creditsEntity:Entity;
 		public var creditsCanvas:Canvas;
@@ -37,7 +39,7 @@ package menu
 			
 			// Add stuff
 			add(creditsEntity = new Entity(0, 0, creditsCanvas));
-			//motionTween = new LinearMotion(finished);
+			//motionTween = new LinearMotion(finishedCallback);
 			//addTween(motionTween, false);
 			
 			// Define keys
@@ -48,13 +50,13 @@ package menu
 		override public function begin():void
 		{
 			Mouse.hide();
-			//motionTween.setMotionSpeed(creditsEntity.x, creditsEntity.y, 0, -creditsCanvas.height, SCROLL_SPEED);
+			//motionTween.setMotionSpeed(creditsEntity.x, creditsEntity.y, 0, -creditsCanvas.height, scrollSpeed);
 		}
 		
-		//public function finished():void
-		//{
-			//Transition.to(IntroLanding, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS));
-		//}
+		public function finishedCallback():void
+		{
+			Transition.to(IntroLanding, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS));
+		}
 		
 		override public function update():void
 		{
@@ -62,6 +64,7 @@ package menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
 				Transition.to(IntroLanding, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS));
+				return;
 			}		
 			
 			// Finished
@@ -74,15 +77,16 @@ package menu
 			// Update scroll speed
 			if (Input.check('speedUp'))
 			{
-				scrollSpeed += 0.5;
+				scrollSpeed += SCROLL_ADJUST_SPEED;
 			}
 			else if (Input.check('slowDown'))
 			{
-				scrollSpeed -= 0.5;
+				scrollSpeed -= SCROLL_ADJUST_SPEED;
 			}
 			
 			//Motion
 			creditsEntity.y -= scrollSpeed;
+			//creditsEntity. y = motionTween.y;
 			
 			if (creditsEntity.y > 0) 
 			{

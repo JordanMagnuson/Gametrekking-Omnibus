@@ -30,14 +30,16 @@ package briefhistory
 		public static const SCARE_MOVE_SPEED:Number = 100;
 		public static const DEAD_BEFORE_SCARE:Number = 1;	// 1
 		public static const DEAD_BEFORE_ALWAYS_SACRED:Number = 5;
-		public static var scareDistance:Number = 20;
-		public static var scareDistanceAfter:Number = 80; 	// How far blocks will move to (from hand) once scared
+
 		
 		// Global variables
+		public static var scareDistance:Number = 20;
+		public static var scareDistanceAfter:Number = 80; 	// How far blocks will move to (from hand) once scared		
 		public static var t:Number = 0;							// Time elapsed since start of game
 		public static var peopleKilled:Number = 0;
 		public static var startedShaking:Boolean = false;
 		public static var shakeAmount:Number = 0.3;
+		public static var returningToMenu:Boolean = false;
 		//public static var k:Number = 2 * Math.PI / WAVE_LENGTH;
 		
 		// Global entities

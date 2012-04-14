@@ -31,6 +31,9 @@ package briefhistory
 		
 		override public function update():void
 		{
+			if (Global.returningToMenu)
+				return;
+			
 			x = FP.world.mouseX;
 			y = FP.world.mouseY;
 			

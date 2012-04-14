@@ -1,5 +1,6 @@
 package briefhistory  
 {
+	import kindnessofstrangers.Menu;
 	import menu.CambodiaLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Backdrop;
@@ -7,6 +8,7 @@ package briefhistory
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Input;
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -24,16 +26,27 @@ package briefhistory
 		public function resetGlobals():void
 		{
 			// Global variables
+			Global.scareDistance = 20;
+			Global.scareDistanceAfter = 80;
 			Global.t = 0;							// Time elapsed since start of game
 			Global.peopleKilled = 0;
 			Global.startedShaking = false;
-			Global.shakeAmount = 0.3;			
+			Global.shakeAmount = 0.3;		
+			Global.returningToMenu = false;
+		
+			// Global entities	
+			Global.mouseController = null;
+			Global.floatController = null;
+			Global.personGrabbed = null;
+			Global.bloodOverlay = null;
+			Global.ambientController = null;
+			Global.gameEndController = null;			
 		}
 		
 		override public function begin():void
 		{
 			// Fade In
-			add(new FadeIn(Colors.BLACK, 10, 5));
+			//add(new FadeIn(Colors.BLACK, 10, 5));
 			
 			// Background
 			add(new Background);
@@ -66,6 +79,10 @@ package briefhistory
 			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
+				FP.tweener.clearTweens();
+				
+				Global.returningToMenu = true;
+				
 				// Stop sounds
 				sndWaves.stop();
 				if (Global.ambientController.currentSound) Global.ambientController.currentSound.stop();
@@ -108,7 +125,8 @@ package briefhistory
 				}
 				
 				// Return
-				FP.world = new CambodiaLanding;
+				//FP.world = new CambodiaLanding;
+				Transition.to(CambodiaLanding, new menu.Global.TRANS_OUT(menu.Global.TRANS_OUT_OPTIONS), new menu.Global.TRANS_IN(menu.Global.TRANS_IN_OPTIONS)); 	
 			}		
 			
 			super.update();
