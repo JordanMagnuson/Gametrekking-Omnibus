@@ -187,4 +187,7 @@
   <!-- <colorDepth></colorDepth> -->
   <!-- </android> -->
   <!-- End of the schema for adding the android specific tags in AndroidManifest.xml file -->
+  <description>A collection of small experimental games and interactive sketches inspired by travel in Asia.</description>
+  <copyright>Jordan Magnuson</copyright>
+  <supportedProfiles>desktop extendedDesktop</supportedProfiles>
 </application>

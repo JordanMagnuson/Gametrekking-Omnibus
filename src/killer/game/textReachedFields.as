@@ -13,8 +13,8 @@ package killer.game
 		public static const FADE_IN_DURATION:Number = 3;
 		public static const FADE_OUT_DURATION:Number = 3;
 
-		public static var text:Text;
-		public static var fadeTween:ColorTween;
+		public var text:Text;
+		public var fadeTween:ColorTween;
 		
 		public var fadeInAlarm:Alarm = new Alarm(3, fadeIn);
 		public var fadeOutAlarm:Alarm = new Alarm(1, fadeOut);		

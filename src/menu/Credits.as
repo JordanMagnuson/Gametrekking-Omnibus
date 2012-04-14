@@ -19,8 +19,9 @@ package menu
 	 */
 	public class Credits extends World
 	{
-		public static var DEFAULT_SCROLL_SPEED:Number = 2;
-		public static var SCROLL_ADJUST_SPEED:Number = 0.2;
+		public static const MAX_SCROLL_SPEED:Number = 10;
+		public static const DEFAULT_SCROLL_SPEED:Number = 2;
+		public static const SCROLL_ADJUST_SPEED:Number = 0.2;
 		
 		public var scrollSpeed:Number = DEFAULT_SCROLL_SPEED;
 		public var finished:Boolean = false;
@@ -83,6 +84,10 @@ package menu
 			{
 				scrollSpeed -= SCROLL_ADJUST_SPEED;
 			}
+			if (scrollSpeed > MAX_SCROLL_SPEED)
+				scrollSpeed = MAX_SCROLL_SPEED;
+			else if (scrollSpeed < -MAX_SCROLL_SPEED)
+				scrollSpeed = -MAX_SCROLL_SPEED;
 			
 			//Motion
 			creditsEntity.y -= scrollSpeed;

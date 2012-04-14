@@ -39,7 +39,7 @@ package killer.game
 		
 		public static const EARLIEST_EXPLOSION:Number = timeInJungle;
 		public static const LATEST_EXPLOSION:Number = timeInJungle + timeInForest + timeInBeach;
-		public static const EXPLOSION_CHANCE:Number = 0.25;
+		public static const EXPLOSION_CHANCE:Number = 0; // 0.25;
 		
 		// Global variables
 		public static var shouldExplode:Boolean = false;

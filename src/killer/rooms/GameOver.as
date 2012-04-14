@@ -89,15 +89,15 @@ package killer.rooms
 				  trace("Error occurred!");
 				}
 			}
-			if (Global.endScreen >= 2 && Input.pressed(Key.X))
-			{
-				request = new URLRequest(leaveCommentURL);
-				try {
-				  navigateToURL(request, '_blank'); // second argument is target
-				} catch (e:Error) {
-				  trace("Error occurred!");
-				}
-			}
+			//if (Global.endScreen >= 2 && Input.pressed(Key.X))
+			//{
+				//request = new URLRequest(leaveCommentURL);
+				//try {
+				  //navigateToURL(request, '_blank'); // second argument is target
+				//} catch (e:Error) {
+				  //trace("Error occurred!");
+				//}
+			//}
 			super.update();
 		}		
 		

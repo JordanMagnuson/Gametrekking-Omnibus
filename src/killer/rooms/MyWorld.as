@@ -94,9 +94,7 @@ package killer.rooms
 		public var startFallingCameraAlarm:Alarm;
 		
 		public function MyWorld()      
-		{
-			resetGlobals();
-			
+		{	
 			// Reset the screen
 			(FP.engine as Main).reset(342, 200, 60, false);
 			//FP.width = 342;
@@ -174,6 +172,9 @@ package killer.rooms
 			}
 			else
 				trace('no explosion this time');
+				
+			// Reset globals
+			resetGlobals();
 		}
 		
 		public function resetGlobals():void
