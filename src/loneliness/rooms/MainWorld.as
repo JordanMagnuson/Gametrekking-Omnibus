@@ -1,5 +1,7 @@
 package loneliness.rooms 
 {
+	import flash.utils.Dictionary;
+	import kindnessofstrangers.Menu;
 	import loneliness.game.Background01;
 	import loneliness.game.Background02;
 	import loneliness.game.Background03;
@@ -27,6 +29,8 @@ package loneliness.rooms
 	import net.flashpunk.Sfx;
 	import net.flashpunk.utils.Input;
 	import flash.ui.Mouse;
+	import punk.transition.Transition;
+	import menu.Global;
 	
 	public class MainWorld extends World
 	{
@@ -85,6 +89,7 @@ package loneliness.rooms
 			addTween(backgroundAlarm, true);
 			
 			music.loop();
+			//FP.world = new MessageScreen;
 			
 			Mouse.hide();
 			
@@ -99,6 +104,25 @@ package loneliness.rooms
 		 */
 		override public function update():void 
 		{			
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
+				
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}
+				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
+				
+				// Return
+				Transition.to(KoreaLanding, new menu.Global.TRANS_OUT(menu.Global.TRANS_OUT_OPTIONS), new menu.Global.TRANS_IN(menu.Global.TRANS_IN_OPTIONS));
+			}			
+			
 			// update entities
 			super.update();
 			
@@ -106,12 +130,6 @@ package loneliness.rooms
 			
 			// Camera
 			cameraFollow();
-			
-			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
-			{
-				music.stop();
-				FP.world = new KoreaLanding;
-			}			
 			
 			// Background
 			//updateBackground();

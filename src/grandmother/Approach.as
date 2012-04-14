@@ -1,11 +1,13 @@
 package grandmother  
 {
+	import flash.utils.Dictionary;
 	import menu.VietnamLanding;
 	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import flash.ui.Mouse;
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Input;
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -57,21 +59,21 @@ package grandmother
 			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
-				// Stop sounds
-				Global.SndAmbient.stop();
-
-				var backdropList:Array = [];
-				getClass(PhotoBackdrop, backdropList);
-				for each (var pb:PhotoBackdrop in backdropList)
-				{
-					if (pb.sound.playing)
-					{
-						pb.sound.stop();
-					}
-				}				
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
+				
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}		
+				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
 				
 				// Return
-				FP.world = new VietnamLanding;
+				punk.transition.Transition.to(VietnamLanding, new SuperGlobal.TRANS_OUT(SuperGlobal.TRANS_OUT_OPTIONS), new SuperGlobal.TRANS_IN(SuperGlobal.TRANS_IN_OPTIONS));
+				//FP.world = new VietnamLanding;
 			}				
 			
 			super.update();

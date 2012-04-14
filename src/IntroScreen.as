@@ -24,7 +24,11 @@ package
 			this.goto = goto;
 			this.returnTo = returnTo;
 			add(new Entity(0, 0, new Backdrop(backdropSource)));
-			Mouse.cursor = 'button';
+		}
+		
+		override public function begin():void
+		{
+			Mouse.cursor = 'button';			
 		}
 		
 		override public function update():void

@@ -2,11 +2,15 @@ package loneliness.rooms
 {
 	import loneliness.game.ChildrenAndText;
 	import menu.KoreaLanding;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import net.flashpunk.Screen;
 	import flash.geom.Rectangle;
 	import net.flashpunk.utils.Input;
+	import menu.Global;
+	import punk.transition.Transition;
+	import flash.utils.Dictionary;
 	
 	/**
 	 * ...
@@ -37,11 +41,25 @@ package loneliness.rooms
 		
 		override public function update():void
 		{
+			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
-				MainWorld.music.stop();
-				FP.world = new KoreaLanding;
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
+				
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}
+				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
+				
+				// Return
+				Transition.to(KoreaLanding, new menu.Global.TRANS_OUT(menu.Global.TRANS_OUT_OPTIONS), new menu.Global.TRANS_IN(menu.Global.TRANS_IN_OPTIONS));
 			}			
+			
 			super.update();
 		}
 		

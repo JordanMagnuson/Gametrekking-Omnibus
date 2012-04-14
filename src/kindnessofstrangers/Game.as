@@ -18,6 +18,10 @@ package kindnessofstrangers
 	import net.flashpunk.utils.Input;
 	import flash.ui.Mouse;
 	
+	import punk.transition.Transition;
+	import flash.utils.Dictionary;
+	import net.flashpunk.Sfx;	
+	
 	/**
 	 * ...
 	 * @author Noel Berry
@@ -110,26 +114,25 @@ package kindnessofstrangers
 				nextlevel();
 			}
 			
+			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
-				if (Global.soundControler) 
-				{
-					Global.soundControler.sndTranscript01.stop();
-					Global.soundControler.sndTranscript02.stop();
-					Global.soundControler.sndTranscript02Break.stop();
-					Global.soundControler.sndTranscript03.stop();
-					Global.soundControler.sndTranscript04.stop();
-				}
-				if (Global.airplane)
-				{
-					Global.airplane.soundPlane.stop();
-				}
-				if (Global.airplane2)
-				{
-					Global.airplane2.soundPlane.stop();
-				}
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
+				
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}		
+				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
+				
+				// Return
+				//punk.transition.Transition.to(TaiwanLanding, new SuperGlobal.TRANS_OUT(SuperGlobal.TRANS_OUT_OPTIONS), new SuperGlobal.TRANS_IN(SuperGlobal.TRANS_IN_OPTIONS));
 				FP.world = new TaiwanLanding;
-			}						
+			}								
 		}
 		
 		public function loadlevel():void 

@@ -6,6 +6,7 @@ package killer.game
 	import net.flashpunk.FP;
 	import killer.rooms.MyWorld;
 	import killer.rooms.MusicChoice;
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -34,7 +35,7 @@ package killer.game
 				{
 					Global.MUSIC_WHILE_WALKING = true;
 					//Global.server.sendMusicChoice();
-					FP.world = new MyWorld;
+					punk.transition.Transition.to(MyWorld, new SuperGlobal.TRANS_OUT(SuperGlobal.TRANS_OUT_OPTIONS), new SuperGlobal.TRANS_IN(SuperGlobal.TRANS_IN_OPTIONS));
 				}
 			}
 			else

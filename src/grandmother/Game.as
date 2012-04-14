@@ -1,10 +1,12 @@
 package grandmother  
 {
+	import flash.utils.Dictionary;
 	import kindnessofstrangers.Menu;
 	import menu.VietnamLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Backdrop;
 	import net.flashpunk.graphics.Image;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import flash.ui.Mouse;
@@ -37,21 +39,21 @@ package grandmother
 			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
-				// Stop sounds
-				Global.SndAmbient.stop();
-
-				var backdropList:Array = [];
-				getClass(PhotoBackdrop, backdropList);
-				for each (var pb:PhotoBackdrop in backdropList)
-				{
-					if (pb.sound.playing)
-					{
-						pb.sound.stop();
-					}
-				}				
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
+				
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}		
+				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
 				
 				// Return
-				FP.world = new VietnamLanding;
+				punk.transition.Transition.to(VietnamLanding, new SuperGlobal.TRANS_OUT(SuperGlobal.TRANS_OUT_OPTIONS), new SuperGlobal.TRANS_IN(SuperGlobal.TRANS_IN_OPTIONS));
+				//FP.world = new VietnamLanding;
 			}				
 			
 			if (Global.dust.cleaned && Global.mouseController.lastPressCounter >= Global.WAIT_TO_DROP_BUCKET && !Global.bucketDropped)

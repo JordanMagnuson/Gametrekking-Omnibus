@@ -1,11 +1,13 @@
 package killer.rooms 
 {
+	import flash.utils.Dictionary;
 	import killer.game.EndScreen02;
 	import killer.game.FadeIn;
 	import menu.CambodiaLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.Screen;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import killer.game.Global;
@@ -15,6 +17,7 @@ package killer.rooms
 	import flash.net.navigateToURL;
 	import flash.ui.Mouse;
 	import killer.Assets;
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -57,15 +60,25 @@ package killer.rooms
 			//}
 			
 			// Return to menu
+			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
-				// Stop sounds
-				if (MyWorld.music) MyWorld.music.stop();
-				if (MyWorld.musicEnd) MyWorld.musicEnd.stop();
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
+				
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}		
+				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
 				
 				// Return
-				FP.world = new CambodiaLanding;
-			}					
+				punk.transition.Transition.to(CambodiaLanding, new SuperGlobal.TRANS_OUT(SuperGlobal.TRANS_OUT_OPTIONS), new SuperGlobal.TRANS_IN(SuperGlobal.TRANS_IN_OPTIONS));
+				//FP.world = new VietnamLanding;
+			}							
 			
 			if (Global.endScreen >= 2 && Input.pressed(Key.SPACE))
 			{  

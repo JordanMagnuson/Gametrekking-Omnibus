@@ -1,7 +1,6 @@
 package menu 
 {
 	import flash.net.URLRequest;
-	import freedombridge.worlds.Intro;
 	import freedombridge.worlds.MyWorld;
 	import gallery.Gallery;
 	import loneliness.rooms.MainWorld;

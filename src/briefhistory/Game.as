@@ -1,5 +1,6 @@
 package briefhistory  
 {
+	import flash.utils.Dictionary;
 	import kindnessofstrangers.Menu;
 	import menu.CambodiaLanding;
 	import net.flashpunk.Entity;
@@ -46,7 +47,7 @@ package briefhistory
 		override public function begin():void
 		{
 			// Fade In
-			//add(new FadeIn(Colors.BLACK, 10, 5));
+			add(new FadeIn(Colors.BLACK, 10, 5));
 			
 			// Background
 			add(new Background);
@@ -79,53 +80,19 @@ package briefhistory
 			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
 				FP.tweener.clearTweens();
 				
-				Global.returningToMenu = true;
-				
-				// Stop sounds
-				sndWaves.stop();
-				if (Global.ambientController.currentSound) Global.ambientController.currentSound.stop();
-				if (Global.ambientController.lastSound) Global.ambientController.lastSound.stop();				
-				Global.ambientController.sndHell01.stop();
-				Global.ambientController.sndHell02.stop();
-				Global.ambientController.sndHell03.stop();
-				
-				var gaspers:Array = [];
-				getClass(PersonGasping, gaspers);
-				for each (var g:PersonGasping in gaspers)
-				{
-					if (g.sndGasping.playing)
-					{
-						g.sndGasping.stop();
-					}
-				}		
-				
-				var swimmers:Array = [];
-				getClass(PersonSwimming, swimmers);
-				for each (var s:PersonSwimming in swimmers)
-				{
-					trace('swimmer stop');
-					s.sndHeartbeat.stop();
-				}				
-				
-				var people:Array = [];
-				//getClass(Person, swimmers);
-				getType('person', people);
-				for each (var p:Person in people)
-				{
-					trace('person stop');
-					p.sndHeartbeat.stop();
-				}							
-				
-				if (Global.personGrabbed) 
-				{
-					Global.personGrabbed.sndHeartbeat.stop();	
-					(Global.personGrabbed as PersonGrabbed).sndDrowning.stop();
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
 				}
 				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
+				
 				// Return
-				//FP.world = new CambodiaLanding;
 				Transition.to(CambodiaLanding, new menu.Global.TRANS_OUT(menu.Global.TRANS_OUT_OPTIONS), new menu.Global.TRANS_IN(menu.Global.TRANS_IN_OPTIONS)); 	
 			}		
 			

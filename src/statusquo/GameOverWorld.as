@@ -1,15 +1,19 @@
 package statusquo  
 {
 	import flash.net.URLRequest;
+	import flash.utils.Dictionary;
 	import menu.TaiwanLanding;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.graphics.Text;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
 	import flash.net.navigateToURL;
+	import menu.Global;
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -96,9 +100,21 @@ package statusquo
 			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
-				if (SoundController.music) SoundController.music.stop();
-				FP.world = new TaiwanLanding;
-			}				
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
+				
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}
+				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
+				
+				// Return
+				Transition.to(TaiwanLanding, new menu.Global.TRANS_OUT(menu.Global.TRANS_OUT_OPTIONS), new menu.Global.TRANS_IN(menu.Global.TRANS_IN_OPTIONS));
+			}					
 			
 			if (Input.pressed(Key.R))
 			{

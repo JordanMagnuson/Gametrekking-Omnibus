@@ -1,6 +1,7 @@
 package killer.rooms
 {
 	import flash.net.LocalConnection;
+	import flash.utils.Dictionary;
 	import killer.game.*;
 	import killer.game.beach.Beach;
 	import killer.game.jungle.Jungle;
@@ -25,6 +26,7 @@ package killer.rooms
 	import killer.SoundController;
 	import killer.Assets;
 	import killer.game.forest.River;
+	import punk.transition.Transition;
 	
 	public class MyWorld extends World
 	{
@@ -224,27 +226,22 @@ package killer.rooms
 			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
-				// Stop sounds
-				soundController.stopSounds();	
-				if (soundController.newSound) soundController.newSound.stop();
-				if (soundController.currentSound) soundController.currentSound.stop();
-				Global.player.sndWalking.stop();
-				music.stop();
-				musicEnd.stop();
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
 				
-				var riverList:Array = [];
-				getClass(River, riverList);
-				for each (var r:River in riverList)
-				{
-					if (r.sndRiver.playing)
-					{
-						r.sndRiver.stop();
-					}
-				}					
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}		
+				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
 				
 				// Return
-				FP.world = new CambodiaLanding;
-			}					
+				punk.transition.Transition.to(CambodiaLanding, new SuperGlobal.TRANS_OUT(SuperGlobal.TRANS_OUT_OPTIONS), new SuperGlobal.TRANS_IN(SuperGlobal.TRANS_IN_OPTIONS));
+				//FP.world = new VietnamLanding;
+			}						
 			
 			// Testing
 			//if (Input.pressed(Key.F12))

@@ -10,6 +10,7 @@ package killer.rooms
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Input;
 	import flash.ui.Mouse;
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -47,10 +48,11 @@ package killer.rooms
 		{
 			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
-			{				
+			{
 				// Return
-				FP.world = new CambodiaLanding;
-			}		
+				punk.transition.Transition.to(CambodiaLanding, new SuperGlobal.TRANS_OUT(SuperGlobal.TRANS_OUT_OPTIONS), new SuperGlobal.TRANS_IN(SuperGlobal.TRANS_IN_OPTIONS));
+				//FP.world = new VietnamLanding;
+			}					
 			
 			// Cursor
 			if (collidePoint('button', Input.mouseX, Input.mouseY))

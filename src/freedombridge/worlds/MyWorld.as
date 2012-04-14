@@ -1,6 +1,7 @@
 package freedombridge.worlds
 {
 	import flash.geom.Point;
+	import flash.utils.Dictionary;
 	import freedombridge.Bank;
 	import freedombridge.Barb01;
 	import freedombridge.Barb02;
@@ -9,6 +10,7 @@ package freedombridge.worlds
 	import freedombridge.Bridge;
 	import freedombridge.Player;
 	import freedombridge.River;
+	import menu.Global;
 	import menu.KoreaLanding;
 	import net.flashpunk.*;
 	import net.flashpunk.tweens.misc.Alarm;
@@ -16,6 +18,7 @@ package freedombridge.worlds
 	import freedombridge.worlds.PhotoWorld;
 	import flash.ui.Mouse;
 	import net.flashpunk.utils.Input;
+	import punk.transition.Transition;
 	
 	public class MyWorld extends World
 	{
@@ -105,10 +108,23 @@ package freedombridge.worlds
 			// camera following
 			cameraFollow();
 			
+			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
-				River.sndRiver.stop();
-				FP.world = new KoreaLanding;
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
+				
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}
+				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
+				
+				// Return
+				Transition.to(KoreaLanding, new Global.TRANS_OUT(menu.Global.TRANS_OUT_OPTIONS), new menu.Global.TRANS_IN(menu.Global.TRANS_IN_OPTIONS));
 			}
 		}		
 		

@@ -33,13 +33,15 @@ package heartattack
 			image.originY = 0;
 			image.x = -GLOW_OFFSET;
 			image.y = 0;	
-			setHitbox(image.width - 2*GLOW_OFFSET, image.height, image.originX, image.originY);				
+			image.alpha = 0;
+			setHitbox(image.width - 2 * GLOW_OFFSET, image.height, image.originX, image.originY);			
+			
+			fadeTween = new ColorTween();
+			fadeTween.alpha = 0;			
 		}
 		
 		override public function added():void
 		{
-			fadeTween = new ColorTween();
-			fadeTween.alpha = 0;
 			fadeIn();
 		}
 		

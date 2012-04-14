@@ -1,10 +1,12 @@
 package menu 
 {
+	import flash.utils.Dictionary;
 	import jui.ButtonController;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Backdrop;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.graphics.Text;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import statusquo.GameWorld;
@@ -51,10 +53,21 @@ package menu
 			Mouse.show();
 		}
 		
+		public function stopAllSounds():void
+		{			
+			// Stop all sounds
+			for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+				if (sfx != null) sfx.stop();
+			}		
+			
+			// Empty sound tracker
+			SuperGlobal.soundsPlaying = new Dictionary();			
+		}
+		
 		override public function begin():void
 		{
 			Global.inTransition = false;	
-			//FP.tweener.clearTweens();
+			stopAllSounds();
 		}
 		
 	}

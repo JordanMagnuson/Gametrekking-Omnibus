@@ -1,8 +1,10 @@
 package heartattack  
 {
 	import flash.net.URLRequest;
+	import flash.utils.Dictionary;
 	import menu.VietnamLanding;
 	import net.flashpunk.graphics.Image;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Key;
@@ -52,13 +54,22 @@ package heartattack
 			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
-				// Stop sounds
-				if (GameOverSequence.music) GameOverSequence.music.stop();
-				if (GameOverSequence.sndFlatline) GameOverSequence.sndFlatline.stop();
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
+				
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}		
+				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
 				
 				// Return
+				//punk.transition.Transition.to(VietnamLanding, new SuperGlobal.TRANS_OUT(SuperGlobal.TRANS_OUT_OPTIONS), new SuperGlobal.TRANS_IN(SuperGlobal.TRANS_IN_OPTIONS));
 				FP.world = new VietnamLanding;
-			}				
+			}			
 			
 			//if (Input.pressed(Key.SPACE))
 			//{  

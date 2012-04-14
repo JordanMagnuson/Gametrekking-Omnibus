@@ -1,13 +1,16 @@
 package heartattack  
 {
 	import flash.geom.Point;
+	import flash.utils.Dictionary;
 	import menu.VietnamLanding;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.tweens.misc.Alarm;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Key;
 	import net.flashpunk.utils.Input;
 	import flash.ui.Mouse;
+	import punk.transition.Transition;
 	
 	/**
 	 * ...
@@ -118,28 +121,22 @@ package heartattack
 			// Return to menu
 			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
 			{
-				// Stop sounds
-				Global.americanController.heartController.heartSoundController.sndBeat01.stop();
-				Global.americanController.heartController.heartSoundController.sndBeat02.stop();
-				Global.americanController.heartController.heartSoundController.sndBeat03.stop();
-				Global.americanController.heartController.heartSoundController.sndBeat04.stop();
-				Global.americanController.heartController.heartSoundController.sndMissed.stop();
-				Global.americanController.heartController.heartSoundController.beatLoop.stop();
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
 				
-				Global.vietController.heartController.heartSoundController.sndBeat01.stop();
-				Global.vietController.heartController.heartSoundController.sndBeat02.stop();
-				Global.vietController.heartController.heartSoundController.sndBeat03.stop();
-				Global.vietController.heartController.heartSoundController.sndBeat04.stop();
-				Global.vietController.heartController.heartSoundController.sndMissed.stop();	
-				Global.vietController.heartController.heartSoundController.beatLoop.stop();
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}		
 				
-				if (GameOverSequence.music) GameOverSequence.music.stop();
-				if (GameOverSequence.sndFlatline) GameOverSequence.sndFlatline.stop();
-				heartattack.Global
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
 				
 				// Return
+				//punk.transition.Transition.to(VietnamLanding, new SuperGlobal.TRANS_OUT(SuperGlobal.TRANS_OUT_OPTIONS), new SuperGlobal.TRANS_IN(SuperGlobal.TRANS_IN_OPTIONS));
 				FP.world = new VietnamLanding;
-			}					
+			}						
 			
 			//trace(Global.phase);
 		
