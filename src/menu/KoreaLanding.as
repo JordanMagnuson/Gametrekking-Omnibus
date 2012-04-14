@@ -22,8 +22,8 @@ package menu
 	{
 		public var map:Entity;
 		public var request:URLRequest;
-		public var reflectionURL:String = "http://chasingdonguri.com/blog-from-beginning?field_country_value_many_to_one=Korea";	
-		public var beingThereURL:String = "http://www.gametrekking.com/the-games/korea/being-there";
+		public var reflectionURL:String = "http://chasingdonguri.com/blog-from-beginning?field_country_value_many_to_one=Korea&utm_source=airapp&utm_medium=desktop&utm_campaign=gametrekkingomnibus";	
+		public var beingThereURL:String = "http://www.gametrekking.com/the-games/korea/being-there?utm_source=airapp&utm_medium=desktop&utm_campaign=gametrekkingomnibus";
 		public var morePhotosURL:String = "http://www.flickr.com/photos/chasingdonguri/collections/72157613775330015/";
 		
 		public function KoreaLanding() 

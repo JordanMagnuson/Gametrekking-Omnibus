@@ -27,8 +27,8 @@ package menu
 	{		
 		public var map:Entity;
 		public var request:URLRequest;
-		public var reflectionURL:String = "http://www.gametrekking.com/blog/taiwan-touch-your-heart";	
-		public var morePhotosURL:String = "http://www.gametrekking.com/blog/taiwan-journey-in-review";
+		public var reflectionURL:String = "http://www.gametrekking.com/blog/taiwan-touch-your-heart?utm_source=airapp&utm_medium=desktop&utm_campaign=gametrekkingomnibus";	
+		public var morePhotosURL:String = "http://www.gametrekking.com/blog/taiwan-journey-in-review?utm_source=airapp&utm_medium=desktop&utm_campaign=gametrekkingomnibus";
 		
 		public function TaiwanLanding() 
 		{

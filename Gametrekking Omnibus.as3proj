@@ -17,7 +17,6 @@
   <classpaths>
     <class path="src" />
     <class path="flashpunk\Draknek-FlashPunk-94a60de" />
-    <class path="flashpunk\RichardMarks-punk.ui-8f85e82\src" />
   </classpaths>
   <!-- Build options -->
   <build>

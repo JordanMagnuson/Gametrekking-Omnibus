@@ -26,10 +26,10 @@ package killer.rooms
 	public class GameOver extends World
 	{
 		public var request:URLRequest;
-		public var learnMoreGameTrekkingCambodiaURL:String = "http://www.gametrekking.com/blog/cambodia-like-no-place-ive-been";
+		public var learnMoreGameTrekkingCambodiaURL:String = "http://www.gametrekking.com/blog/cambodia-like-no-place-ive-been?utm_source=airapp&utm_medium=desktop&utm_campaign=gametrekkingomnibus";
 		public var learnMoreKillingFieldsURL:String = "http://en.wikipedia.org/wiki/The_killing_fields";
 		public var learnMoreCambodiaURL:String = "http://en.wikipedia.org/wiki/Cambodia";
-		public var leaveCommentURL:String = "http://www.gametrekking.com/comment/reply/58#comment-form";
+		public var leaveCommentURL:String = "http://www.gametrekking.com/comment/reply/58#comment-form?utm_source=airapp&utm_medium=desktop&utm_campaign=gametrekkingomnibus";
 		
 		public function GameOver() 
 		{

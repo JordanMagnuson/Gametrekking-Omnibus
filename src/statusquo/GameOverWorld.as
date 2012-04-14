@@ -37,7 +37,7 @@ package statusquo
 		[Embed(source = '../../assets/statusquo/ch_press_space.png')] private const CH_PRESS:Class;
 		public var chPress:Image = new Image(CH_PRESS);				
 		
-		public var learnMoreURL:String = "http://www.gametrekking.com/about-taiwan";
+		public var learnMoreURL:String = "http://www.gametrekking.com/about-taiwan?utm_source=airapp&utm_medium=desktop&utm_campaign=gametrekkingomnibus";
 		
 		public function GameOverWorld() 
 		{

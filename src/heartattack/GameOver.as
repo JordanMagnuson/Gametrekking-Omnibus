@@ -22,8 +22,8 @@ package heartattack
 		public var gameOverText:EntityFader;
 		
 		public var request:URLRequest;
-		public var learnMoreURL:String = "http://www.gametrekking.com/category/tags/vietnam";
-		public var leaveCommentURL:String = "http://www.gametrekking.com/comment/reply/65#comment-form";		
+		public var learnMoreURL:String = "http://www.gametrekking.com/category/tags/vietnam?utm_source=airapp&utm_medium=desktop&utm_campaign=gametrekkingomnibus";
+		public var leaveCommentURL:String = "http://www.gametrekking.com/comment/reply/65#comment-form?utm_source=airapp&utm_medium=desktop&utm_campaign=gametrekkingomnibus";		
 		
 		public function GameOver() 
 		{
