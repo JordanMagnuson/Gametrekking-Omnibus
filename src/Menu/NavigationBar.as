@@ -103,6 +103,13 @@ package menu
 		
 		public function quit():void
 		{
+			Global.inTransition = true;
+			navigationUnderline.goto(quitButton, SLIDE_DURATION);
+			FP.alarm(SLIDE_DURATION, quitFinal);
+		}
+		
+		public function quitFinal():void
+		{
 			NativeApplication.nativeApplication.exit();
 		}
 		

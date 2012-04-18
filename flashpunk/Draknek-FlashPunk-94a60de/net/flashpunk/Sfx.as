@@ -104,10 +104,13 @@
 		private function onComplete(e:Event = null):void
 		{
 			if (_looping) loop(_vol, _pan);
-			else stop();
+			else 
+			{
+				stop();
+				delete SuperGlobal.soundsPlaying[this];
+			}
 			_position = 0;
 			if (complete != null) complete();
-			//SuperGlobal.soundsPlaying[this] = null;
 		}
 		
 		/** @private Add the sound to the global list. */

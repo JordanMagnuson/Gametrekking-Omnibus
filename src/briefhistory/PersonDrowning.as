@@ -82,7 +82,7 @@ package briefhistory
 		{
 			var personList:Array = [];
 
-			world.getClass(PersonFloating, personList);
+			FP.world.getClass(PersonFloating, personList);
 
 			// Finally, we can loop through the array and call each Enemy's die() function.
 			for each (var p:PersonFloating in personList)
@@ -118,7 +118,8 @@ package briefhistory
 			if (sndDrowning.playing) sndDrowning.stop();
 			
 			// Game end
-			if (Global.peopleKilled >= Global.NUMBER_OF_PEOPLE && !Global.gameEndController)
+			//if (true)
+			if (FP.world.typeCount('person') <= 0 && Global.peopleKilled >= Global.NUMBER_OF_PEOPLE && !Global.gameEndController)
 			{
 				FP.world.add(Global.gameEndController = new GameEndController);
 			}

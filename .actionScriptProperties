@@ -46,7 +46,12 @@
   <buildTargets>
     <buildTarget buildTargetName="default">
       <airSettings airCertificatePath="C:/Users/Jordan/Documents/adobe_air_digital_signature_jordan_magnuson.p12" airTimestamp="true" anePathSet="true" version="1">
-        <airExcludes/>
+        <airExcludes>
+          <pathEntry path=".gitignore"/>
+          <pathEntry path="README.markdown"/>
+          <pathEntry path="icon/Thumbs.db"/>
+          <pathEntry path="license.txt"/>
+        </airExcludes>
         <anePaths/>
       </airSettings>
       <actionScriptSettings version="1"/>

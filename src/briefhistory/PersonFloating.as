@@ -111,7 +111,7 @@ package briefhistory
 						unterrifyAlarm = new Alarm(30, unterrify);
 						break;											
 				}
-				addTween(unterrifyAlarm, true);	
+				if (unterrifyAlarm != null) addTween(unterrifyAlarm, true);	
 				terrified = false;
 			}
 			

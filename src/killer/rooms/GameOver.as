@@ -80,15 +80,15 @@ package killer.rooms
 				//FP.world = new VietnamLanding;
 			}							
 			
-			if (Global.endScreen >= 2 && Input.pressed(Key.SPACE))
-			{  
-				request = new URLRequest(learnMoreGameTrekkingCambodiaURL);
-				try {
-				  navigateToURL(request, '_blank'); // second argument is target
-				} catch (e:Error) {
-				  trace("Error occurred!");
-				}
-			}
+			//if (Global.endScreen >= 2 && Input.pressed(Key.SPACE))
+			//{  
+				//request = new URLRequest(learnMoreGameTrekkingCambodiaURL);
+				//try {
+				  //navigateToURL(request, '_blank'); // second argument is target
+				//} catch (e:Error) {
+				  //trace("Error occurred!");
+				//}
+			//}
 			//if (Global.endScreen >= 2 && Input.pressed(Key.X))
 			//{
 				//request = new URLRequest(leaveCommentURL);

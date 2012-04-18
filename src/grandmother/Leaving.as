@@ -1,9 +1,15 @@
 package grandmother  
 {
+	import flash.utils.Dictionary;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Backdrop;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.tweens.sound.SfxFader;
 	import net.flashpunk.World;
+	import net.flashpunk.FP;
+	import punk.transition.Transition;
+	import menu.VietnamLanding;
+	import net.flashpunk.utils.Input;
 	
 	/**
 	 * ...
@@ -33,6 +39,26 @@ package grandmother
 		
 		override public function update():void
 		{
+			// Return to menu
+			if (Input.pressed(SuperGlobal.RETURN_KEY)) 
+			{
+				// Clear tweens (eg fading sounds, FP.alarm, etc.)
+				FP.tweener.clearTweens();
+				
+				// Stop all sounds
+				for each (var sfx:Sfx in SuperGlobal.soundsPlaying) {
+					trace('another sound');
+					if (sfx != null) sfx.stop();
+				}		
+				
+				// Empty sound tracker
+				SuperGlobal.soundsPlaying = new Dictionary();
+				
+				// Return
+				punk.transition.Transition.to(VietnamLanding, new SuperGlobal.TRANS_OUT(SuperGlobal.TRANS_OUT_OPTIONS), new SuperGlobal.TRANS_IN(SuperGlobal.TRANS_IN_OPTIONS));
+				//FP.world = new VietnamLanding;
+			}				
+			
 			if (photoController.currentIndex == photoArray.length && photoController.currentPhoto.fadeInComplete)
 			{
 				fadeOut();

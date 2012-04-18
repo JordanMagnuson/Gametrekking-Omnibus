@@ -11,6 +11,7 @@ package briefhistory
 	 */
 	public class GameEndController extends Entity
 	{
+		public const FADE_OUT_DELAY:Number = 15;
 		public const MUSIC_IN_DELAY:Number = 20;
 		public const MUSIC_FADE_IN_DURATION:Number = 30;
 		
@@ -27,6 +28,8 @@ package briefhistory
 		{	
 			trace('gameEndController added');
 			if (Global.ambientController.started) Global.ambientController.fadeOut(40);
+			
+			FP.alarm(FADE_OUT_DELAY, fadeOut);
 			//FP.alarm(MUSIC_IN_DELAY, startMusic);
 			
 			// Fade out waves
@@ -47,7 +50,7 @@ package briefhistory
 		
 		public function fadeOut():void
 		{
-			FP.world.add(new FadeOut(GameOver, Colors.BLACK, 10, 0));
+			FP.world.add(new FadeOut(GameOver, Colors.BLACK, 20, 0));
 		}
 		
 		public function placeGhosts():void

@@ -96,6 +96,13 @@ package briefhistory
 				Transition.to(CambodiaLanding, new menu.Global.TRANS_OUT(menu.Global.TRANS_OUT_OPTIONS), new menu.Global.TRANS_IN(menu.Global.TRANS_IN_OPTIONS)); 	
 			}		
 			
+			// Game end
+			//if (typeCount('person') <= 0 && !Global.gameEndController)
+			//{
+				//trace('game over starting');
+				//add(Global.gameEndController = new GameEndController);
+			//}			
+			
 			super.update();
 		}
 		
