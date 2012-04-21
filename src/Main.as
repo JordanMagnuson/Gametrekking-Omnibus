@@ -67,10 +67,13 @@ package
 			// See net.flashpunk.Engine constructor
 			
 			// global game properties
-			FP.width = width;
-			FP.height = height;
-			FP.halfWidth = width/2;
-			FP.halfHeight = height/2;
+			if (FP.width != width || FP.height != height) 
+				FP.resize(width, height);
+			//FP.width = width;
+			//FP.height = height;
+			//FP.halfWidth = width/2;
+			//FP.halfHeight = height/2;
+			
 			FP.assignedFrameRate = frameRate;
 			FP.fixed = fixed;
 			FP.timeInFrames = fixed;

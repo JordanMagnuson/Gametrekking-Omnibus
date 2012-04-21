@@ -1,6 +1,7 @@
 package kindnessofstrangers
 {
 	import net.flashpunk.Entity;
+	import net.flashpunk.graphics.Backdrop;
 	import net.flashpunk.graphics.Image
 	import net.flashpunk.masks.Pixelmask;
 	import net.flashpunk.FP;
@@ -14,8 +15,8 @@ package kindnessofstrangers
 		// Graphic
 		[Embed(source = '../../assets/kindnessofstrangers/supertough_maze_top.png')] private const S_MAZE_TOP:Class;
 		[Embed(source = '../../assets/kindnessofstrangers/supertough_maze_bottom.png')] private const S_MAZE_BOTTOM:Class;
-		public var imgTop:Image = new Image(S_MAZE_TOP);
-		public var imgBottom:Image = new Image(S_MAZE_BOTTOM);
+		public var imgTop:Backdrop = new Backdrop(S_MAZE_TOP, false, false);
+		public var imgBottom:Backdrop = new Backdrop(S_MAZE_BOTTOM, false, false);
 		
 		// Solution
 		//[Embed(source = '../../assets/kindnessofstrangers/supertough_maze_top_solution.png')] private const S_MAZE_TOP_SOL:Class;
@@ -42,7 +43,7 @@ package kindnessofstrangers
 			mazeTop.layer = layer;
 			mazeTop.active = active;
 			
-			// Maze bottom
+			// Maze bottom		
 			FP.world.add(mazeBottom = new Entity(x, y + imgTop.height, imgBottom, new Pixelmask(S_MAZE_BOTTOM)));
 			mazeBottom.type = type;
 			mazeBottom.layer = layer;		

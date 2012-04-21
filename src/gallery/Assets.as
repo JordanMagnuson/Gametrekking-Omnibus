@@ -56,7 +56,7 @@ package gallery
 			new Array(taiwan_05, "Hitching a ride on the back of a pickup on Taiwan's east coast. Our drivers were incredibly friendly, and the ocean breeze felt amazing (especially as this was our first real sunny day in Taiwan, after two weeks of rain)."),
 			new Array(taiwan_06, "Buddhist monks in Taroko Gorge, who were returning to their monastery after visiting a sick friend. After talking for a bit, they insisted on sharing their lunch with us... delicious honey-bread dessert included."),
 			new Array(taiwan_08, "Dinner with the Mao-Mao's, a family in Tainan who took us in sight-unseen, and treated us like family... one of the many inspirations for my game, 'The Kindness of Strangers.'"),
-			new Array(taiwan_10, "A picture I took in Kaohsiung Harbor, which embodies the Taiwanese spirit for me. I will never forget all the smiling faces, and the outrageous kindness that was shown to us there."),
+			new Array(taiwan_10, "A picture I took in Kaohsiung Harbor, which embodies the Taiwanese spirit for me. I will never forget all the smiling faces, and the outrageous kindness that was shown to us in Taiwan."),
 			new Array(taiwan_end, null)
 		);		
 		
@@ -101,7 +101,7 @@ package gallery
 		[Embed(source = "../../assets/gallery/vietnam/vietnam_end.png")] static public const vietnam_end:Class
 		
 		public static const VIETNAM_PHOTO_ARRAY:Array = new Array(
-			new Array(vietnam_01, "Ho Chi Minh's Mausoleum: a memorial to a man, and also to a struggle. One of the many conspicuous examples of Vietnam's fascination with the American War, which inspired my short game, 'The Heart Attack.'"),
+			new Array(vietnam_01, "Ho Chi Minh's Mausoleum: a memorial to a man, and also to a struggle. One of the many conspicuous examples of Vietnam's immortalization of the American War, which inspired my short game, 'The Heart Attack.'"),
 			new Array(vietnam_03, "People enjoying a swim in one of Hanoi's lakes."),
 			new Array(vietnam_05, "Getting a haircut in Hanoi."),
 			new Array(vietnam_02, "The Vietnamese hold their ancestors in high regard. The constant demonstration of this fact served as inspiration for my interactive sketch, 'Grandmother.'"),
