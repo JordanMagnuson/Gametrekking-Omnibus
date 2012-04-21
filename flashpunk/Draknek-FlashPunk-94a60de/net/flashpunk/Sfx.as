@@ -42,7 +42,7 @@
 		 */
 		public function play(vol:Number = 1, pan:Number = 0):void
 		{
-			SuperGlobal.soundsPlaying[this] = this;			
+			SuperGlobal.soundsPlaying[this] = this;	
 			if (_channel) stop();
 			_pan = FP.clamp(pan, -1, 1);
 			_vol = vol < 0 ? 0 : vol;
