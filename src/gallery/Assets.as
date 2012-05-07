@@ -49,7 +49,7 @@ package gallery
 		public static const TAIWAN_PHOTO_ARRAY:Array = new Array(
 			new Array(taiwan_07, "A woman praying and casting stones at multidenominational Longshan Temple in Taipei. Like most temples in Taiwan, Longshan honors a mix of Buddhist, Taoist, and local folk deities."),
 			new Array(taiwan_09, "Taiwan's ROC flag flying proudly outside of the National Palace Museum, which houses the world's largest collection of artifacts and treasures from mainland China. China considers the artifacts stolen, and threatens to take them back by force. Just one of the many tensions that exist between the two nations, which inspired my game, 'Status Quo.'"),
-			new Array(taiwan_11, "In Taipei, on the metro, I played an elaborate game of sign language with this boy, who's hat read 'Yo Yo King,' while his sister looked on and laughed hysterically. What game we were playing, I'll never know."),
+			new Array(taiwan_11, "In Taipei, on the metro, I played an elaborate game of sign language with this boy, whose hat read 'Yo Yo King,' while his sister looked on and laughed hysterically. What game we were playing, I'll never know."),
 			new Array(taiwan_02, "Hiking the Historic Caoling Trail in the rain, above the tropic tree line."),
 			new Array(taiwan_03, "A family paying their respects at a small mountaintop shrine. Whether perched on top of a mountain, placed unassumingly beside the road, or tucked away under a bridge, the shrines seemed omnipresent in Taiwan."),
 			new Array(taiwan_04, "Tiangong Temple, in Dali, where we spent the night after hiking Caoling."),
@@ -78,11 +78,11 @@ package gallery
 			new Array(cambodia_02, "A Buddhist monk on a moped. A common sight in Phnom Penh, as all male Cambodians are expected to serve some time in the ubiquitous orange robes."),
 			new Array(cambodia_01, "Eating dinner with Rob (an Australian we met in Phnom Penh) and his Cambodian fiancée, Srey Na. Srey Na's fun extended family joined us later for a wonderful evening of laughter, eating frog legs, and drinking beer with ice."),
 			new Array(cambodia_03, "In Kompong Cham, the young and the hip lead the way in a line-dancing, aerobic hybrid workout."),
-			new Array(cambodia_04, "Meeting an elephant (and it's driver, or 'mahout') before taking a ride in Cambodia's isolated eastern region of Mondulkiri. Indigenous highlanders have captured, tamed, and worked with wild elephants here for over 2,000 years."),
+			new Array(cambodia_04, "Meeting an elephant (and its driver, or 'mahout') before taking a ride in Cambodia's isolated eastern region of Mondulkiri. Indigenous highlanders have captured, tamed, and worked with wild elephants here for over 2,000 years."),
 			new Array(cambodia_05, "Tuol Sleng Genocide Museum has detailed records of many of the people who were imprisoned, tortured, and killed by the Khmer Rouge. The photo of this young boy with his intense, unapologetic gaze, jumped out at me immediately."),
 			new Array(cambodia_06, "On Koh Paen island. The bamboo bridge you see in the background is washed away every year during Cambodia's wet season, and built again when the Southwest monsoon passes."),
 			new Array(cambodia_10, "A painting by Vann Nath: one of seven survivors of prison S-21, where 17,000 victims were killed. This image in particular served as inspiration for my short game, 'The Killer.'"),
-			new Array(cambodia_07, "Sa Vorn, our wonderful Angkor tour guide, studying his English while he waits for Marisa and I at a temple stop. No kidding, that's a grammar book."),
+			new Array(cambodia_07, "Sa Vorn, our wonderful Angkor tour guide, studying his English while he waits for Marisa and me at a temple stop. No kidding, that's a grammar book."),
 			new Array(cambodia_08, "The incomparable Angkor Wat."),
 			new Array(cambodia_end, null)
 		);			

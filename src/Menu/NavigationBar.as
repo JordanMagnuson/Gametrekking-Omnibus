@@ -150,11 +150,11 @@ package menu
 			
 			if (Global.navButtonIndex < Global.INTRO_BUTTON_INDEX)
 			{
-				slideDirection = 'right';
+				slideDirection = 'left';
 			}
 			else
 			{
-				slideDirection = 'left';
+				slideDirection = 'right';
 			}
 			FP.world.add(new SlideTransition(new Backdrop(Assets.INTRO_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, IntroLanding));
 			navigationUnderline.goto(introButton, SLIDE_DURATION);
@@ -178,11 +178,11 @@ package menu
 			
 			if (Global.navButtonIndex < Global.KOREA_BUTTON_INDEX)
 			{
-				slideDirection = 'right';;
+				slideDirection = 'left';;
 			}
 			else
 			{
-				slideDirection = 'left';;
+				slideDirection = 'right';;
 			}
 			FP.world.add(new SlideTransition(new Backdrop(Assets.KOREA_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, KoreaLanding));
 			navigationUnderline.goto(koreaButton, SLIDE_DURATION);
@@ -206,11 +206,11 @@ package menu
 			
 			if (Global.navButtonIndex < Global.TAIWAN_BUTTON_INDEX)
 			{
-				slideDirection = 'right';
+				slideDirection = 'left';
 			}
 			else
 			{
-				slideDirection = 'left';
+				slideDirection = 'right';
 			}			
 			FP.world.add(new SlideTransition(new Backdrop(Assets.TAIWAN_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, TaiwanLanding));
 			navigationUnderline.goto(taiwanButton, SLIDE_DURATION);
@@ -234,11 +234,11 @@ package menu
 			
 			if (Global.navButtonIndex < Global.VIETNAM_BUTTON_INDEX)
 			{
-				slideDirection = 'right';
+				slideDirection = 'left';
 			}
 			else
 			{
-				slideDirection = 'left';
+				slideDirection = 'right';
 			}			
 			FP.world.add(new SlideTransition(new Backdrop(Assets.VIETNAM_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, VietnamLanding));
 			navigationUnderline.goto(vietnamButton, SLIDE_DURATION);
@@ -262,11 +262,11 @@ package menu
 			
 			if (Global.navButtonIndex < Global.CAMBODIA_BUTTON_INDEX)
 			{
-				slideDirection = 'right';
+				slideDirection = 'left';
 			}
 			else
 			{
-				slideDirection = 'left';
+				slideDirection = 'right';
 			}			
 			FP.world.add(new SlideTransition(new Backdrop(Assets.CAMBODIA_LANDING, false, false), Colors.WHITE, slideDirection, SLIDE_DURATION, CambodiaLanding));
 			navigationUnderline.goto(cambodiaButton, SLIDE_DURATION);
