@@ -1,10 +1,12 @@
 package jui 
 {
+	import menu.Assets;
 	import net.flashpunk.Entity;
 	import net.flashpunk.Graphic;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.Mask;
 	import net.flashpunk.FP;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.utils.Input;
 	import flash.ui.Mouse;
 	
@@ -22,8 +24,12 @@ package jui
 		public var onPress:Function;
 		
 		public var hover:Boolean = false;
+		public var playHoverSound:Boolean = true;
 		
-		public function Button(x:Number = 0, y:Number = 0, imageOff:Image = null, imageHover:Image = null, hoverScale:Number = 1,  maskOff:Mask = null, maskHover:Mask = null, centered:Boolean = true, onPress:Function = null) 
+		public var sndRollover:Sfx = new Sfx(Assets.SND_ROLLOVER);
+		public var sndClick:Sfx = new Sfx(Assets.SND_CLICK);		
+		
+		public function Button(x:Number = 0, y:Number = 0, imageOff:Image = null, imageHover:Image = null, hoverScale:Number = 1,  maskOff:Mask = null, maskHover:Mask = null, centered:Boolean = true, onPress:Function = null, playHoverSound:Boolean = true) 
 		{
 			this.imageOff = imageOff;
 			this.imageHover = imageHover;
@@ -31,6 +37,7 @@ package jui
 			this.maskOff = maskOff;
 			this.maskHover = maskHover;			
 			this.onPress = onPress;
+			this.playHoverSound = playHoverSound;
 			
 			if (centered)
 			{
@@ -69,6 +76,10 @@ package jui
 			if (this.imageHover != null) 
 			{
 				graphic = this.imageHover;
+			}
+			if (this.playHoverSound)
+			{
+				sndRollover.play(0.5);
 			}
 			this.imageOff.scale = hoverScale;
 			//Mouse.cursor = 'button';

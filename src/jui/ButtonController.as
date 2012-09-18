@@ -1,8 +1,10 @@
 package jui 
 {
+	import menu.Assets;
 	import net.flashpunk.Entity;
 	import net.flashpunk.FP;
 	import jui.Button;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.utils.Input;
 	import menu.Global;
 	import flash.ui.Mouse;
@@ -14,6 +16,8 @@ package jui
 	public class ButtonController extends Entity
 	{
 		public var overButton:Boolean;
+		public var sndRollover:Sfx = new Sfx(Assets.SND_ROLLOVER);
+		public var sndClick:Sfx = new Sfx(Assets.SND_CLICK);
 		
 		public function ButtonController() 
 		{
@@ -46,7 +50,11 @@ package jui
 					overButton = true;
 					if (Input.mousePressed)
 					{
-						if (b.onPress != null) b.onPress();
+						if (b.onPress != null) 
+						{
+							//sndClick.play();
+							b.onPress();
+						}
 					}
 					if (!b.hover)
 					{

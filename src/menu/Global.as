@@ -28,6 +28,7 @@ package menu
 		
 		public static var navButtonIndex;
 		public static var inTransition:Boolean = false;
+		public static var voiceIntroPlayed:Boolean = false;
 		
 	}
 

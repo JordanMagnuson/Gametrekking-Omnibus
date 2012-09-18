@@ -46,31 +46,31 @@ package menu
 			//add(new Entity(200, 200, new Text("The Gametrekking Omnibus", 0, 0, { font: "Casual Encounter", size: 14 } )));
 			
 			// Intro
-			FP.world.add(introButton = new Button(366, 0, new Image(Assets.NAV_INTRO), null, Global.NAV_HOVER_SCALE, null, null, false, gotoIntro));
+			FP.world.add(introButton = new Button(366, 0, new Image(Assets.NAV_INTRO), null, Global.NAV_HOVER_SCALE, null, null, false, gotoIntro, false));
 			introButton.layer = layer;
 			
 			// Korea
-			FP.world.add(koreaButton = new Button(453, 0, new Image(Assets.NAV_KOREA), null, Global.NAV_HOVER_SCALE, null, null, false, gotoKorea));	
+			FP.world.add(koreaButton = new Button(453, 0, new Image(Assets.NAV_KOREA), null, Global.NAV_HOVER_SCALE, null, null, false, gotoKorea, false));	
 			koreaButton.layer = layer;
 			
 			// Taiwan
-			FP.world.add(taiwanButton = new Button(540, 0, new Image(Assets.NAV_TAIWAN), null, Global.NAV_HOVER_SCALE, null, null, false, gotoTaiwan));	;	
+			FP.world.add(taiwanButton = new Button(540, 0, new Image(Assets.NAV_TAIWAN), null, Global.NAV_HOVER_SCALE, null, null, false, gotoTaiwan, false));	;	
 			taiwanButton.layer = layer;
 			
 			// Vietnam
-			FP.world.add(vietnamButton = new Button(635, 0, new Image(Assets.NAV_VIETNAM), null, Global.NAV_HOVER_SCALE, null, null, false, gotoVietnam));	;	
+			FP.world.add(vietnamButton = new Button(635, 0, new Image(Assets.NAV_VIETNAM), null, Global.NAV_HOVER_SCALE, null, null, false, gotoVietnam, false));	;	
 			vietnamButton.layer = layer;
 			
 			// Cambodia
-			FP.world.add(cambodiaButton = new Button(741, 0, new Image(Assets.NAV_CAMBODIA), null, Global.NAV_HOVER_SCALE, null, null, false, gotoCambodia));	;	
+			FP.world.add(cambodiaButton = new Button(741, 0, new Image(Assets.NAV_CAMBODIA), null, Global.NAV_HOVER_SCALE, null, null, false, gotoCambodia, false));	;	
 			cambodiaButton.layer = layer;		
 			
 			// Credits
-			FP.world.add(creditsButton = new Button(858, 0, new Image(Assets.NAV_CREDITS), null, Global.NAV_HOVER_SCALE, null, null, false, gotoCredits));	;	
+			FP.world.add(creditsButton = new Button(858, 0, new Image(Assets.NAV_CREDITS), null, Global.NAV_HOVER_SCALE, null, null, false, gotoCredits, false));	;	
 			creditsButton.layer = layer;		
 			
 			// Quit
-			FP.world.add(quitButton = new Button(953, 0, new Image(Assets.NAV_QUIT), null, Global.NAV_HOVER_SCALE, null, null, false, quit));	;	
+			FP.world.add(quitButton = new Button(953, 0, new Image(Assets.NAV_QUIT), null, Global.NAV_HOVER_SCALE, null, null, false, quit, false));	;	
 			quitButton.layer = layer;					
 			
 			// Navigation Underline

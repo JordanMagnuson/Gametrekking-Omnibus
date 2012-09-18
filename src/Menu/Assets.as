@@ -10,6 +10,12 @@ package menu
 		[Embed(source = "../../assets/menu/google_copyright.png")] public static const GOOGLE_COPYRIGHT:Class;
 		[Embed(source = "../../assets/CasualEncounter.ttf", embedAsCFF = "false", fontFamily = 'Casual Encounter')] public static const CASUAL_ENCOUNTER:Class;
 		
+		// Sounds
+		[Embed(source = "../../assets/menu/interface_sounds.swf", symbol = "click.wav")] public static const SND_CLICK:Class;
+		[Embed(source = "../../assets/menu/interface_sounds.swf", symbol = "rollover.wav")] public static const SND_ROLLOVER:Class;
+		[Embed(source = "../../assets/menu/interface_sounds.swf", symbol = "swoosh.wav")] public static const SND_SWOOSH:Class;
+		[Embed(source = "../../assets/menu/interface_sounds.swf", symbol = "voice_intro.wav")] public static const SND_VOICE_INTRO:Class;
+		
 		// Navigation
 		[Embed(source = "../../assets/menu/nav_logo.png")] public static const NAV_LOGO:Class;
 		[Embed(source = "../../assets/menu/nav_intro.png")] public static const NAV_INTRO:Class;

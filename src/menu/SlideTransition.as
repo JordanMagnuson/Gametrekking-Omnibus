@@ -6,6 +6,7 @@ package menu
 	import net.flashpunk.graphics.Backdrop;
 	import net.flashpunk.graphics.Canvas;
 	import net.flashpunk.FP;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.tweens.motion.LinearMotion;
 	import net.flashpunk.utils.Ease;
 	
@@ -24,6 +25,8 @@ package menu
 		public var goto:Class;
 		public var motionTween:LinearMotion;
 		public var ease:Function;
+		
+		public var sndSwoosh:Sfx = new Sfx(Assets.SND_SWOOSH);
 		
 		public function SlideTransition(graphic:Graphic = null, color:uint = 0x000000, direction:String = 'left', duration:Number = 1, goto:Class = null, ease:Function = null, layer:Number = -60) 
 		{
@@ -81,6 +84,7 @@ package menu
 			addTween(motionTween);
 			motionTween.setMotion(x, y, destX, destY, duration, ease);
 			super.added();
+			sndSwoosh.play(0.5);
 		}
 		
 		override public function update():void
