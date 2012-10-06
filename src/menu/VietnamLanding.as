@@ -55,7 +55,8 @@ package menu
 		public function gotoHeartAttack():void
 		{
 			//FP.world = new Game;
-			var goto:World = new IntroScreen(Assets.INTRO_HEART_ATTACK, Game, VietnamLanding);
+			//var goto:World = new IntroScreen(Assets.INTRO_HEART_ATTACK, Game, VietnamLanding);
+			var goto:World = new Game;
 			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 				
 		}		
 		

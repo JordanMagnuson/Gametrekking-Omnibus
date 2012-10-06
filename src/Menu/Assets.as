@@ -6,6 +6,7 @@ package menu
 	 */
 	public class Assets 
 	{
+		[Embed(source = "../../assets/menu/sound_notice_screen.png")] public static const SOUND_NOTICE_SCREEN:Class;
 		[Embed(source = "../../assets/menu/stamp_background.jpg")] public static const STAMP_BACKGROUND:Class;
 		[Embed(source = "../../assets/menu/google_copyright.png")] public static const GOOGLE_COPYRIGHT:Class;
 		[Embed(source = "../../assets/CasualEncounter.ttf", embedAsCFF = "false", fontFamily = 'Casual Encounter')] public static const CASUAL_ENCOUNTER:Class;

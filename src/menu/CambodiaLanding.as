@@ -55,7 +55,8 @@ package menu
 		public function gotoKiller():void
 		{
 			//FP.world = new MusicChoice;
-			var goto:World = new IntroScreen(Assets.INTRO_KILLER, MusicChoice, CambodiaLanding);
+			//var goto:World = new IntroScreen(Assets.INTRO_KILLER, MusicChoice, CambodiaLanding);
+			var goto:World = new MusicChoice;
 			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 					
 		}		
 		

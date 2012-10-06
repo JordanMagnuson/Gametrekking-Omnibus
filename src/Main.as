@@ -14,6 +14,7 @@ package
 	import menu.IntroLanding;
 	import menu.KoreaLanding;
 	import menu.Landing;
+	import menu.SoundNotice;
 	import menu.TaiwanLanding;
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
@@ -54,7 +55,7 @@ package
 			// Console for debugging
 			//FP.console.enable();		
 			
-			FP.world = new IntroLanding;
+			FP.world = new SoundNotice;
 			
 			//Mouse.hide();
 		}
