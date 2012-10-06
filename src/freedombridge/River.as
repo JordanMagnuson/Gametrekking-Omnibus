@@ -82,7 +82,7 @@ package freedombridge
 		{
 			var fader:SfxFader = new SfxFader(sndRiver);
 			addTween(fader);
-			fader.fadeTo(0, 15);
+			fader.fadeTo(0, 10);
 			fader.start();
 		}
 		

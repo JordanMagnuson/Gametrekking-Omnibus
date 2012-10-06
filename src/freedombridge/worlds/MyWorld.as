@@ -67,7 +67,7 @@ package freedombridge.worlds
 			//add(new FadeOut(new PhotoWorld, Colors.BLACK, 3, 10));
 			
 			player.x = 120;
-			//player.x = 3000;
+			player.x = 3000;
 			player.y = height / 2;
 			
 			barb01.x = FP.width - player.x;

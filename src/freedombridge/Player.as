@@ -58,7 +58,7 @@ package freedombridge
 		public var splatterAlarm:Alarm = new Alarm(0.3, splatter);
 		
 		// Time until fade.
-		public var fadeAlarm:Alarm = new Alarm(20, startFade);
+		public var fadeAlarm:Alarm = new Alarm(10, startFade);
 		
 		public var testAlarm:Alarm = new Alarm(2, startFade);
 		
@@ -149,7 +149,7 @@ package freedombridge
 		private function startFade():void
 		{
 			trace("start fade");
-			FP.world.add(new FadeOut(PhotoWorld, Colors.BLACK, 15, 3));
+			FP.world.add(new FadeOut(PhotoWorld, Colors.BLACK, 5, 3));
 		}
 		
 		/**
