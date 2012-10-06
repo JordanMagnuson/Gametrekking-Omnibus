@@ -65,7 +65,7 @@ package loneliness.game
 			setSpdMax();
 			acceleration();
 			move(spdX * FP.elapsed, spdY * FP.elapsed);	
-			if (y <= 200)
+			if (y <= 400)
 			{
 				FP.world.remove(this);
 				//FP.world.add(new ChildrenAndText);

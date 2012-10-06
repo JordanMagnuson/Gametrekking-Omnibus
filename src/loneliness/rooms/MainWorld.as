@@ -97,6 +97,7 @@ package loneliness.rooms
 			//FP.alarm(1, updateBackground);
 			
 			//player.y = FP.height - FP.screen.height * 5;
+			//player.y = 1300;
 		}
 		
 		/**

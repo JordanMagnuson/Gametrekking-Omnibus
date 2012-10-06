@@ -20,7 +20,7 @@ package loneliness.game
 		/**
 		 * Fade in
 		 */
-		public const FADE_IN_DURATION:Number = 4;	
+		public const FADE_IN_DURATION:Number = 2;	
 		public var fadeAlarm:Alarm = new Alarm(0.1, fadeIn); // Time until fade starts
 		public var fadeTween:ColorTween = new ColorTween(nextText);
 		
