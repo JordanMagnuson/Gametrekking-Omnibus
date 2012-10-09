@@ -36,6 +36,7 @@ package menu
 		
 		// Intro
 		[Embed(source = "../../assets/menu/intro_landing.jpg")] public static const INTRO_LANDING:Class;
+		[Embed(source = "../../assets/menu/intro_website_text.png")] public static const WEBSITE_TEXT:Class;
 
 		// Korea
 		[Embed(source = "../../assets/menu/korea_landing.jpg")] public static const KOREA_LANDING:Class;
