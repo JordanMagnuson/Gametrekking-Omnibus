@@ -69,12 +69,15 @@ package menu
 		
 		public function gotoReflection():void
 		{
-			request = new URLRequest(reflectionURL);
-			try {
-				navigateToURL(request, '_blank'); // second argument is target
-			} catch (e:Error) {
-				trace("Error occurred!");
-			}
+			var goto:World = new Reflection(Assets.VIETNAM_REFLECTION, VietnamLanding);
+			Transition.to(goto, new Global.TRANS_OUT(Global.TRANS_OUT_OPTIONS), new Global.TRANS_IN(Global.TRANS_IN_OPTIONS)); 		
+			
+			//request = new URLRequest(reflectionURL);
+			//try {
+				//navigateToURL(request, '_blank'); // second argument is target
+			//} catch (e:Error) {
+				//trace("Error occurred!");
+			//}
 		}			
 		
 	}
