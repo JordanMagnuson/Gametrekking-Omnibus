@@ -29,6 +29,7 @@ package menu
 		
 		// Reflections
 		[Embed(source = "../../assets/menu/reflection_scroll_arrow.png")] public static const REFLECTION_SCROLL_ARROW:Class;
+		[Embed(source = "../../assets/menu/korea_reflection.jpg")] public static const KOREA_REFLECTION:Class;
 		[Embed(source = "../../assets/menu/taiwan_reflection.jpg")] public static const TAIWAN_REFLECTION:Class;
 		[Embed(source = "../../assets/menu/vietnam_reflection.jpg")] public static const VIETNAM_REFLECTION:Class;
 		[Embed(source = "../../assets/menu/cambodia_reflection.jpg")] public static const CAMBODIA_REFLECTION:Class;
