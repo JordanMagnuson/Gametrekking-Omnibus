@@ -29,8 +29,8 @@ package gallery
 			new Array(korea_08, "Another common sight: giant pots of fermenting cabbage. Koreans eat Kimchi with nearly every meal, and I've come to sorely miss the delicious, spicy stuff."),
 			new Array(korea_06, "A South Korean soldier standing guard at the DMZ, the most heavily fortified national border in the world. North Korea lies just beyond that blue building, and it was a shock to discover that I could get this close."),
 			new Array(korea_07, "A fence by Freedom Bridge, in the DMZ, where people have left prayers and messages for inaccessible family members on the other side. Seeing this fence was the major inspiration for my short game, 'Freedom Bridge.'"),
-			new Array(korea_10, "Despite the long hours at school, and the tension between North and South, there's no shortage of smiling faces in Korea."),
-			new Array(korea_end, null)
+			new Array(korea_10, "Despite the long hours at school, and the tension between North and South, there's no shortage of smiling faces in Korea.")
+			//new Array(korea_end, null)
 		);
 		
 		// Taiwan
@@ -56,8 +56,8 @@ package gallery
 			new Array(taiwan_05, "Hitching a ride on the back of a pickup on Taiwan's east coast. Our drivers were incredibly friendly, and the ocean breeze felt amazing (especially as this was our first real sunny day in Taiwan, after two weeks of rain)."),
 			new Array(taiwan_06, "Buddhist monks in Taroko Gorge, who were returning to their monastery after visiting a sick friend. After talking for a bit, they insisted on sharing their lunch with us... delicious honey-bread dessert included."),
 			new Array(taiwan_08, "Dinner with the Mao-Mao's, a family in Tainan who took us in sight-unseen, and treated us like family... one of the many inspirations for my game, 'The Kindness of Strangers.'"),
-			new Array(taiwan_10, "A picture I took in Kaohsiung Harbor, which embodies the Taiwanese spirit for me. I will never forget all the smiling faces, and the outrageous kindness that was shown to us in Taiwan."),
-			new Array(taiwan_end, null)
+			new Array(taiwan_10, "A picture I took in Kaohsiung Harbor, which embodies the Taiwanese spirit for me. I will never forget all the smiling faces, and the outrageous kindness that was shown to us in Taiwan.")
+			//new Array(taiwan_end, null)
 		);		
 		
 		// Cambodia
@@ -83,8 +83,8 @@ package gallery
 			new Array(cambodia_06, "On Koh Paen island. The bamboo bridge you see in the background is washed away every year during Cambodia's wet season, and built again when the Southwest monsoon passes."),
 			new Array(cambodia_10, "A painting by Vann Nath: one of seven survivors of prison S-21, where 17,000 victims were killed. This image in particular served as inspiration for my short game, 'The Killer.'"),
 			new Array(cambodia_07, "Sa Vorn, our wonderful Angkor tour guide, studying his English while he waits for Marisa and me at a temple stop. No kidding, that's a grammar book."),
-			new Array(cambodia_08, "The incomparable Angkor Wat."),
-			new Array(cambodia_end, null)
+			new Array(cambodia_08, "The incomparable Angkor Wat.")
+			//new Array(cambodia_end, null)
 		);			
 		
 		// Vietnam
@@ -110,8 +110,8 @@ package gallery
 			new Array(vietnam_06, "Note the crosses on the graves. I took this shot from the train while riding through a region of northern Vietnam populated by Christian minority tribes."),
 			new Array(vietnam_08, "Palm trees and rice paddies seen from a train window."),
 			new Array(vietnam_10, "Hanoi's Lake Tay Ho at dusk."),
-			new Array(vietnam_09, "Hanoi at sundown."),
-			new Array(vietnam_end, null)
+			new Array(vietnam_09, "Hanoi at sundown.")
+			//new Array(vietnam_end, null)
 		);					
 		
 	}
